@@ -1,0 +1,1438 @@
+﻿
+@{
+    ViewData["Title"] = "Shop Page";
+}
+
+<!--MAIN-START-->
+
+@section Css{
+         <link rel="stylesheet" href="~/assets/css/pages/shop/shop.css">
+}
+
+  <main>
+
+
+    <!--BANNER-START-->
+
+    <section id="banner">
+
+      <div class="col-sm-12 col-md-12 col-lg-12">
+
+        <div class="banner" style="background-image: url(assets/images/banners/banner6.jpg)">
+          <h1>Shop</h1>
+          <p>Food is one of the basic necessities of life. Food contains nutrients essential for the growth, repair, and
+            maintenance of body tissues and for the regulation of vital processes.</p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!--BANNER-END-->
+
+
+    <!--FILTER-START-->
+
+    <section id="filtering" class="my-4">
+
+
+      <div class="row" style="width: 100%;">
+
+        <div class="col-sm-12 col-md-6 col-lg-3">
+          <div class="left-side">
+
+            <div class="banner-image">
+              <img src="~/assets/images/banners/banner7.webp" alt="">
+            </div>
+
+            <div class="filter my-5">
+              <h5 class="my-2">Filter By Category</h5>
+              <div class="filter-by-category">
+                <ul>
+                  <li>
+                    <input class="form-check-input" type="checkbox">
+                    <label for="">Vegetables</label>
+                    <span>(5) products</span>
+                  </li>
+                  <li>
+                    <input class="form-check-input" type="checkbox">
+                    <label for="">Fruits</label>
+                    <span>(7) products</span>
+                  </li>
+                  <li>
+                    <input class="form-check-input" type="checkbox">
+                    <label for="">Sea Foods</label>
+                    <span>(9) products</span>
+                  </li>
+                  <li>
+                    <input class="form-check-input" type="checkbox">
+                    <label for="">Dry Foods</label>
+                    <span>(2) products</span>
+                  </li>
+                  <li>
+                    <input class="form-check-input" type="checkbox">
+                    <label for="">Fast Foods</label>
+                    <span>(9) products</span>
+                  </li>
+                  <li>
+                    <input class="form-check-input" type="checkbox">
+                    <label for="">Dairy Foods</label>
+                    <span>(6) products</span>
+                  </li>
+                  <li>
+                    <input class="form-check-input" type="checkbox">
+                    <label for="">Drinks</label>
+                    <span>(3) products</span>
+                  </li>
+                </ul>
+
+              </div>
+
+            </div>
+
+            <div class="filter my-5">
+              <h5 class="my-2">Filter By Price</h5>
+              <div class="filter-by-price my-3">
+                <input type="text" placeholder="Minimum">
+                <input class="maximum" type="text" placeholder="Maximum">
+              </div>
+              <div class="filter-btn">
+                <a href="">Filter</a>
+              </div>
+            </div>
+
+            <div class="filter my-5">
+              <h5 class="my-2">Filter By Rating</h5>
+              <div class="filter-by-rating">
+                <ul>
+                  <li>
+                    <input class="form-check-input" type="checkbox">
+                    <label class="star" for="">
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                    </label>
+                    <span>(8) products</span>
+                  </li>
+                  <li>
+                    <input class="form-check-input" type="checkbox">
+                    <label class="star" for="">
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star"></i>
+                    </label>
+                    <span>(4) products</span>
+                  </li>
+                  <li>
+                    <input class="form-check-input" type="checkbox">
+                    <label class="star" for="">
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                    </label>
+                    <span>(2) products</span>
+                  </li>
+                  <li>
+                    <input class="form-check-input" type="checkbox">
+                    <label class="star" for="">
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                    </label>
+                    <span>(3) products</span>
+                  </li>
+                  <li>
+                    <input class="form-check-input" type="checkbox">
+                    <label class="star" for="">
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                    </label>
+                    <span>(7) products</span>
+                  </li>
+                </ul>
+
+              </div>
+
+            </div>
+
+            <div class="filter my-5">
+              <h5 class="my-2">Filter By Tag</h5>
+              <div class="filter-by-tag">
+                <ul>
+                  <li>
+                    <input class="form-check-input" type="checkbox">
+                    <label for="">Vegan Life</label>
+                    <span>(5) products</span>
+                  </li>
+                  <li>
+                    <input class="form-check-input" type="checkbox">
+                    <label for="">Healthy Food</label>
+                    <span>(7) products</span>
+                  </li>
+                  <li>
+                    <input class="form-check-input" type="checkbox">
+                    <label for="">Life Style</label>
+                    <span>(9) products</span>
+                  </li>
+                  <li>
+                    <input class="form-check-input" type="checkbox">
+                    <label for="">Delicious</label>
+                    <span>(2) products</span>
+                  </li>
+                  <li>
+                    <input class="form-check-input" type="checkbox">
+                    <label for="">Vegetables</label>
+                    <span>(9) products</span>
+                  </li>
+                  <li>
+                    <input class="form-check-input" type="checkbox">
+                    <label for="">Food</label>
+                    <span>(6) products</span>
+                  </li>
+                  <li>
+                    <input class="form-check-input" type="checkbox">
+                    <label for="">Organic</label>
+                    <span>(3) products</span>
+                  </li>
+                </ul>
+
+              </div>
+
+            </div>
+
+            <div class="filter my-5">
+              <h5 class="my-2">Filter By Brand</h5>
+              <div class="filter-by-brand">
+                <ul>
+                  <li>
+                    <input class="form-check-input" type="checkbox">
+                    <label for="">Vegan Food</label>
+                    <span>(5) products</span>
+                  </li>
+                  <li>
+                    <input class="form-check-input" type="checkbox">
+                    <label for="">Farm Fresh</label>
+                    <span>(7) products</span>
+                  </li>
+                  <li>
+                    <input class="form-check-input" type="checkbox">
+                    <label for="">Premium Quality</label>
+                    <span>(9) products</span>
+                  </li>
+                  <li>
+                    <input class="form-check-input" type="checkbox">
+                    <label for="">Fresh Food</label>
+                    <span>(2) products</span>
+                  </li>
+                  <li>
+                    <input class="form-check-input" type="checkbox">
+                    <label for="">Pure Vegetarian</label>
+                    <span>(9) products</span>
+                  </li>
+                  <li>
+                    <input class="form-check-input" type="checkbox">
+                    <label for="">Organic Food</label>
+                    <span>(6) products</span>
+                  </li>
+                  <li>
+                    <input class="form-check-input" type="checkbox">
+                    <label for="">Natural Product</label>
+                    <span>(3) products</span>
+                  </li>
+                </ul>
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-sm-12 col-md-6 col-lg-9">
+
+          <div class="breadcrumb-sortby d-flex">
+
+            <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <div class="breadcrumb-items">
+                     <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                            <li class="breadcrumb-item active"><a asp-controller="Shop" asp-action="Index">Shop</a></li>
+                     <li class="breadcrumb-item"><a asp-controller="Blog" asp-action="Index">Blog</a></li>
+                     <li class="breadcrumb-item"><a asp-controller="About" asp-action="Index">About</a></li>
+                     <li class="breadcrumb-item"><a asp-controller="Contact" asp-action="Index">Contact</a></li>
+                </div>
+              </ol>
+            </nav>
+
+            <div class="sort-by">
+              <span>Sort by</span>
+
+              <select id="">
+                <option value="option1">Price - Low to High</option>
+                <option value="option2">Price - High to Low</option>
+                <option value="option3">Name - A to Z</option>
+                <option value="option4">Name - Z to A</option>
+              </select>
+
+            </div>
+          </div>
+
+          <div class="right-side products mt-5">
+
+            <div class="tab-content mt-4" id="pills-tabContent">
+
+
+              <div class="col-sm-12 col-md-6 col-lg-3">
+
+                <div class="product card" style="width: 18rem;">
+
+                  <div class="product-images">
+                    <a href="product.html">
+                      <img class="image1" src="~/assets/images/products/tomato1.png" alt="">
+                      <img class="image2" src="~/assets/images/products/tomato2.png" alt="">
+                    </a>
+
+                  </div>
+
+                  <div class="product-add-to-wishlist">
+                    <a href="#">
+                      <span class="wishlist">Add to wishlist</span>
+                      <i class="fa-regular fa-heart"></i>
+                      <i class="fa-solid fa-heart d-none"></i>
+                    </a>
+                  </div>
+
+                  <div class="product-shuffle-eyeglasses">
+                    <div class="icons">
+                      <i class="fa-solid fa-shuffle"></i>
+                      <span class="vertical-line"></span>
+                      <i class="fa-solid fa-glasses"></i>
+                    </div>
+                  </div>
+
+                  <div class="product-featured">
+                    <span>New</span>
+
+                  </div>
+
+                  <div class="product-content card-body">
+
+                    <div class="product-rating">
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                    </div>
+                    <span class="product-review">Reviews (3)</span>
+                    <h6 class="product-name">Tomato</h6>
+                    <h6 class="product-price"><span class="discount">$34</span><span>$28</span><span>(15%
+                        discount)</span></h6>
+                    <a href="#" class="product-add-to-cart"><i class="fas fa-shopping-basket"></i>Add to
+                      cart</a>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="col-sm-12 col-md-6 col-lg-3">
+                <div class="product card" style="width: 18rem;">
+
+                  <div class="product-images">
+                    <a href="product.html">
+                      <img class="image1" src="~/assets/images/products/strawberry1.png" alt="">
+                      <img class="image2" src="~/assets/images/products/strawberry2.png" alt="">
+                    </a>
+                  </div>
+
+                  <div class="product-add-to-wishlist">
+                    <a href="#">
+                      <span class="wishlist">Add to wishlist</span>
+                      <i class="fa-regular fa-heart"></i>
+                      <i class="fa-solid fa-heart d-none"></i>
+                    </a>
+                  </div>
+
+                  <div class="product-shuffle-eyeglasses">
+                    <div class="icons">
+                      <i class="fa-solid fa-shuffle"></i>
+                      <span class="vertical-line"></span>
+                      <i class="fa-solid fa-glasses"></i>
+                    </div>
+                  </div>
+
+                  <div class="product-featured">
+                    <span>New</span>
+
+                  </div>
+
+                  <div class="product-content card-body">
+
+                    <div class="product-rating">
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                    </div>
+                    <span class="product-review">Reviews (3)</span>
+                    <h6 class="product-name">Strawberry</h6>
+                    <h6 class="product-price"><span class="discount">$34</span><span>$28</span><span>(15%
+                        discount)</span></h6>
+                    <a href="#" class="product-add-to-cart"><i class="fas fa-shopping-basket"></i>Add to
+                      cart</a>
+
+
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="col-sm-12 col-md-6 col-lg-3">
+                <div class="product card" style="width: 18rem;">
+
+                  <div class="product-images">
+                    <a href="product.html">
+                      <img class="image1" src="~/assets/images/products/carrot1.png" alt="">
+                      <img class="image2" src="~/assets/images/products/carrot2.png" alt="">
+                    </a>
+
+                  </div>
+
+                  <div class="product-add-to-wishlist">
+                    <a href="#">
+                      <span class="wishlist">Add to wishlist</span>
+                      <i class="fa-regular fa-heart"></i>
+                      <i class="fa-solid fa-heart d-none"></i>
+                    </a>
+                  </div>
+
+                  <div class="product-shuffle-eyeglasses">
+                    <div class="icons">
+                      <i class="fa-solid fa-shuffle"></i>
+                      <span class="vertical-line"></span>
+                      <i class="fa-solid fa-glasses"></i>
+                    </div>
+                  </div>
+
+                  <div class="product-featured">
+                    <span>New</span>
+
+                  </div>
+
+                  <div class="product-content card-body">
+
+                    <div class="product-rating">
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                    </div>
+                    <span class="product-review">Reviews (3)</span>
+                    <h6 class="product-name">Carrot</h6>
+                    <h6 class="product-price"><span class="discount">$34</span><span>$28</span><span>(15%
+                        discount)</span></h6>
+                    <a href="#" class="product-add-to-cart"><i class="fas fa-shopping-basket"></i>Add to
+                      cart</a>
+
+
+                  </div>
+
+
+
+                </div>
+              </div>
+
+              <div class="col-sm-12 col-md-6 col-lg-3">
+                <div class="product card" style="width: 18rem;">
+
+                  <div class="product-images">
+                    <a href="product.html">
+                      <img class="image1" src="~/assets/images/products/eggplant1.png" alt="">
+                      <img class="image2" src="~/assets/images/products/eggplant2.png" alt="">
+                    </a>
+
+                  </div>
+
+                  <div class="product-add-to-wishlist">
+                    <a href="#">
+                      <span class="wishlist">Add to wishlist</span>
+                      <i class="fa-regular fa-heart"></i>
+                      <i class="fa-solid fa-heart d-none"></i>
+                    </a>
+                  </div>
+
+                  <div class="product-shuffle-eyeglasses">
+                    <div class="icons">
+                      <i class="fa-solid fa-shuffle"></i>
+                      <span class="vertical-line"></span>
+                      <i class="fa-solid fa-glasses"></i>
+                    </div>
+                  </div>
+
+                  <div class="product-featured">
+                    <span>New</span>
+
+                  </div>
+
+                  <div class="product-content card-body">
+
+                    <div class="product-rating">
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                    </div>
+                    <span class="product-review">Reviews (3)</span>
+                    <h6 class="product-name">Eggplant</h6>
+                    <h6 class="product-price"><span class="discount">$34</span><span>$28</span><span>(15%
+                        discount)</span></h6>
+                    <a href="#" class="product-add-to-cart"><i class="fas fa-shopping-basket"></i>Add to
+                      cart</a>
+
+
+                  </div>
+
+
+
+                </div>
+              </div>
+
+              <div class="col-sm-12 col-md-6 col-lg-3">
+                <div class="product card" style="width: 18rem;">
+
+                  <div class="product-images">
+                    <a href="product.html">
+                      <img class="image1" src="~/assets/images/products/banana1.png" alt="">
+                      <img class="image2" src="~/assets/images/products/banana2.png" alt="">
+                    </a>
+
+                  </div>
+
+                  <div class="product-add-to-wishlist">
+                    <a href="#">
+                      <span class="wishlist">Add to wishlist</span>
+                      <i class="fa-regular fa-heart"></i>
+                      <i class="fa-solid fa-heart d-none"></i>
+                    </a>
+                  </div>
+
+                  <div class="product-shuffle-eyeglasses">
+                    <div class="icons">
+                      <i class="fa-solid fa-shuffle"></i>
+                      <span class="vertical-line"></span>
+                      <i class="fa-solid fa-glasses"></i>
+                    </div>
+                  </div>
+
+                  <div class="product-featured">
+                    <span>New</span>
+
+                  </div>
+
+                  <div class="product-content card-body">
+
+                    <div class="product-rating">
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                    </div>
+                    <span class="product-review">Reviews (3)</span>
+                    <h6 class="product-name">Banana</h6>
+                    <h6 class="product-price"><span class="discount">$34</span><span>$28</span><span>(15%
+                        discount)</span></h6>
+                    <a href="#" class="product-add-to-cart"><i class="fas fa-shopping-basket"></i>Add to
+                      cart</a>
+
+
+                  </div>
+
+
+
+                </div>
+              </div>
+
+              <div class="col-sm-12 col-md-6 col-lg-3">
+                <div class="product card" style="width: 18rem;">
+
+                  <div class="product-images">
+                    <a href="product.html">
+                      <img class="image1" src="~/assets/images/products/cocktail1.png" alt="">
+                      <img class="image2" src="~/assets/images/products/cocktail2.png" alt="">
+                    </a>
+
+                  </div>
+
+                  <div class="product-add-to-wishlist">
+                    <a href="#">
+                      <span class="wishlist">Add to wishlist</span>
+                      <i class="fa-regular fa-heart"></i>
+                      <i class="fa-solid fa-heart d-none"></i>
+                    </a>
+                  </div>
+
+                  <div class="product-shuffle-eyeglasses">
+                    <div class="icons">
+                      <i class="fa-solid fa-shuffle"></i>
+                      <span class="vertical-line"></span>
+                      <i class="fa-solid fa-glasses"></i>
+                    </div>
+                  </div>
+
+                  <div class="product-featured">
+                    <span>New</span>
+
+                  </div>
+
+                  <div class="product-content card-body">
+
+                    <div class="product-rating">
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                    </div>
+                    <span class="product-review">Reviews (3)</span>
+                    <h6 class="product-name">Cocktail</h6>
+                    <h6 class="product-price"><span class="discount">$34</span><span>$28</span><span>(15%
+                        discount)</span></h6>
+                    <a href="#" class="product-add-to-cart"><i class="fas fa-shopping-basket"></i>Add to
+                      cart</a>
+
+
+                  </div>
+
+
+
+                </div>
+              </div>
+
+              <div class="col-sm-12 col-md-6 col-lg-3">
+                <div class="product card" style="width: 18rem;">
+
+                  <div class="product-images">
+                    <a href="product.html">
+                      <img class="image1" src="~/assets/images/products/peach1.png" alt="">
+                      <img class="image2" src="~/assets/images/products/peach2.png" alt="">
+                    </a>
+
+                  </div>
+
+                  <div class="product-add-to-wishlist">
+                    <a href="#">
+                      <span class="wishlist">Add to wishlist</span>
+                      <i class="fa-regular fa-heart"></i>
+                      <i class="fa-solid fa-heart d-none"></i>
+                    </a>
+                  </div>
+
+                  <div class="product-shuffle-eyeglasses">
+                    <div class="icons">
+                      <i class="fa-solid fa-shuffle"></i>
+                      <span class="vertical-line"></span>
+                      <i class="fa-solid fa-glasses"></i>
+                    </div>
+                  </div>
+
+                  <div class="product-featured">
+                    <span>New</span>
+
+                  </div>
+
+                  <div class="product-content card-body">
+
+                    <div class="product-rating">
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                    </div>
+                    <span class="product-review">Reviews (3)</span>
+                    <h6 class="product-name">Peach</h6>
+                    <h6 class="product-price"><span class="discount">$34</span><span>$28</span><span>(15%
+                        discount)</span></h6>
+                    <a href="#" class="product-add-to-cart"><i class="fas fa-shopping-basket"></i>Add to
+                      cart</a>
+
+
+                  </div>
+
+
+
+                </div>
+              </div>
+
+              <div class="col-sm-12 col-md-6 col-lg-3">
+                <div class="product card" style="width: 18rem;">
+
+                  <div class="product-images">
+                    <a href="product.html">
+                      <img class="image1" src="~/assets/images/products/mullet1.png" alt="">
+                      <img class="image2" src="~/assets/images/products/mullet2.png" alt="">
+                    </a>
+
+                  </div>
+
+                  <div class="product-add-to-wishlist">
+                    <a href="#">
+                      <span class="wishlist">Add to wishlist</span>
+                      <i class="fa-regular fa-heart"></i>
+                      <i class="fa-solid fa-heart d-none"></i>
+                    </a>
+                  </div>
+
+                  <div class="product-shuffle-eyeglasses">
+                    <div class="icons">
+                      <i class="fa-solid fa-shuffle"></i>
+                      <span class="vertical-line"></span>
+                      <i class="fa-solid fa-glasses"></i>
+                    </div>
+                  </div>
+
+                  <div class="product-featured">
+                    <span>New</span>
+
+                  </div>
+
+                  <div class="product-content card-body">
+
+                    <div class="product-rating">
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                    </div>
+                    <span class="product-review">Reviews (3)</span>
+                    <h6 class="product-name">Mullet</h6>
+                    <h6 class="product-price"><span class="discount">$34</span><span>$28</span><span>(15%
+                        discount)</span></h6>
+                    <a href="#" class="product-add-to-cart"><i class="fas fa-shopping-basket"></i>Add to
+                      cart</a>
+
+
+                  </div>
+
+
+
+                </div>
+              </div>
+
+              <div class="col-sm-12 col-md-6 col-lg-3">
+                <div class="product card" style="width: 18rem;">
+
+                  <div class="product-images">
+                    <a href="product.html">
+                      <img class="image1" src="~/assets/images/products/almond1.png" alt="">
+                      <img class="image2" src="~/assets/images/products/almond2.png" alt="">
+                    </a>
+
+                  </div>
+
+                  <div class="product-add-to-wishlist">
+                    <a href="#">
+                      <span class="wishlist">Add to wishlist</span>
+                      <i class="fa-regular fa-heart"></i>
+                      <i class="fa-solid fa-heart d-none"></i>
+                    </a>
+                  </div>
+
+                  <div class="product-shuffle-eyeglasses">
+                    <div class="icons">
+                      <i class="fa-solid fa-shuffle"></i>
+                      <span class="vertical-line"></span>
+                      <i class="fa-solid fa-glasses"></i>
+                    </div>
+                  </div>
+
+                  <div class="product-featured">
+                    <span>New</span>
+
+                  </div>
+
+                  <div class="product-content card-body">
+
+                    <div class="product-rating">
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                    </div>
+                    <span class="product-review">Reviews (3)</span>
+                    <h6 class="product-name">Almond</h6>
+                    <h6 class="product-price"><span class="discount">$34</span><span>$28</span><span>(15%
+                        discount)</span></h6>
+                    <a href="#" class="product-add-to-cart"><i class="fas fa-shopping-basket"></i>Add to
+                      cart</a>
+
+                  </div>
+
+
+
+                </div>
+              </div>
+
+              <div class="col-sm-12 col-md-6 col-lg-3">
+                <div class="product card" style="width: 18rem;">
+
+                  <div class="product-images">
+                    <a href="product.html">
+                      <img class="image1" src="~/assets/images/products/hotdog1.png" alt="">
+                      <img class="image2" src="~/assets/images/products/hotdog2.png" alt="">
+                    </a>
+
+                  </div>
+
+                  <div class="product-add-to-wishlist">
+                    <a href="#">
+                      <span class="wishlist">Add to wishlist</span>
+                      <i class="fa-regular fa-heart"></i>
+                      <i class="fa-solid fa-heart d-none"></i>
+                    </a>
+                  </div>
+
+                  <div class="product-shuffle-eyeglasses">
+                    <div class="icons">
+                      <i class="fa-solid fa-shuffle"></i>
+                      <span class="vertical-line"></span>
+                      <i class="fa-solid fa-glasses"></i>
+                    </div>
+                  </div>
+
+                  <div class="product-featured">
+                    <span>New</span>
+
+                  </div>
+
+                  <div class="product-content card-body">
+
+                    <div class="product-rating">
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                    </div>
+                    <span class="product-review">Reviews (3)</span>
+                    <h6 class="product-name">Hotdog</h6>
+                    <h6 class="product-price"><span class="discount">$34</span><span>$28</span><span>(15%
+                        discount)</span></h6>
+                    <a href="#" class="product-add-to-cart"><i class="fas fa-shopping-basket"></i>Add to
+                      cart</a>
+
+
+                  </div>
+
+
+
+                </div>
+              </div>
+
+              <div class="col-sm-12 col-md-6 col-lg-3">
+                <div class="product card" style="width: 18rem;">
+
+                  <div class="product-images">
+                    <a href="product.html">
+                      <img class="image1" src="~/assets/images/products/hazelnut1.png" alt="">
+                      <img class="image2" src="~/assets/images/products/hazelnut2.png" alt="">
+                    </a>
+
+                  </div>
+
+                  <div class="product-add-to-wishlist">
+                    <a href="#">
+                      <span class="wishlist">Add to wishlist</span>
+                      <i class="fa-regular fa-heart"></i>
+                      <i class="fa-solid fa-heart d-none"></i>
+                    </a>
+                  </div>
+
+                  <div class="product-shuffle-eyeglasses">
+                    <div class="icons">
+                      <i class="fa-solid fa-shuffle"></i>
+                      <span class="vertical-line"></span>
+                      <i class="fa-solid fa-glasses"></i>
+                    </div>
+                  </div>
+
+                  <div class="product-featured">
+                    <span>New</span>
+
+                  </div>
+
+                  <div class="product-content card-body">
+
+                    <div class="product-rating">
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                    </div>
+                    <span class="product-review">Reviews (3)</span>
+                    <h6 class="product-name">Hazelnut</h6>
+                    <h6 class="product-price"><span class="discount">$34</span><span>$28</span><span>(15%
+                        discount)</span></h6>
+                    <a href="#" class="product-add-to-cart"><i class="fas fa-shopping-basket"></i>Add to
+                      cart</a>
+
+
+                  </div>
+
+
+
+                </div>
+              </div>
+
+              <div class="col-sm-12 col-md-6 col-lg-3">
+                <div class="product card" style="width: 18rem;">
+
+                  <div class="product-images">
+                    <a href="product.html">
+                      <img class="image1" src="~/assets/images/products/salmon1.png" alt="">
+                      <img class="image2" src="~/assets/images/products/salmon2.png" alt="">
+                    </a>
+                  </div>
+
+                  <div class="product-add-to-wishlist">
+                    <a href="#">
+                      <span class="wishlist">Add to wishlist</span>
+                      <i class="fa-regular fa-heart"></i>
+                      <i class="fa-solid fa-heart d-none"></i>
+                    </a>
+                  </div>
+
+                  <div class="product-shuffle-eyeglasses">
+                    <div class="icons">
+                      <i class="fa-solid fa-shuffle"></i>
+                      <span class="vertical-line"></span>
+                      <i class="fa-solid fa-glasses"></i>
+                    </div>
+                  </div>
+
+                  <div class="product-featured">
+                    <span>New</span>
+
+                  </div>
+
+                  <div class="product-content card-body">
+
+                    <div class="product-rating">
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                    </div>
+                    <span class="product-review">Reviews (3)</span>
+                    <h6 class="product-name">Salmon</h6>
+                    <h6 class="product-price"><span class="discount">$34</span><span>$28</span><span>(15%
+                        discount)</span></h6>
+                    <a href="#" class="product-add-to-cart"><i class="fas fa-shopping-basket"></i>Add to
+                      cart</a>
+
+
+                  </div>
+
+
+
+                </div>
+              </div>
+
+              <div class="col-sm-12 col-md-6 col-lg-3">
+                <div class="product card" style="width: 18rem;">
+
+                  <div class="product-images">
+                    <a href="product.html">
+                      <img class="image1" src="~/assets/images/products/butter1.png" alt="">
+                      <img class="image2" src="~/assets/images/products/butter2.png" alt="">
+                    </a>
+
+                  </div>
+
+                  <div class="product-add-to-wishlist">
+                    <a href="#">
+                      <span class="wishlist">Add to wishlist</span>
+                      <i class="fa-regular fa-heart"></i>
+                      <i class="fa-solid fa-heart d-none"></i>
+                    </a>
+                  </div>
+
+                  <div class="product-shuffle-eyeglasses">
+                    <div class="icons">
+                      <i class="fa-solid fa-shuffle"></i>
+                      <span class="vertical-line"></span>
+                      <i class="fa-solid fa-glasses"></i>
+                    </div>
+                  </div>
+
+                  <div class="product-featured">
+                    <span>New</span>
+
+                  </div>
+
+                  <div class="product-content card-body">
+
+                    <div class="product-rating">
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                    </div>
+                    <span class="product-review">Reviews (3)</span>
+                    <h6 class="product-name">Butter</h6>
+                    <h6 class="product-price"><span class="discount">$34</span><span>$28</span><span>(15%
+                        discount)</span></h6>
+                    <a href="#" class="product-add-to-cart"><i class="fas fa-shopping-basket"></i>Add to
+                      cart</a>
+
+
+                  </div>
+
+
+
+                </div>
+              </div>
+
+              <div class="col-sm-12 col-md-6 col-lg-3">
+                <div class="product card" style="width: 18rem;">
+
+                  <div class="product-images">
+                    <a href="product.html">
+                      <img class="image1" src="~/assets/images/products/cheese1.png" alt="">
+                      <img class="image2" src="~/assets/images/products/cheese2.png" alt="">
+                    </a>
+
+                  </div>
+
+                  <div class="product-add-to-wishlist">
+                    <a href="#">
+                      <span class="wishlist">Add to wishlist</span>
+                      <i class="fa-regular fa-heart"></i>
+                      <i class="fa-solid fa-heart d-none"></i>
+                    </a>
+                  </div>
+
+                  <div class="product-shuffle-eyeglasses">
+                    <div class="icons">
+                      <i class="fa-solid fa-shuffle"></i>
+                      <span class="vertical-line"></span>
+                      <i class="fa-solid fa-glasses"></i>
+                    </div>
+                  </div>
+
+                  <div class="product-featured">
+                    <span>New</span>
+
+                  </div>
+
+                  <div class="product-content card-body">
+
+                    <div class="product-rating">
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                    </div>
+                    <span class="product-review">Reviews (3)</span>
+                    <h6 class="product-name">Cheese</h6>
+                    <h6 class="product-price"><span class="discount">$34</span><span>$28</span><span>(15%
+                        discount)</span></h6>
+                    <a href="#" class="product-add-to-cart"><i class="fas fa-shopping-basket"></i>Add to
+                      cart</a>
+
+                  </div>
+
+
+
+                </div>
+              </div>
+
+              <div class="col-sm-12 col-md-6 col-lg-3">
+                <div class="product card" style="width: 18rem;">
+
+                  <div class="product-images">
+                    <a href="product.html">
+                      <img class="image1" src="~/assets/images/products/hamburger1.png" alt="">
+                      <img class="image2" src="~/assets/images/products/hamburger2.png" alt="">
+                    </a>
+
+                  </div>
+
+                  <div class="product-add-to-wishlist">
+                    <a href="#">
+                      <span class="wishlist">Add to wishlist</span>
+                      <i class="fa-regular fa-heart"></i>
+                      <i class="fa-solid fa-heart d-none"></i>
+                    </a>
+                  </div>
+
+                  <div class="product-shuffle-eyeglasses">
+                    <div class="icons">
+                      <i class="fa-solid fa-shuffle"></i>
+                      <span class="vertical-line"></span>
+                      <i class="fa-solid fa-glasses"></i>
+                    </div>
+                  </div>
+
+                  <div class="product-featured">
+                    <span>New</span>
+
+                  </div>
+
+                  <div class="product-content card-body">
+
+                    <div class="product-rating">
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                    </div>
+                    <span class="product-review">Reviews (3)</span>
+                    <h6 class="product-name">Burger</h6>
+                    <h6 class="product-price"><span class="discount">$34</span><span>$28</span><span>(15%
+                        discount)</span></h6>
+                    <a href="#" class="product-add-to-cart"><i class="fas fa-shopping-basket"></i>Add to
+                      cart</a>
+
+
+                  </div>
+
+
+
+                </div>
+              </div>
+
+              <div class="col-sm-12 col-md-6 col-lg-3">
+                <div class="product card" style="width: 18rem;">
+
+                  <div class="product-images">
+                    <a href="product.html">
+                      <img class="image1" src="~/assets/images/products/pizza1.png" alt="">
+                      <img class="image2" src="~/assets/images/products/pizza2.png" alt="">
+                    </a>
+
+                  </div>
+
+                  <div class="product-add-to-wishlist">
+                    <a href="#">
+                      <span class="wishlist">Add to wishlist</span>
+                      <i class="fa-regular fa-heart"></i>
+                      <i class="fa-solid fa-heart d-none"></i>
+                    </a>
+                  </div>
+
+                  <div class="product-shuffle-eyeglasses">
+                    <div class="icons">
+                      <i class="fa-solid fa-shuffle"></i>
+                      <span class="vertical-line"></span>
+                      <i class="fa-solid fa-glasses"></i>
+                    </div>
+                  </div>
+
+                  <div class="product-featured">
+                    <span>New</span>
+
+                  </div>
+
+                  <div class="product-content card-body">
+
+                    <div class="product-rating">
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                    </div>
+                    <span class="product-review">Reviews (3)</span>
+                    <h6 class="product-name">Pizza</h6>
+                    <h6 class="product-price"><span class="discount">$34</span><span>$28</span><span>(15%
+                        discount)</span></h6>
+                    <a href="#" class="product-add-to-cart"><i class="fas fa-shopping-basket"></i>Add to
+                      cart</a>
+
+
+                  </div>
+
+
+
+                </div>
+              </div>
+
+              <div class="col-sm-12 col-md-6 col-lg-3">
+                <div class="product card" style="width: 18rem;">
+
+                  <div class="product-images">
+                    <a href="product.html">
+                      <img class="image1" src="~/assets/images/products/butter1.png" alt="">
+                      <img class="image2" src="~/assets/images/products/butter2.png" alt="">
+                    </a>
+
+                  </div>
+
+                  <div class="product-add-to-wishlist">
+                    <a href="#">
+                      <span class="wishlist">Add to wishlist</span>
+                      <i class="fa-regular fa-heart"></i>
+                      <i class="fa-solid fa-heart d-none"></i>
+                    </a>
+                  </div>
+
+                  <div class="product-shuffle-eyeglasses">
+                    <div class="icons">
+                      <i class="fa-solid fa-shuffle"></i>
+                      <span class="vertical-line"></span>
+                      <i class="fa-solid fa-glasses"></i>
+                    </div>
+                  </div>
+
+                  <div class="product-featured">
+                    <span>New</span>
+
+                  </div>
+
+                  <div class="product-content card-body">
+
+                    <div class="product-rating">
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                    </div>
+                    <span class="product-review">Reviews (3)</span>
+                    <h6 class="product-name">Butter</h6>
+                    <h6 class="product-price"><span class="discount">$34</span><span>$28</span><span>(15%
+                        discount)</span></h6>
+                    <a href="#" class="product-add-to-cart"><i class="fas fa-shopping-basket"></i>Add to
+                      cart</a>
+
+
+                  </div>
+
+
+
+                </div>
+              </div>
+
+              <div class="col-sm-12 col-md-6 col-lg-3">
+                <div class="product card" style="width: 18rem;">
+
+                  <div class="product-images">
+                    <a href="product.html">
+                      <img class="image1" src="~/assets/images/products/cheese1.png" alt="">
+                      <img class="image2" src="~/assets/images/products/cheese2.png" alt="">
+                    </a>
+
+                  </div>
+
+                  <div class="product-add-to-wishlist">
+                    <a href="#">
+                      <span class="wishlist">Add to wishlist</span>
+                      <i class="fa-regular fa-heart"></i>
+                      <i class="fa-solid fa-heart d-none"></i>
+                    </a>
+                  </div>
+
+                  <div class="product-shuffle-eyeglasses">
+                    <div class="icons">
+                      <i class="fa-solid fa-shuffle"></i>
+                      <span class="vertical-line"></span>
+                      <i class="fa-solid fa-glasses"></i>
+                    </div>
+                  </div>
+
+                  <div class="product-featured">
+                    <span>New</span>
+
+                  </div>
+
+                  <div class="product-content card-body">
+
+                    <div class="product-rating">
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                    </div>
+                    <span class="product-review">Reviews (3)</span>
+                    <h6 class="product-name">Cheese</h6>
+                    <h6 class="product-price"><span class="discount">$34</span><span>$28</span><span>(15%
+                        discount)</span></h6>
+                    <a href="#" class="product-add-to-cart"><i class="fas fa-shopping-basket"></i>Add to
+                      cart</a>
+
+                  </div>
+
+
+
+                </div>
+              </div>
+
+              <div class="col-sm-12 col-md-6 col-lg-3">
+                <div class="product card" style="width: 18rem;">
+
+                  <div class="product-images">
+                    <a href="product.html">
+                      <img class="image1" src="~/assets/images/products/hamburger1.png" alt="">
+                      <img class="image2" src="~/assets/images/products/hamburger2.png" alt="">
+                    </a>
+
+                  </div>
+
+                  <div class="product-add-to-wishlist">
+                    <a href="#">
+                      <span class="wishlist">Add to wishlist</span>
+                      <i class="fa-regular fa-heart"></i>
+                      <i class="fa-solid fa-heart d-none"></i>
+                    </a>
+                  </div>
+
+                  <div class="product-shuffle-eyeglasses">
+                    <div class="icons">
+                      <i class="fa-solid fa-shuffle"></i>
+                      <span class="vertical-line"></span>
+                      <i class="fa-solid fa-glasses"></i>
+                    </div>
+                  </div>
+
+                  <div class="product-featured">
+                    <span>New</span>
+
+                  </div>
+
+                  <div class="product-content card-body">
+
+                    <div class="product-rating">
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                    </div>
+                    <span class="product-review">Reviews (3)</span>
+                    <h6 class="product-name">Burger</h6>
+                    <h6 class="product-price"><span class="discount">$34</span><span>$28</span><span>(15%
+                        discount)</span></h6>
+                    <a href="#" class="product-add-to-cart"><i class="fas fa-shopping-basket"></i>Add to
+                      cart</a>
+
+
+                  </div>
+
+
+
+                </div>
+              </div>
+
+              <div class="col-sm-12 col-md-6 col-lg-3">
+                <div class="product card" style="width: 18rem;">
+
+                  <div class="product-images">
+                    <a href="product.html">
+                      <img class="image1" src="~/assets/images/products/pizza1.png" alt="">
+                      <img class="image2" src="~/assets/images/products/pizza2.png" alt="">
+                    </a>
+
+                  </div>
+
+                  <div class="product-add-to-wishlist">
+                    <a href="#">
+                      <span class="wishlist">Add to wishlist</span>
+                      <i class="fa-regular fa-heart"></i>
+                      <i class="fa-solid fa-heart d-none"></i>
+                    </a>
+                  </div>
+
+                  <div class="product-shuffle-eyeglasses">
+                    <div class="icons">
+                      <i class="fa-solid fa-shuffle"></i>
+                      <span class="vertical-line"></span>
+                      <i class="fa-solid fa-glasses"></i>
+                    </div>
+                  </div>
+
+                  <div class="product-featured">
+                    <span>New</span>
+
+                  </div>
+
+                  <div class="product-content card-body">
+
+                    <div class="product-rating">
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                      <i class="fa-solid fa-star active"></i>
+                    </div>
+                    <span class="product-review">Reviews (3)</span>
+                    <h6 class="product-name">Pizza</h6>
+                    <h6 class="product-price"><span class="discount">$34</span><span>$28</span><span>(15%
+                        discount)</span></h6>
+                    <a href="#" class="product-add-to-cart"><i class="fas fa-shopping-basket"></i>Add to
+                      cart</a>
+
+
+                  </div>
+
+
+
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+          </nav>
+        </div>
+
+      </div>
+
+
+    </section>
+
+    <!--FILTER-END-->
+
+
+  </main>
+
+
+  <!--MAIN-END-->
+
+@section Scripts{
+    <script src="~/assets/js/shop.js"></script>
+}

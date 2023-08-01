@@ -1,0 +1,139 @@
+﻿
+@{
+    ViewData["Title"] = "Login Page";
+}
+
+
+@section Css{
+        <link rel="stylesheet" href="~/assets/css/pages/login/login.css">
+}
+
+
+<!--MAIN-START-->
+
+<main>
+
+
+    <!--BANNER-START-->
+
+    <section id="banner">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="banner">
+                <img src="~/assets/images/banners/banner6.jpg" />
+                <h1>Account<span>Login</span></h1>
+            </div>
+        </div>
+    </section>
+
+    <!--BANNER-END-->
+
+
+
+    <!--LOGIN-START-->
+
+    <section id="login" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <div class="login">
+
+                        <div class="login-image">
+                            <img src="~/assets/images/banners/banner11.png" alt="">
+                        </div>
+
+                        <div class="login-content">
+                            <div class="login-title">
+                                <h1>Sign in to your account</h1>
+                            </div>
+
+
+                            <form>
+
+                                <div class="input">
+                                    <label for="name">Username or Email</label>
+                                    <input id="name" type="text" placeholder="Username or Email">
+                                </div>
+
+                                <div class="input">
+                                    <label for="password">Password</label>
+                                    <input id="password" type="password" placeholder="Password">
+                                    <i class="fa-solid fa-eye eye"></i>
+                                    <div class="line"></div>
+                                </div>
+
+                                <div class="forgot-password-remember-me">
+                                    <div class="remember-me">
+                                        <input class="form-check-input" id="checkbox" type="checkbox">
+                                        <label for="checkbox">Remember me</label>
+                                    </div>
+                                    <div class="forgot-password">
+                                        <a href="forgot-password.html">Forgot password?</a>
+                                    </div>
+
+                                </div>
+
+                                <div class="login-btn mt-4">
+                                    <button type="submit" class="btn btn-success">Sign In</button>
+                                </div>
+
+                                <div class="horizontal-line-or">
+
+                                    <div class="horizontal-line">
+                                    </div>
+
+                                    <div class="or">
+                                        <span>Or</span>
+                                    </div>
+
+                                    <div class="horizontal-line">
+                                    </div>
+
+                                </div>
+
+                                <div class="social-medias">
+
+                                    <a class="facebook" href="https://www.facebook.com">
+                                        <i class="fa-brands fa-facebook-f"></i>Sign in With Facebook
+                                    </a>
+
+                                    <a class="google" href="https://www.google.com/">
+                                        <i class="fa-brands fa-google"></i>Sign in With Google
+                                    </a>
+
+                                    <a class="instagram" href="https://www.instagram.com/">
+                                        <i class="fa-brands fa-instagram"></i>Sign in With Instagram
+                                    </a>
+
+                                </div>
+
+                                <div class="dont-have-account">
+                                    <p>
+                                        Don't have an account?
+                                        <a asp-controller="Account" asp-action="Register">Sign up</a>
+                                    </p>
+                                </div>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <!--LOGIN-END-->
+
+
+
+</main>
+
+
+<!--MAIN-END-->
+
+@section Scripts{
+       <script src="~/assets/js/login.js"></script>
+}

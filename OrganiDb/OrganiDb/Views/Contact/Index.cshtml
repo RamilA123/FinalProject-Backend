@@ -1,0 +1,289 @@
+﻿
+@{
+    ViewData["Title"] = "Contact Page";
+}
+
+  <!--MAIN-START-->
+
+
+  @section Css{
+     <link rel="stylesheet" href="~/assets/css/pages/contact/contact.css">
+  }
+
+  <main>
+
+
+    <!--BANNER-START-->
+
+    <section id="banner">
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <div class="banner pt-5" style="background-image: url(assets/images/banners/banner6.jpg)">
+          <h1>Contact us</h1>
+          <p>Research has shown that consuming these nutrients as food, within fruits and vegetables, is more beneficial
+            for health than consuming them as supplements.</p>
+        </div>
+      </div>
+    </section>
+
+    <!--BANNER-END-->
+
+
+
+    <!--BREADCRUMB-START-->
+
+    <section id="breadcrumb" class="mt-4">
+
+      <div class="container">
+        <div class="breadcrumb-sortby d-flex">
+
+          <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <div class="breadcrumb-items">
+                   <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                   <li class="breadcrumb-item"><a asp-controller="Shop" asp-action="Index">Shop</a></li>
+                   <li class="breadcrumb-item"><a asp-controller="Blog" asp-action="Index">Blog</a></li>
+                   <li class="breadcrumb-item"><a asp-controller="About" asp-action="Index">About</a></li>
+                   <li class="breadcrumb-item active"><a asp-controller="Contact" asp-action="Index">Contact</a></li>
+              </div>
+            </ol>
+          </nav>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!--BREADCRUMB-END-->
+
+
+
+    <!--CONTACT-START-->
+
+    <section id="contact" class="mt-3">
+
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-sm-12 col-md-6 col-lg-6">
+            <h3>Contact Information</h3>
+
+            <div class="left-side">
+
+              <div class="left-side-info">
+                <h5>Office</h5>
+
+                <div class="office-address office">
+
+                  <div class="icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                  </div>
+
+                  <div class="info">
+                    <span>Visit Store</span>
+                    <p>1429 Netus Rd, NY 48247, New York</p>
+                  </div>
+
+                </div>
+
+                <div class="office-phone-number office">
+
+                  <div class="icon">
+                    <i class="fa-solid fa-question"></i>
+                  </div>
+                  <div class="info">
+                    <span>Have Question?</span>
+                    <p>+1 (646) 555-7212</p>
+                  </div>
+
+                </div>
+
+                <div class="office-email office">
+
+                  <div class="icon">
+                    <i class="fa-solid fa-envelope"></i>
+                  </div>
+
+                  <div class="info">
+                    <span>Write Email</span>
+                    <p>organi@gmail.com</p>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="right-side-info">
+                <h5>Store Hours</h5>
+
+                <div class="work-hours">
+                  <p><span>Monday - Friday:</span> (11am - 9pm)</p>
+                  <p><span>Saturday:</span> (11am - 5pm)</p>
+                  <p><span>Sunday:</span> Closed</p>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="contact-image mt-5">
+              <img src="~/assets/images/cities/city1.jpeg" alt="">
+              <p>1429 Netus Rd, NY 48247, New York <br> USA</p>
+            </div>
+
+          </div>
+
+          <div class="col-sm-12 col-md-6 col-lg-6">
+
+
+
+            <div class="right-side">
+              <h3>Write a Message</h3>
+              <h1>We’re always here to help you</h1>
+
+
+              <form>
+                <div class="contact-message">
+
+                  <div class="upper-side">
+
+                    <div class="left-side-inputs">
+
+                      <div class="input-icon">
+                        <i class="fa-solid fa-user"></i>
+                        <input class="form-control" type="text" placeholder="Name">
+                      </div>
+
+                      <div class="input-icon">
+                        <i class="fa-solid fa-bookmark"></i>
+                        <input class="form-control" type="text" placeholder="Subject">
+                      </div>
+
+                    </div>
+
+                    <div class="right-side-inputs">
+
+                      <div class="input-icon">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input class="form-control" type="text" placeholder="Email Address">
+                      </div>
+
+                      <div class="input-icon">
+                        <i class="fa-solid fa-phone"></i>
+                        <input class="form-control" type="text" placeholder="Phone Number">
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <div class="down-side mt-3">
+
+                    <div class="input-icon">
+                      <i class="fa-solid fa-message"></i>
+                      <textarea cols="55" rows="13" placeholder="Message"></textarea>
+                    </div>
+
+                    <div class="message-btn text-center">
+                      <button type="submit" class="btn btn-success mt-3">Submit</button>
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </form>
+
+            </div>
+
+
+
+
+          </div>
+        </div>
+
+
+
+      </div>
+
+    </section>
+
+    <!--CONTACT-END-->
+
+
+
+    <!--MAP-START-->
+
+    <section id="map" class="mt-5">
+
+      <div class="col-ms-12 col-md-12 col-lg-12">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d387374.79739582026!2d-74.1820858!3d40.6659127!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2saz!4v1690281218794!5m2!1sen!2saz"
+          width="100%" height="650" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+
+    </section>
+
+    <!--MAP-END-->
+
+
+    <!--CITY-START-->
+
+    <section id="city" class="my-5">
+      <h1>Our Stores</h1>
+      <div class="row" style="width: 100%;">
+        <div class="col-ms-12 col-md-6 col-lg-3">
+          <div class="city city1" style="background-image: url(assets/images/cities/city2.jpg);">
+          </div>
+          <div class="city-address">
+            <p>St. Mark's Place, New York</p>
+            <span>+1 (646) 555-5993</span>
+          </div>
+
+        </div>
+
+        <div class="col-ms-12 col-md-6 col-lg-3">
+          <div class="city city2" style="background-image: url(assets/images/cities/city3.jpg);">
+          </div>
+          <div class="city-address">
+            <p>Kichijoji Sun Road 45, Tokio</p>
+            <span>+1 (646) 555-3899</span>
+          </div>
+
+        </div>
+
+        <div class="col-ms-12 col-md-6 col-lg-3">
+          <div class="city city3" style="background-image: url(assets/images/cities/city4.jpg);">
+          </div>
+          <div class="city-address">
+            <p>Lugarno Torrig Road 73, Italy</p>
+            <span>+1 (646) 555-4099</span>
+          </div>
+
+        </div>
+
+        <div class="col-ms-12 col-md-6 col-lg-3">
+          <div class="city city4" style="background-image: url(assets/images/cities/city5.jpg);">
+          </div>
+          <div class="city-address">
+            <p>Ru Château Road 35, France</p>
+            <span>+1 (646) 555-5772</span>
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </section>
+
+    <!--CITY-END-->
+
+
+  </main>
+
+
+  <!--MAIN-END-->
+
+  @section Scripts{
+    <script src="~/assets/js/contact.js"></script>
+  }
