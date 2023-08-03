@@ -3,11 +3,11 @@
     ViewData["Title"] = "Login Page";
 }
 
+@model LoginVM
 
 @section Css{
         <link rel="stylesheet" href="~/assets/css/pages/login/login.css">
 }
-
 
 <!--MAIN-START-->
 
@@ -47,16 +47,16 @@
                             </div>
 
 
-                            <form>
+                            <form method="post" asp-action="Login">
 
                                 <div class="input">
                                     <label for="name">Username or Email</label>
-                                    <input id="name" type="text" placeholder="Username or Email">
+                                    <input id="name" asp-for="UsernameOrEmail" placeholder="Username or Email">
                                 </div>
 
                                 <div class="input">
                                     <label for="password">Password</label>
-                                    <input id="password" type="password" placeholder="Password">
+                                    <input id="password" asp-for="Password" placeholder="Password">
                                     <i class="fa-solid fa-eye eye"></i>
                                     <div class="line"></div>
                                 </div>
@@ -67,7 +67,7 @@
                                         <label for="checkbox">Remember me</label>
                                     </div>
                                     <div class="forgot-password">
-                                        <a href="forgot-password.html">Forgot password?</a>
+                                        <a asp-action="ForgotPassword">Forgot password?</a>
                                     </div>
 
                                 </div>
@@ -113,6 +113,10 @@
                                     </p>
                                 </div>
 
+                                <div class="text-danger" asp-validation-summary="All" role="alert">
+                                   
+                                </div>
+
                             </form>
 
                         </div>
@@ -135,5 +139,6 @@
 <!--MAIN-END-->
 
 @section Scripts{
-       <script src="~/assets/js/login.js"></script>
+    <script src="~/assets/js/login.js"></script>
+    <partial name="_ValidationScriptsPartial" />
 }

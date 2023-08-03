@@ -2,6 +2,9 @@
     ViewData["Title"] = "Register Page";
 }
 
+@model RegisterVM
+
+
 @section Css{
      <link rel="stylesheet" href="~/assets/css/pages/register/register.css">
 }
@@ -24,6 +27,8 @@
     </section>
 
     <!--BANNER-END-->
+
+
     <!--REGISTER-START-->
 
     <section id="register">
@@ -43,38 +48,38 @@
                     </div>
 
 
-                    <form class="mt-4">
+                    <form class="mt-4" method="post" asp-action="Register">
 
                         <div class="input">
                             <label for="name">Name</label>
-                            <input id="name" type="text" placeholder="Name">
+                            <input id="name" asp-for="Name" placeholder="Name">
                         </div>
 
                         <div class="input">
                             <label for="surname">Surname</label>
-                            <input id="surname" type="text" placeholder="Surname">
+                            <input id="surname" asp-for="Surname" placeholder="Surname">
                         </div>
 
                         <div class="input">
                             <label for="username">Username</label>
-                            <input id="username" type="text" placeholder="Username">
+                            <input id="username" asp-for="Username" placeholder="Username">
                         </div>
 
                         <div class="input">
                             <label for="email">Email</label>
-                            <input id="email" type="email" placeholder="Email">
+                            <input id="email" asp-for="Email" placeholder="Email">
                         </div>
 
                         <div class="input">
                             <label for="password">Password</label>
-                            <input id="password" type="password" placeholder="Password">
+                            <input id="password" asp-for="Password" placeholder="Password">
                             <i class="fa-solid fa-eye eye"></i>
                             <div class="line"></div>
                         </div>
 
                         <div class="input">
                             <label for="confirm-password">Repeat Password</label>
-                            <input id="confirm-password" type="password" placeholder="Repeat Password">
+                            <input id="confirm-password" asp-for="RepeatPassword" placeholder="Repeat Password">
                             <i class="fa-solid fa-eye eye"></i>
                             <div class="line"></div>
                         </div>
@@ -85,7 +90,7 @@
                                 <label for="checkbox">Remember me</label>
                             </div>
                             <div class="forgot-password">
-                                <a href="forgot-password.html">Forgot password?</a>
+                                <a asp-action="ForgotPassword">Forgot password?</a>
                             </div>
 
                         </div>
@@ -100,7 +105,8 @@
                                 <a asp-controller="Account" asp-action="Login">Sign in</a>
                             </p>
                         </div>
-
+                        <div class="text-danger" asp-validation-summary="All" role="alert">
+                        </div>
                     </form>
 
                 </div>
@@ -123,5 +129,6 @@
 
 @section Scripts{
     <script src="~/assets/js/register.js"></script>
+    <partial name="_ValidationScriptsPartial" />
 }
 

@@ -550,20 +550,30 @@
    padding-left: 10px;
 }
 
+#header .down-side .drop-down .profile {
+   right: -4px;
+}
+
+#header .down-side .drop-down .account {
+   right: -24px;
+}
+
 #header .down-side .drop-down-title:hover {
    cursor: pointer;
 }
 
-#header .down-side .drop-down-title:hover+.drop-down-menu {
+#header .down-side .drop-down-title:hover + .drop-down-menu {
    height: 119px;
+   width: 235px;
 }
 
-#header .down-side .drop-down-title:hover+.drop-down-menu li {
+#header .down-side .drop-down-title:hover + .drop-down-menu li {
    display: block;
 }
 
 #header .down-side .drop-down-menu:hover {
    height: 119px;
+   width: 235px;
 }
 
 #header .down-side .drop-down-menu:hover li {
@@ -571,8 +581,8 @@
 }
 
 #header .down-side .drop-down-menu li {
-   padding: 7px 20px;
-   width: 215px
+   padding: 7px 15px;
+   width: 235px;
 }
 
 #header .down-side .drop-down-menu li:hover {
@@ -1093,7 +1103,8 @@
 }
 
 #filtering .pagination {
-   margin-left: 26%;
+    margin-left: 40%;
+    margin-top: 15px;
 }
 
 #filtering .pagination li {

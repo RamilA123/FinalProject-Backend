@@ -550,29 +550,39 @@
     padding-left: 10px;
 }
 
+#header .down-side .drop-down .profile {
+   right: -4px;
+}
+
+#header .down-side .drop-down .account {
+   right: -24px;
+}
+
 #header .down-side .drop-down-title:hover {
-    cursor: pointer;
+   cursor: pointer;
 }
 
-#header .down-side .drop-down-title:hover+.drop-down-menu {
-    height: 119px;
+#header .down-side .drop-down-title:hover + .drop-down-menu {
+   height: 119px;
+   width: 235px;
 }
 
-#header .down-side .drop-down-title:hover+.drop-down-menu li {
-    display: block;
+#header .down-side .drop-down-title:hover + .drop-down-menu li {
+   display: block;
 }
 
 #header .down-side .drop-down-menu:hover {
-    height: 119px;
+   height: 119px;
+   width: 235px;
 }
 
 #header .down-side .drop-down-menu:hover li {
-    display: block;
+   display: block;
 }
 
 #header .down-side .drop-down-menu li {
-    padding: 7px 20px;
-    width: 215px
+   padding: 7px 15px;
+   width: 235px;
 }
 
 #header .down-side .drop-down-menu li:hover {
@@ -834,6 +844,19 @@ label {
 #register .already-account p a {
     color: green;
     text-decoration: underline;
+}
+
+#register .text-danger ul {
+    font-size: 20px;
+    background: #daffda;
+    margin-right: 35px;
+    border-radius: 15px;
+    margin: 30px 0;
+    margin-right: 30px;
+}
+
+#register .text-danger ul li {
+   padding: 5px 0;
 }
 
 #footer .bg-image {

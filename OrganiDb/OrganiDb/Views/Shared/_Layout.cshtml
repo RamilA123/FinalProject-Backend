@@ -64,12 +64,23 @@
                             <div class="logo">
                                 <a asp-controller="Home" asp-action="Index"><img src="~/assets/images/info-logos/header-logo.png" alt=""></a>
                             </div>
-                            <a href="login.html">
+                            <a asp-controller="Account" asp-action="Login">
                                 <div class="account">
-                                    <div class="image">
-                                        <img src="~/assets/images/info-logos/user.png" alt="">
-                                    </div>
-                                    <span class="login">Sign in / Sign up</span>
+                                    @if (User.Identity.IsAuthenticated)
+                                    {
+                                        <div class="image">
+                                            <img src="~/assets/images/profiles/profile3.png" alt="">
+                                        </div>
+                                        <span class="login">Ramil Allahverdiyev</span>
+                                    }
+                                    else
+                                    {
+                                        <div class="image">
+                                            <img src="~/assets/images/info-logos/user.png" alt="">
+                                        </div>
+                                        <span class="login">Sign in / Sign up</span>
+                                    }
+
                                 </div>
                             </a>
 
@@ -239,32 +250,67 @@
 
                     <div class="drop-down" style="width: 85px">
 
-                        <div class="drop-down-title">
+                                    @if (User.Identity.IsAuthenticated)
+                                    {
+                            <div class="drop-down-title">
 
-                            <li>
-                                <a class="hover" asp-controller="Account" asp-action="Register">Account</a>
-                                <div class="horizontal-line"></div>
-                                <i class="fa-solid fa-chevron-down hover"></i>
-                            </li>
+                                <li>
+                                    <a class="hover" asp-controller="Account" asp-action="Register">Profile</a>
+                                    <div class="horizontal-line"></div>
+                                    <i class="fa-solid fa-chevron-down hover profile"></i>
+                                </li>
 
 
-                        </div>
+                            </div>
 
-                        <div class="drop-down-menu">
+                            <div class="drop-down-menu">
 
-                            <a asp-controller="Account" asp-action="Login">
-                                <li>Login</li>
-                            </a>
+                                <a asp-controller="Account" asp-action="Login">
+                                    <li>Ramil Allahverdiyev</li>
+                                </a>
 
-                            <a asp-controller="Account" asp-action="Register">
-                                <li>Register</li>
-                            </a>
+                                <a asp-controller="Account" asp-action="Register">
+                                    <li>@User.Identity.Name</li>
+                                </a>
 
-                            <a asp-controller="Account" asp-action="ForgotPassword">
-                                <li>Forgot Password</li>
-                            </a>
+                                <a asp-controller="Account" asp-action="Logout">
+                                    <li>Logout</li>
+                                </a>
 
-                        </div>
+                                        </div>
+                                    }
+
+                                    else
+                                    {
+                            <div class="drop-down-title">
+
+                                <li>
+                                    <a class="hover" asp-controller="Account" asp-action="Register">Account</a>
+                                    <div class="horizontal-line"></div>
+                                    <i class="fa-solid fa-chevron-down hover account"></i>
+                                </li>
+
+
+                            </div>
+
+                            <div class="drop-down-menu">
+
+                                <a asp-controller="Account" asp-action="Login">
+                                    <li>Login</li>
+                                </a>
+
+                                <a asp-controller="Account" asp-action="Register">
+                                    <li>Register</li>
+                                </a>
+
+                                <a asp-controller="Account" asp-action="ForgotPassword">
+                                    <li>Forgot Password</li>
+                                </a>
+
+                            </div>
+                                    }
+
+
                     </div>
 
                     </ul>

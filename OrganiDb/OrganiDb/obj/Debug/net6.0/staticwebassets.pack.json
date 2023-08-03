@@ -733,6 +733,10 @@
       "PackagePath": "staticwebassets\\assets\\images\\profiles\\profile2.jpg"
     },
     {
+      "Id": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\Final Project - Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\images\\profiles\\profile3.png",
+      "PackagePath": "staticwebassets\\assets\\images\\profiles\\profile3.png"
+    },
+    {
       "Id": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\Final Project - Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\images\\reviews\\user1.jpg",
       "PackagePath": "staticwebassets\\assets\\images\\reviews\\user1.jpg"
     },
@@ -817,8 +821,8 @@
       "PackagePath": "staticwebassets\\assets\\js\\forgot-password.js"
     },
     {
-      "Id": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\Final Project - Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\js\\home1.js",
-      "PackagePath": "staticwebassets\\assets\\js\\home1.js"
+      "Id": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\Final Project - Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\js\\home.js",
+      "PackagePath": "staticwebassets\\assets\\js\\home.js"
     },
     {
       "Id": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\Final Project - Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\js\\login.js",
@@ -9297,6 +9301,38 @@
       "PackagePath": "staticwebassets\\assets\\lib\\fontawesome\\webfonts\\fa-v4compatibility.woff2"
     },
     {
+      "Id": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\Final Project - Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\assets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\Final Project - Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\assets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\Final Project - Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\assets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\Final Project - Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\assets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\Final Project - Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\assets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\Final Project - Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\assets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\Final Project - Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\assets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\Final Project - Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\assets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
       "Id": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\Final Project - Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\lib\\jquery\\jquery.min.js",
       "PackagePath": "staticwebassets\\assets\\lib\\jquery\\jquery.min.js"
     },
@@ -10063,6 +10099,14 @@
     {
       "Id": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\Final Project - Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\lib\\owl-carousel\\OwlCarousel2-2.3.4\\test\\unit\\core.js",
       "PackagePath": "staticwebassets\\assets\\lib\\owl-carousel\\OwlCarousel2-2.3.4\\test\\unit\\core.js"
+    },
+    {
+      "Id": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\Final Project - Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\templates\\email-confirmation.html",
+      "PackagePath": "staticwebassets\\assets\\templates\\email-confirmation.html"
+    },
+    {
+      "Id": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\Final Project - Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\templates\\forgot-password.html",
+      "PackagePath": "staticwebassets\\assets\\templates\\forgot-password.html"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.OrganiDb.Microsoft.AspNetCore.StaticWebAssets.props",
