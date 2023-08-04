@@ -1,9 +1,9 @@
 ﻿
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Profile Page";
 }
 
-@model LayoutVM
+@model ProfileVM
 
 @section Css{
     <link rel="stylesheet" href="~/assets/css/pages/profile/profile.css">
@@ -13,8 +13,8 @@
 
 <section id="banner">
     <div class="col-sm-12 col-md-12 col-lg-12">
-        <div class="banner" style="background-image: url(assets/images/banners/banner6.jpg)">
-            <h1>My Profile</h1>
+        <div class="banner" style="background-image: url(assets/images/banners/@Model.Banners.Skip(6).Take(1).FirstOrDefault().Image)">
+            <h1>@Model.BannerInfos.Skip(12).Take(1).FirstOrDefault().Title</h1>
         </div>
     </div>
 </section>
@@ -50,12 +50,12 @@
                     <div class="profile-inputs">
                         <div class="profile-input-group">
                             <label for="">Full Name</label>
-                            <input class="form-control" type="text" value="@Model.User.Name @Model.User.Surname">
+                            <input class="form-control" type="text" value="@Model.Data.User.Name @Model.Data.User.Surname">
                         </div>
 
                         <div class="profile-input-group">
                             <label for="">Email</label>
-                            <input class="form-control" type="email" value="@Model.User.Email">
+                            <input class="form-control" type="email" value="@Model.Data.User.Email">
                         </div>
                     </div>
 

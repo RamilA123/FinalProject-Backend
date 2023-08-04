@@ -39,6 +39,9 @@ builder.Services.Configure<IdentityOptions>(opt =>
     opt.Lockout.AllowedForNewUsers = true;
 });
 
+
+builder.Services.AddScoped<IBannerService,BannerService>();
+builder.Services.AddScoped<IBannerInfoService,BannerInfoService>();
 builder.Services.AddScoped<IAccountService, AccountService>();
 builder.Services.AddScoped<ILayoutService,LayoutService>();
 builder.Services.AddScoped<IEmailService, EmailService>();

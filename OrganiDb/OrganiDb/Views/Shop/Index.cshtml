@@ -5,6 +5,8 @@
 
 <!--MAIN-START-->
 
+@model ShopVM
+
 @section Css{
          <link rel="stylesheet" href="~/assets/css/pages/shop/shop.css">
 }
@@ -18,10 +20,9 @@
 
       <div class="col-sm-12 col-md-12 col-lg-12">
 
-        <div class="banner" style="background-image: url(assets/images/banners/banner6.jpg)">
-          <h1>Shop</h1>
-          <p>Food is one of the basic necessities of life. Food contains nutrients essential for the growth, repair, and
-            maintenance of body tissues and for the regulation of vital processes.</p>
+        <div class="banner" style="background-image: url(assets/images/banners/@Model.Banners.Skip(6).Take(1).FirstOrDefault().Image">
+          <h1>@Model.BannerInfos.Skip(2).Take(1).FirstOrDefault().Title</h1>
+          <p>@Model.BannerInfos.Skip(2).Take(1).FirstOrDefault().Description</p>
         </div>
 
       </div>
@@ -42,7 +43,7 @@
           <div class="left-side">
 
             <div class="banner-image">
-              <img src="~/assets/images/banners/banner7.webp" alt="">
+                        <img src="~/assets/images/banners/@Model.Banners.Skip(7).Take(1).FirstOrDefault().Image" alt="">
             </div>
 
             <div class="filter my-5">

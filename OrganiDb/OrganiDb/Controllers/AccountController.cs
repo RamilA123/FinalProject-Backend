@@ -9,6 +9,11 @@ using MailKit.Net.Smtp;
 using OrganiDb.Helpers;
 using OrganiDb.Services;
 using OrganiDb.Services.Interfaces;
+using OrganiDb.Data;
+using Microsoft.EntityFrameworkCore;
+using OrganiDb.ViewModels.About;
+using OrganiDb.ViewModels;
+using OrganiDb.ViewModels.Wishlist;
 
 namespace OrganiDb.Controllers
 {
@@ -16,17 +21,36 @@ namespace OrganiDb.Controllers
     {
         private readonly IAccountService _accountService;
         private readonly IEmailService _emailService;
+        private readonly IBannerService _bannerService;
+        private readonly ILayoutService _layoutService;
+        private readonly IBannerInfoService _bannerInfoService;
 
-        public AccountController(IAccountService accountService, IEmailService emailService)
+        public AccountController(IAccountService accountService, 
+                                 IEmailService emailService, 
+                                 IBannerService bannerService,
+                                 ILayoutService layoutService,
+                                 IBannerInfoService bannerInfoService)
         {
             _accountService = accountService;
             _emailService = emailService;
+            _bannerService = bannerService;
+            _layoutService = layoutService;
+            _bannerInfoService = bannerInfoService;
         }
        
         [HttpGet]
-        public IActionResult Register()
+        public async Task<IActionResult> Register()
         {
-            return View();
+            List<Banner> banners = await _bannerService.GetAllAsync();
+            List<BannerInfo> bannerInfos = await _bannerInfoService.GetAllAsync();
+
+            RegisterVM model = new()
+            {
+                Banners = banners,
+                BannerInfos = bannerInfos
+            };
+
+            return View(model);
         }
 
         [HttpPost]
@@ -101,10 +125,18 @@ namespace OrganiDb.Controllers
         }
 
         [HttpGet]
-        public IActionResult Login()
+        public async Task <IActionResult> Login()
         {
+            List<Banner> banners = await _bannerService.GetAllAsync();
+            List<BannerInfo> bannerInfos = await _bannerInfoService.GetAllAsync();
 
-            return View();
+            LoginVM model = new()
+            {
+                Banners = banners,
+                BannerInfos = bannerInfos
+            };
+
+            return View(model);
         }
 
         [HttpPost]
@@ -156,11 +188,21 @@ namespace OrganiDb.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-
         [HttpGet]
-        public IActionResult ForgotPassword()
+        public async Task<IActionResult> ForgotPassword()
         {
-            return View();
+            List<Banner> banners = await _bannerService.GetAllAsync();
+            List<BannerInfo> bannerInfos = await _bannerInfoService.GetAllAsync();
+            LayoutVM data = await _layoutService.GetAllDatas();
+
+            ForgotPasswordVM model = new()
+            {
+                Banners = banners,
+                BannerInfos = bannerInfos,
+                Data = data
+            };
+
+            return View(model);
         }
 
         [HttpPost]
@@ -197,11 +239,17 @@ namespace OrganiDb.Controllers
         }
 
         [HttpGet]
-        public IActionResult ResetPassword(string userId, string token)
+        public async Task<IActionResult> ResetPassword(string userId, string token)
         {
+            List<Banner> banners = await _bannerService.GetAllAsync();
+
+            List<BannerInfo> bannerInfos = await _bannerInfoService.GetAllAsync();
+
+            LayoutVM data = await _layoutService.GetAllDatas();
+
             if (userId == null || token == null) return BadRequest();
 
-            return View(new ResetPasswordVM { UserId = userId, Token = token });
+            return View(new ResetPasswordVM { UserId = userId, Token = token, Banners = banners, Data = data, BannerInfos = bannerInfos });
         }
 
         [HttpPost]

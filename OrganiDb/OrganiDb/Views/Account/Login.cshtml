@@ -19,8 +19,8 @@
     <section id="banner">
         <div class="col-sm-12 col-md-12 col-lg-12">
             <div class="banner">
-                <img src="~/assets/images/banners/banner6.jpg" />
-                <h1>Account<span>Login</span></h1>
+                <img src="~/assets/images/banners/@Model.Banners.Skip(6).Take(1).FirstOrDefault().Image" />
+                <h1>@Model.BannerInfos.Skip(8).Take(1).FirstOrDefault().Title<span>@Model.BannerInfos.Skip(8).Take(1).FirstOrDefault().Description</span></h1>
             </div>
         </div>
     </section>
@@ -38,7 +38,7 @@
                     <div class="login">
 
                         <div class="login-image">
-                            <img src="~/assets/images/banners/banner11.png" alt="">
+                            <img src="~/assets/images/banners/@Model.Banners.Skip(10).Take(1).FirstOrDefault().Image" alt="">
                         </div>
 
                         <div class="login-content">

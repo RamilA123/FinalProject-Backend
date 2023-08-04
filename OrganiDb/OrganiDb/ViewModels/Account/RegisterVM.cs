@@ -1,9 +1,14 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using OrganiDb.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace OrganiDb.ViewModels.Account
 {
     public class RegisterVM
     {
+        public List<Banner> Banners { get; set; }
+
+        public List<BannerInfo> BannerInfos { get; set; }
+
         [Required(ErrorMessage = "The name is required")]
         public string Name { get; set; }
 

@@ -2,6 +2,8 @@
     ViewData["Title"] = "Home Page";
 }
 
+@model HomeVM
+
 @section Css{
    <link rel="stylesheet"
           href="~/assets/lib/owl-carousel/OwlCarousel2-2.3.4/docs/assets/owlcarousel/assets/owl.carousel.min.css">
@@ -20,11 +22,11 @@
     <section id="banner">
 
       <div class="col-sm-12 col-md-12 col-lg-12">
-        <div class="banner-section" style="background-image: url(assets/images/backgrounds/background2.png)">
+        <div class="banner-section" style="background-image: url(assets/images/backgrounds/@Model.Banners.Take(1).FirstOrDefault().Image">
 
           <div class="banner-images">
-            <img class="img-animation1 image1" src="~/assets/images/banners/banner1.png" alt="">
-            <img class="img-animation2 image2" src="~/assets/images/banners/banner2.png" alt="">
+            <img class="img-animation1 image1" src="~/assets/images/banners/@Model.Banners.Skip(1).Take(1).FirstOrDefault().Image" alt="">
+            <img class="img-animation2 image2" src="~/assets/images/banners/@Model.Banners.Skip(2).Take(1).FirstOrDefault().Image" alt="">
           </div>
 
 
@@ -33,17 +35,13 @@
             <div class="banner-text">
 
               <div class="banner-title banner">
-                <h4>100% ORGANIC FOODS</h4>
+                <h4>@Model.BannerInfos.Take(1).FirstOrDefault().Title</h4>
                 <img src="~/assets/images/backgrounds/background3.png" alt="">
               </div>
 
               <div class="banner-description banner">
 
-                <h2>Organic<span class="food"> Vegetables & Foods </span><br>You Cook
-                  <font class="text-effect">
-                    <span>H</span><span>e</span><span>a</span><span>l</span><span>t</span><span>h</span><span>y</span>
-                  </font>
-                </h2>
+                <h2>@Html.Raw(Model.BannerInfos.Take(1).FirstOrDefault().Description)</h2>
 
 
               </div>
@@ -68,10 +66,10 @@
 
       <div class="advert-images">
         <div class="advert-image">
-          <img src="~/assets/images/banners/banner4.png" alt="">
+          <img src="~/assets/images/banners/@Model.Banners.Skip(3).Take(1).FirstOrDefault().Image" alt="">
         </div>
         <div class="advert-image">
-          <img src="~/assets/images/banners/banner5.png" alt="">
+          <img src="~/assets/images/banners/@Model.Banners.Skip(4).Take(1).FirstOrDefault().Image" alt="">
         </div>
       </div>
 
@@ -3028,12 +3026,11 @@
       <div class="col-sm-12 col-md-12 col-lg-12">
 
         <div class="advert">
-          <img src="~/assets/images/banners/banner3.jpg" alt="">
+          <img src="~/assets/images/banners/@Model.Banners.Skip(5).Take(1).FirstOrDefault().Image" alt="">
           <div class="bg-color"></div>
           <div class="advert-content">
-            <h2>Healthy Food & Grocery Market</h2>
-            <p>A grocery store is another form of retailing, primarily focusing on selling food, along with non-food
-              household products, such as bathroom or cleaning products, to their consumers</p>
+            <h2>@Model.BannerInfos.Skip(1).Take(1).FirstOrDefault().Title</h2>
+            <p>@Model.BannerInfos.Skip(1).Take(1).FirstOrDefault().Description</p>
           </div>
 
 

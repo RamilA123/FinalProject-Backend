@@ -3,6 +3,8 @@
     ViewData["Title"] = "Cart Page";
 }
 
+@model CartVM
+
 @section Css{
     <link rel="stylesheet" href="~/assets/css/pages/cart/cart.css">
 }
@@ -15,8 +17,8 @@
 
         <section id="banner">
             <div class="col-sm-12 col-md-12 col-lg-12">
-                <div class="banner" style="background-image: url(assets/images/banners/banner6.jpg)">
-                    <h1>Shopping Cart</h1>
+                <div class="banner" style="background-image: url(assets/images/banners/@Model.Banners.Skip(6).Take(1).FirstOrDefault().Image">
+                <h1>@Model.BannerInfos.Skip(6).Take(1).FirstOrDefault().Title</h1>
                 </div>
             </div>
         </section>

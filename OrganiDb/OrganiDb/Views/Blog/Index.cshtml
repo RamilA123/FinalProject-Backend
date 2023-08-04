@@ -3,6 +3,9 @@
     ViewData["Title"] = "Blog Page";
 }
 
+
+@model BlogVM
+
 @section Css{
       <link rel="stylesheet" href="~/assets/css/pages/blog/blog.css">
 }
@@ -17,12 +20,9 @@
 
         <div class="col-sm-12 col-md-12 col-lg-12">
 
-            <div class="banner" style="background-image: url(assets/images/banners/banner6.jpg)">
-                <h1>Blog</h1>
-                <p>
-                    Many varieties of vegetables can be found in grocery and health food stores across the country.
-                    They can be bought in both organic and conventionally grown varieties.
-                </p>
+            <div class="banner" style="background-image: url(assets/images/banners/@Model.Banners.Skip(6).Take(1).FirstOrDefault().Image">
+                <h1>@Model.BannerInfos.Skip(3).Take(1).FirstOrDefault().Title</h1>
+                <p>@Model.BannerInfos.Skip(3).Take(1).FirstOrDefault().Description</p>
             </div>
 
         </div>
@@ -437,7 +437,7 @@
                     </div>
 
                     <div class="banner">
-                        <img src="~/assets/images/banners/banner8.png" alt="">
+                        <img src="~/assets/images/banners/@Model.Banners.Skip(8).Take(1).FirstOrDefault().Image" alt="">
                     </div>
                 </div>
 

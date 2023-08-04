@@ -5,6 +5,7 @@
 
   <!--MAIN-START-->
 
+@model ContactVM
 
   @section Css{
      <link rel="stylesheet" href="~/assets/css/pages/contact/contact.css">
@@ -17,10 +18,9 @@
 
     <section id="banner">
       <div class="col-sm-12 col-md-12 col-lg-12">
-        <div class="banner pt-5" style="background-image: url(assets/images/banners/banner6.jpg)">
-          <h1>Contact us</h1>
-          <p>Research has shown that consuming these nutrients as food, within fruits and vegetables, is more beneficial
-            for health than consuming them as supplements.</p>
+        <div class="banner pt-5" style="background-image: url(assets/images/banners/@Model.Banners.Skip(6).Take(1).FirstOrDefault().Image">
+            <h1>@Model.BannerInfos.Skip(5).Take(1).FirstOrDefault().Title</h1>
+            <p>@Model.BannerInfos.Skip(5).Take(1).FirstOrDefault().Description</p>
         </div>
       </div>
     </section>

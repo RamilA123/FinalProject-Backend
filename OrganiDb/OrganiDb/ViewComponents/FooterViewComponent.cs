@@ -15,9 +15,9 @@ namespace OrganiDb.ViewComponents
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            LayoutVM datas = await _layoutService.GetAllDatas();
+            LayoutVM data = await _layoutService.GetAllDatas();
 
-            return await Task.FromResult(View(datas));
+            return await Task.FromResult(View(data));
         }
     }
 }

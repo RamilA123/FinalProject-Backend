@@ -2,7 +2,7 @@
 @{
     ViewData["Title"] = "About Page";
 }
-
+@model AboutVM
 
 @section Css{
     <link rel="stylesheet" href="~/assets/css/pages/about/about.css">
@@ -19,12 +19,9 @@
 
         <div class="col-sm-12 col-md-12 col-lg-12">
 
-            <div class="banner" style="background-image: url(assets/images/banners/banner6.jpg)">
-                <h1>About us</h1>
-                <p>
-                    Foods are any substance consumed by an organism for nutritional support is usually of plant, animal, or
-                    fungal origin and contains essential nutrients such as carbohydrates, fats, proteins, vitamins, or minerals.
-                </p>
+            <div class="banner" style="background-image: url(assets/images/banners/@Model.Banners.Skip(6).Take(1).FirstOrDefault().Image)">
+                <h1>@Model.BannerInfos.Skip(4).Take(1).FirstOrDefault().Title</h1>
+                <p>@Model.BannerInfos.Skip(4).Take(1).FirstOrDefault().Description</p>
             </div>
 
         </div>
@@ -32,6 +29,7 @@
     </section>
 
     <!--BANNER-END-->
+
     <!--ABOUT-START-->
 
     <section id="about">
@@ -57,7 +55,7 @@
             <div class="col-sm-12 col-md-6 col-lg-6">
                 <div class="left-side">
                     <div class="about-image">
-                        <img src="~/assets/images/banners/banner9.jpg" alt="">
+                        <img src="~/assets/images/banners/@Model.Banners.Skip(9).Take(1).FirstOrDefault().Image" alt="">
                     </div>
                 </div>
             </div>
@@ -138,6 +136,7 @@
     </section>
 
     <!--ABOUT-END-->
+
     <!--BRAND-START-->
 
     <section id="brand">
@@ -178,6 +177,7 @@
     </section>
 
     <!--BRAND-END-->
+
     <!--TEAM-FARMER-START-->
 
     <section id="team-farmer">
@@ -295,6 +295,7 @@
     </section>
 
     <!--TEAM-FARMER-END-->
+
     <!--FEEDBACK-START-->
 
     <section id="feedback" class="mt-4">

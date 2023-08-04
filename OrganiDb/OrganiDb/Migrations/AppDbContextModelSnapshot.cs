@@ -226,6 +226,139 @@ namespace OrganiDb.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("OrganiDb.Models.Banner", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("SoftDelete")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Banners");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedDate = new DateTime(2023, 8, 4, 14, 54, 33, 863, DateTimeKind.Local).AddTicks(4320),
+                            Image = "background2.png",
+                            SoftDelete = false
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedDate = new DateTime(2023, 8, 4, 14, 54, 33, 863, DateTimeKind.Local).AddTicks(4338),
+                            Image = "banner1.png",
+                            SoftDelete = false
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedDate = new DateTime(2023, 8, 4, 14, 54, 33, 863, DateTimeKind.Local).AddTicks(4339),
+                            Image = "banner2.png",
+                            SoftDelete = false
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedDate = new DateTime(2023, 8, 4, 14, 54, 33, 863, DateTimeKind.Local).AddTicks(4340),
+                            Image = "banner4.png",
+                            SoftDelete = false
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CreatedDate = new DateTime(2023, 8, 4, 14, 54, 33, 863, DateTimeKind.Local).AddTicks(4340),
+                            Image = "banner5.png",
+                            SoftDelete = false
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CreatedDate = new DateTime(2023, 8, 4, 14, 54, 33, 863, DateTimeKind.Local).AddTicks(4341),
+                            Image = "banner3.jpg",
+                            SoftDelete = false
+                        },
+                        new
+                        {
+                            Id = 7,
+                            CreatedDate = new DateTime(2023, 8, 4, 14, 54, 33, 863, DateTimeKind.Local).AddTicks(4341),
+                            Image = "banner6.jpg",
+                            SoftDelete = false
+                        },
+                        new
+                        {
+                            Id = 8,
+                            CreatedDate = new DateTime(2023, 8, 4, 14, 54, 33, 863, DateTimeKind.Local).AddTicks(4342),
+                            Image = "banner7.webp",
+                            SoftDelete = false
+                        },
+                        new
+                        {
+                            Id = 9,
+                            CreatedDate = new DateTime(2023, 8, 4, 14, 54, 33, 863, DateTimeKind.Local).AddTicks(4342),
+                            Image = "banner8.png",
+                            SoftDelete = false
+                        },
+                        new
+                        {
+                            Id = 10,
+                            CreatedDate = new DateTime(2023, 8, 4, 14, 54, 33, 863, DateTimeKind.Local).AddTicks(4343),
+                            Image = "banner9.jpg",
+                            SoftDelete = false
+                        },
+                        new
+                        {
+                            Id = 11,
+                            CreatedDate = new DateTime(2023, 8, 4, 14, 54, 33, 863, DateTimeKind.Local).AddTicks(4343),
+                            Image = "banner11.png",
+                            SoftDelete = false
+                        },
+                        new
+                        {
+                            Id = 12,
+                            CreatedDate = new DateTime(2023, 8, 4, 14, 54, 33, 863, DateTimeKind.Local).AddTicks(4344),
+                            Image = "banner10.webp",
+                            SoftDelete = false
+                        });
+                });
+
+            modelBuilder.Entity("OrganiDb.Models.BannerInfo", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("SoftDelete")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("BannerInfos");
+                });
+
             modelBuilder.Entity("OrganiDb.Models.Setting", b =>
                 {
                     b.Property<int>("Id")
