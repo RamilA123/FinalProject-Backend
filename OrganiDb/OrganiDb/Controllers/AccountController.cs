@@ -222,7 +222,6 @@ namespace OrganiDb.Controllers
             return RedirectToAction(nameof(Login));
         }
 
-
         [HttpGet]
         public async Task<IActionResult> CreateRoles()
         {

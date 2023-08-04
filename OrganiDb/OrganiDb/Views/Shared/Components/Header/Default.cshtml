@@ -1,0 +1,347 @@
+﻿
+@{
+    ViewData["Title"] = "Default";
+}
+
+@model LayoutVM
+
+<!--HEADER-START-->
+
+<header>
+
+    <section id="header">
+
+        <div class="upper-side">
+
+            <div class="container">
+
+                <div class="row">
+
+
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <div class="service">
+                            <span>Free Shipping on all orders $120</span>
+
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <div class="social-medias">
+                            <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://www.twitter.com/"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="https://www.pinterest.com/"><i class="fa-brands fa-pinterest-p"></i></a>
+                        </div>
+
+                    </div>
+
+
+
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="middle-side">
+
+            <div class="row" style="width: 100%">
+
+
+                <div class="col-sm-12 col-md-6 col-lg-3">
+
+                    <div class="right-side">
+                        <div class="logo">
+                            <a asp-controller="Home" asp-action="Index"><img src="~/assets/images/info-logos/@Model.SettingDatas["HeaderLogo"]" alt=""></a>
+                        </div>
+                        <a asp-controller="Account" asp-action="Login">
+                            <div class="account">
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <div class="image">
+                                        <img src="~/assets/images/profiles/profile2.png" alt="">
+                                    </div>
+                                    <span class="login">@Model.User.Name @Model.User.Surname</span>
+                                }
+                                else
+                                {
+                                    <div class="image">
+                                        <img src="~/assets/images/info-logos/user.png" alt="">
+                                    </div>
+                                    <span class="login">Sign in / Sign up</span>
+                                }
+
+                            </div>
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-7">
+                    <div class="container">
+                        <div class="row">
+                            <div class="search">
+                                <div class="search-design1">
+                                </div>
+                                <div class="search-design2">
+                                </div>
+
+                                <form>
+                                    <input type="text" class="form-control" placeholder="Search anything ... ">
+                                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-2">
+
+                    <div class="items">
+                        <div class="icons">
+
+                            <div class="user" style="margin-right: 20px">
+                                <a href=""><i class="fa-solid fa-shuffle"></i></a>
+                            </div>
+
+
+                            <div class="cart">
+                                <a asp-controller="Cart" asp-action="Index"><i class="fa-solid fa-cart-shopping"></i></a>
+                                <sup>0</sup>
+                            </div>
+
+                            <div class="wishlist">
+                                <a asp-controller="Wishlist" asp-action="Index"><i class="fa-solid fa-heart"></i></a>
+                                <sup>0</sup>
+                            </div>
+
+
+                        </div>
+
+                        <div class="flags">
+
+                            <div class="flag-header">
+
+                                <div class="country-flag">
+                                    <span>US</span>
+
+                                    <div class="image">
+                                        <img src="~/assets/images/flags/united-states.png" alt="">
+                                    </div>
+                                    <i class="fa-solid fa-angle-down"></i>
+                                </div>
+
+                            </div>
+
+                            <div class="flag-content invisible">
+
+                                <div class="country-flag flag-item">
+                                    <span>AZ</span>
+
+                                    <div class="image">
+                                        <img src="~/assets/images/flags/azerbaijan.png" alt="">
+                                    </div>
+
+                                </div>
+
+                                <div class="country-flag flag-item">
+                                    <span>TR</span>
+
+                                    <div class="image turkey">
+                                        <img src="~/assets/images/flags/turkey.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="down-side">
+
+            <div class="row" style="width: 100%;">
+
+                <div class="col-sm-12 col-md-6 col-lg-7">
+                    <div class="menu">
+                        <ul style="height: 50px;">
+
+                            <li>
+                                <a asp-controller="Home" asp-action="Index">Home</a>
+                                <div class="horizontal-line"></div>
+                            </li>
+
+
+                            <li>
+                                <a asp-controller="Shop" asp-action="Index">Shop</a>
+                                <div class="horizontal-line"></div>
+                            </li>
+
+
+                            <li>
+                                <a asp-controller="Blog" asp-action="Index">Blog</a>
+                                <div class="horizontal-line"></div>
+                            </li>
+
+
+                            <li>
+                                <a asp-controller="About" asp-action="Index">About</a>
+                                <div class="horizontal-line"></div>
+                            </li>
+
+
+                            <li>
+                                <a asp-controller="Contact" asp-action="Index">Contact</a>
+                                <div class="horizontal-line"></div>
+                            </li>
+
+
+                            <div class="drop-down">
+
+                                <div class="drop-down-title">
+                            <li>
+                                <a class="hover" href="#">Pages</a>
+                                <div class="horizontal-line"></div>
+                                <i class="fa-solid fa-chevron-down hover"></i>
+                            </li>
+                    </div>
+
+
+                    <div class="drop-down-menu">
+
+                        <a asp-controller="Cart" asp-action="Index">
+                            <li>Cart</li>
+                        </a>
+
+
+
+                        <a asp-controller="Wishlist" asp-action="Index">
+                            <li>Wishlist</li>
+                        </a>
+
+
+                        <a asp-controller="Shop" asp-action="Index">
+                            <li>Shop</li>
+                        </a>
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="drop-down" style="width: 85px">
+
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                        <div class="drop-down-title">
+
+                            <li>
+                                <a class="hover" asp-controller="Profile" asp-action="Index">Profile</a>
+                                <div class="horizontal-line"></div>
+                                <i class="fa-solid fa-chevron-down hover profile"></i>
+                            </li>
+
+
+                        </div>
+
+                        <div class="drop-down-menu">
+
+                            <a asp-controller="Account" asp-action="Login">
+                                <li>@Model.User.Name @Model.User.Surname</li>
+                            </a>
+
+                            <a asp-controller="Account" asp-action="Register">
+                                <li>@User.Identity.Name</li>
+                            </a>
+
+                            <a asp-controller="Account" asp-action="Logout">
+                                <li>Logout</li>
+                            </a>
+
+                        </div>
+                                }
+
+                                else
+                                {
+                        <div class="drop-down-title">
+
+                            <li>
+                                <a class="hover" asp-controller="Account" asp-action="Register">Account</a>
+                                <div class="horizontal-line"></div>
+                                <i class="fa-solid fa-chevron-down hover account"></i>
+                            </li>
+
+
+                        </div>
+
+                        <div class="drop-down-menu">
+
+                            <a asp-controller="Account" asp-action="Login">
+                                <li>Login</li>
+                            </a>
+
+                            <a asp-controller="Account" asp-action="Register">
+                                <li>Register</li>
+                            </a>
+
+                            <a asp-controller="Account" asp-action="ForgotPassword">
+                                <li>Forgot Password</li>
+                            </a>
+
+                        </div>
+                                }
+
+
+                </div>
+
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="col-sm-12 col-md-6 col-lg-5">
+            <div class="info">
+                <a href="contact.html">
+                    <div class="phone-number content">
+                        <div class="image">
+                            <img src="~/assets/images/info-logos/phone-call.png" alt="">
+                        </div>
+                        <div class="phone title ">
+                            <span style="display: block">Call us</span>
+                            <span>@Model.SettingDatas["HeaderPhoneNumber"]</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="contact.html">
+                    <div class="email-address content">
+                        <div class="image">
+                            <img src="~/assets/images/info-logos/email.png" alt="">
+                        </div>
+                        <div class="email title">
+                            <span style="display: block">Email</span>
+                            <span style="display: block">@Model.SettingDatas["HeaderEmail"]</span>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+
+    </section>
+
+</header>
+
+<!--HEADER-END-->
+
+

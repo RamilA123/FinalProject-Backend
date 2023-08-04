@@ -40,6 +40,7 @@ builder.Services.Configure<IdentityOptions>(opt =>
 });
 
 builder.Services.AddScoped<IAccountService, AccountService>();
+builder.Services.AddScoped<ILayoutService,LayoutService>();
 builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.AddScoped<EmailConfigurations>();
 

@@ -1,0 +1,148 @@
+﻿
+@{
+    ViewData["Title"] = "Default";
+}
+
+@model LayoutVM
+
+<!--FOOTER-START-->
+
+<footer>
+
+    <section id="footer">
+
+        <div class="col-sm-12 col-md-12 col-lg-12">
+
+            <div class="bg-image">
+
+                <img src="~/assets/images/backgrounds/background4.png" />
+                .
+                <div class="footer-section">
+                    <div class="upper-side">
+
+                        <div class="footer-info">
+
+                            <div class="left-side horizontal-line">
+
+                                <div class="logo">
+                                    <a asp-controller="Home" aps-action="Index"><img src="~/assets/images/info-logos/@Model.SettingDatas["FooterLogo"]" alt=""></a>
+                                </div>
+
+                                <div class="subscribe my-4">
+
+                                    <form class="input">
+                                        <input class="form-control" type="text" placeholder="Email Address">
+                                        <button type="submit" class="btn btn-success subscribe-btn" href="">Subscribe</button>
+                                    </form>
+
+                                </div>
+
+                                <div class="paragraph">
+                                    <p>
+                                        Vegetables are particularly high in fiber, which is needed for optimal digestion. They have a low
+                                        glycemic index, so your blood sugar won’t rise quickly after a meal. The American Diabetes Association
+                                        recommends at least 3 to 5 servings per day of non-starchy vegetables like broccoli, carrots, or
+                                        cauliflower.
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <div class="middle-side horizontal-line">
+
+                                <div class="list">
+
+                                    <div class="list-group">
+                                        <a href="">
+                                            <h4>Information</h4>
+                                        </a>
+                                        <ul>
+                                            <li><a asp-controller="About" asp-action="Index">About us</a></li>
+                                            <li><a href="">Delivery Information</a></li>
+                                            <li><a href="">Privacy Policy</a></li>
+                                            <li><a href="">Terms & Conditions</a></li>
+                                            <li><a href="">Return Policy</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="list-group">
+                                        <a href="">
+                                            <h4>Account</h4>
+                                        </a>
+                                        <ul>
+                                            <li><a asp-controller="Account" asp-action="Register">Account</a></li>
+                                            <li><a asp-controller="Cart" asp-action="Index">Shopping Cart</a></li>
+                                            <li><a asp-controller="Wishlist" asp-action="Index">Wishlist</a></li>
+                                            <li><a href="">Order History</a></li>
+                                            <li><a href="">International Orders</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="list-group">
+                                        <a asp-controller="Contact" asp-action="Index">
+                                            <h4>Contact Us</h4>
+                                        </a>
+                                        <ul>
+                                            <li><a href="contact.html"><span>Address: </span>@Model.SettingDatas["FooterAddress"]</a></li>
+                                            <li><a href="contact.html"><span>Email: </span>@Model.SettingDatas["FooterEmail"]</a></li>
+                                            <li><a href="contact.html"><span>Phone: </span>@Model.SettingDatas["FooterPhoneNumber"]</a></li>
+                                            <li><a href=""><span>Payment Accepted</span></a></li>
+                                            <li><a href="#"><img src="~/assets/images/info-logos/payment.png" alt=""></a></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="right-side horizontal-line">
+                                <div class="social-medias d-flex my-4">
+
+                                    <a href="https://twitter.com/"><i class="fa-brands fa-twitter"></i></a>
+                                    <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i></a>
+                                    <a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a>
+                                    <a href="https://www.google.com/"><i class="fa-brands fa-google-plus-g"></i></a>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+                    </div>
+
+                    <div class="down-side">
+
+                        <div class="left-side">
+                            <p>Copyright © 2022 <span>ORGANI</span> Inc. All rights reserved.</p>
+                        </div>
+
+                        <div class="right-side">
+                            <ul>
+                                <li><a href=""><span>Privacy</span></a></li>
+                                <li><a href="">Terms of Use</a></li>
+                                <li><a href="">Sales and Refunds</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="up-arrow">
+                        <i class="fa-solid fa-arrow-up"></i>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+</footer>
+
+<!--FOOTER-END-->
+

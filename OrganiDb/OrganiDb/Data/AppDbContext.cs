@@ -10,6 +10,7 @@ namespace OrganiDb.Data
         {
         }
 
+        public DbSet<Setting> Settings { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

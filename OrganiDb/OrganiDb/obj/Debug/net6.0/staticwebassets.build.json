@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/9triniyrkUr6BP11sfquPL+F14ColjW2d5DogufCsI=",
+  "Hash": "IzBjXY0a+tQkTFzbYL/m6GkgCwcIIWAMWJH872BngQ8=",
   "Source": "OrganiDb",
   "BasePath": "_content/OrganiDb",
   "Mode": "Default",
@@ -3128,12 +3128,12 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\profiles\\profile1.jpg"
     },
     {
-      "Identity": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\Final Project - Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\images\\profiles\\profile2.jpg",
+      "Identity": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\Final Project - Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\images\\profiles\\profile2.png",
       "SourceId": "OrganiDb",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\Final Project - Backend\\OrganiDb\\OrganiDb\\wwwroot\\",
       "BasePath": "_content/OrganiDb",
-      "RelativePath": "assets/images/profiles/profile2.jpg",
+      "RelativePath": "assets/images/profiles/profile2.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -3142,15 +3142,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\images\\profiles\\profile2.jpg"
+      "OriginalItemSpec": "wwwroot\\assets\\images\\profiles\\profile2.png"
     },
     {
-      "Identity": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\Final Project - Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\images\\profiles\\profile3.png",
+      "Identity": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\Final Project - Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\images\\profiles\\profile3.jpg",
       "SourceId": "OrganiDb",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\Final Project - Backend\\OrganiDb\\OrganiDb\\wwwroot\\",
       "BasePath": "_content/OrganiDb",
-      "RelativePath": "assets/images/profiles/profile3.png",
+      "RelativePath": "assets/images/profiles/profile3.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -3159,7 +3159,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\images\\profiles\\profile3.png"
+      "OriginalItemSpec": "wwwroot\\assets\\images\\profiles\\profile3.jpg"
     },
     {
       "Identity": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\Final Project - Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\images\\reviews\\user1.jpg",
