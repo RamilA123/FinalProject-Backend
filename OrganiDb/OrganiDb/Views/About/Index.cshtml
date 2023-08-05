@@ -185,12 +185,11 @@
         <div class="container">
 
             <div class="team-farmer-section-title text-center mt-5">
-                <span class="team-farmer-section-tagline">Meet the Farmers</span>
-                <h2 class="team-farmer-section-subtitle">Awesome farmers team <br> here to help you</h2>
+                <span class="team-farmer-section-tagline">@Model.TeamFarmerHeader.Title</span>
+                @Html.Raw(Model.TeamFarmerHeader.Description)
             </div>
 
             <div class="row">
-
                 @foreach (TeamFarmer teamFarmer in Model.TeamFarmers)
                 {
                     <div class="col-sm-12 col-md-6 col-lg-4">
@@ -226,106 +225,6 @@
                         </div>
                     </div>
                 }
-
-              @*  <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="team-farmer">
-                        <div class="team-farmer-image">
-                            <div class="team-farmer-shape4">
-                                <img src="~/assets/images/shapes/shape4.png" alt="">
-                            </div>
-                            <div class="team-farmer-shape1">
-                                <img src="~/assets/images/shapes/shape1.png" alt="">
-                                <div class="team-farmer-img">
-                                    <img src="~/assets/images/team-farmers/team-farmer1.jpg" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team-farmer-content">
-                            <div class="team-farmer-shape2">
-                                <img src="~/assets/images/shapes/shape2.png" alt="">
-                            </div>
-                            <div class="team-farmer-shape3">
-                                <img src="~/assets/images/shapes/shape3.png" alt="">
-                            </div>
-                            <div class="team-two-title-box">
-                                <h3 class="team-farmer-title"><a href="">Kevin Martin</a></h3>
-                                <p class="team-farmer-subtitle">Senior Farmer</p>
-                            </div>
-                            <div class="team-two-social-box">
-                                <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
-                                <a href="https://www.facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
-                                <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="team-farmer">
-                        <div class="team-farmer-image">
-                            <div class="team-farmer-shape4">
-                                <img src="~/assets/images/shapes/shape4.png" alt="">
-                            </div>
-                            <div class="team-farmer-shape1">
-                                <img src="~/assets/images/shapes/shape1.png" alt="">
-                                <div class="team-farmer-img">
-                                    <img src="~/assets/images/team-farmers/team-farmer2.jpg" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team-farmer-content">
-                            <div class="team-farmer-shape2">
-                                <img src="~/assets/images/shapes/shape2.png" alt="">
-                            </div>
-                            <div class="team-farmer-shape3">
-                                <img src="~/assets/images/shapes/shape3.png" alt="">
-                            </div>
-                            <div class="team-two-title-box">
-                                <h3 class="team-farmer-title"><a href="">Aleesha Brown</a></h3>
-                                <p class="team-farmer-subtitle">Farm Worker</p>
-                            </div>
-                            <div class="team-two-social-box">
-                                <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
-                                <a href="https://www.facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
-                                <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="team-farmer">
-                        <div class="team-farmer-image">
-                            <div class="team-farmer-shape4">
-                                <img src="~/assets/images/shapes/shape4.png" alt="">
-                            </div>
-                            <div class="team-farmer-shape1">
-                                <img src="~/assets/images/shapes/shape1.png" alt="">
-                                <div class="team-farmer-img">
-                                    <img src="~/assets/images/team-farmers/team-farmer3.jpg" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team-farmer-content">
-                            <div class="team-farmer-shape2">
-                                <img src="~/assets/images/shapes/shape2.png" alt="">
-                            </div>
-                            <div class="team-farmer-shape3">
-                                <img src="~/assets/images/shapes/shape3.png" alt="">
-                            </div>
-                            <div class="team-two-title-box">
-                                <h3 class="team-farmer-title"><a href="">Mike Hardson</a></h3>
-                                <p class="team-farmer-subtitle">Farm Manager</p>
-                            </div>
-                            <div class="team-two-social-box">
-                                <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
-                                <a href="https://www.facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
-                                <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>*@
-
             </div>
         </div>
     </section>

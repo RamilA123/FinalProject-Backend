@@ -12,13 +12,16 @@ namespace OrganiDb.Data
         }
 
         public DbSet<Setting> Settings { get; set; }
+        public DbSet<Slider> Sliders { get; set; }
         public DbSet<Banner> Banners { get; set; }
         public DbSet<BannerInfo> BannerInfos { get; set; }
         public DbSet<Position> Positions { get; set; }
         public DbSet<TeamFarmer> TeamFarmers { get; set; }
         public DbSet<SocialMedia> SocialMedias { get; set; }
         public DbSet<TeamFarmerSocialMedia> TeamFarmerSocialMedias { get; set; }
-        public DbSet<HeaderTeamFarmer> HeaderTeamFarmers { get; set; }
+        public DbSet<TeamFarmerHeader> TeamFarmerHeaders { get; set; }
+
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -29,6 +32,8 @@ namespace OrganiDb.Data
             modelBuilder.Entity<Position>().HasQueryFilter(m => !m.SoftDelete);
             modelBuilder.Entity<TeamFarmer>().HasQueryFilter(m => !m.SoftDelete);
             modelBuilder.Entity<SocialMedia>().HasQueryFilter(m => !m.SoftDelete);
+            modelBuilder.Entity<TeamFarmerHeader>().HasQueryFilter(m => !m.SoftDelete);
+            modelBuilder.Entity<Slider>().HasQueryFilter(m => !m.SoftDelete);
 
             modelBuilder.Entity<Banner>().HasData(
 

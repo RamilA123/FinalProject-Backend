@@ -88,39 +88,19 @@
 
           <div class="carousel-inner carousel">
 
-            <div class="carousel-item active">
-              <img src="~/assets/images/sliders/slider1.jpg" class="d-block w-100" alt="...">
-              <div class="carousel-text1">
-                <img src="~/assets/images/info-logos/slider-icon.webp" alt="">
-                <span>100% Healthy & Affordable</span>
-                <h3>Organic Vegetables</h3>
-                <p>Small Changes Big Difference</p>
-                <a asp-controller="Shop" asp-action="Index">Shop Now</a>
+              @foreach (Slider slider in Model.Sliders)
+              {
+              <div class="carousel-item @(slider == Model.Sliders.FirstOrDefault() ? "active" : "")">
+              <img src="~/assets/images/sliders/@slider.Image" class="d-block w-100" alt="...">
+              <div class="carousel-text1 @(slider == Model.Sliders.Skip(1).Take(1).FirstOrDefault() ? "carousel-text2" : "") @(slider == Model.Sliders.Skip(2).Take(1).FirstOrDefault() ? "carousel-text3" : "")">
+              <img src="~/assets/images/info-logos/@slider.Logo" alt="">
+              <span>@slider.Text</span>
+              <h3>@slider.Title</h3>
+              <p>@slider.Description</p>
+              <a asp-controller="Shop" asp-action="Index">Shop Now</a>
               </div>
-            </div>
-            <div class="carousel-item">
-              <img src="~/assets/images/sliders/slider2.jpg" class="d-block w-100" alt="...">
-              <div class="carousel-text2 carousel-text1">
-                <img src="~/assets/images/info-logos/slider-icon.webp" alt="">
-                <h3>Vegetable 100% Organic</h3>
-                <p>Natural Health Care Ingredients</p>
-                <span style="display: block;">Keep calm and eat more veggies</span>
-                <a asp-controller="Shop" asp-action="Index">Shop Now</a>
               </div>
-              =
-
-            </div>
-            <div class="carousel-item">
-                        <img src="~/assets/images/sliders/slider3.jpg" class="d-block w-100" alt="...">
-              <div class="carousel-text3 carousel-text1">
-                <img src="~/assets/images/info-logos/slider-icon.webp" alt="">
-                <span>Natural Health Care Ingredients</span>
-                <h3>Grocery Shopping</h3>
-                <p>Eating vegetables makes you feel good</p>
-                <a asp-controller="Shop" asp-action="Index">Shop Now</a>
-              </div>
-            </div>
-
+              }
           </div>
 
           <button class="carousel-control-prev prev btn" type="button" data-bs-target="#carouselExampleIndicators"

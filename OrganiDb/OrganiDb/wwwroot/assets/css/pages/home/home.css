@@ -817,7 +817,7 @@
 #slider .slider .carousel .carousel-text1 {
    position: absolute;
    top: 20%;
-   left: 30%;
+   left: 31%;
    color: white;
    font-size: 35px;
    text-align: center;
@@ -864,23 +864,13 @@
    background: green;
 }
 
-
 #slider .slider .carousel .carousel-text2 {
-   position: absolute;
-   top: 17%;
-   left: 7%;
-   color: white;
-   font-size: 35px;
-   text-align: center;
+   left: 12%;
 }
 
 #slider .slider .carousel .carousel-text3 {
-   position: absolute;
-   top: 20%;
-   left: 25%;
-   color: white;
-   font-size: 35px;
-   text-align: center;
+   top: 22%;
+   left: 26%;
 }
 
 #slider .slider .carousel .carousel-text button:hover {

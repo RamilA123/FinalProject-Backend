@@ -39,14 +39,14 @@ builder.Services.Configure<IdentityOptions>(opt =>
     opt.Lockout.AllowedForNewUsers = true;
 });
 
-
-builder.Services.AddScoped<ITeamFarmerService, TeamFarmerService>();
-builder.Services.AddScoped<ISocialMediaService, SocialMediaService>();
+builder.Services.AddScoped<ISliderService,SliderService>();
+builder.Services.AddScoped<ITeamFarmerService,TeamFarmerService>();
+builder.Services.AddScoped<ISocialMediaService,SocialMediaService>();
 builder.Services.AddScoped<IBannerService,BannerService>();
 builder.Services.AddScoped<IBannerInfoService,BannerInfoService>();
-builder.Services.AddScoped<IAccountService, AccountService>();
+builder.Services.AddScoped<IAccountService,AccountService>();
 builder.Services.AddScoped<ILayoutService,LayoutService>();
-builder.Services.AddScoped<IEmailService, EmailService>();
+builder.Services.AddScoped<IEmailService,EmailService>();
 builder.Services.AddScoped<EmailConfigurations>();
 
 
