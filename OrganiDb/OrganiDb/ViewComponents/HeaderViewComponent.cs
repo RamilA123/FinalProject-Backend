@@ -7,6 +7,7 @@ namespace OrganiDb.ViewComponents
     public class HeaderViewComponent : ViewComponent
     {
         private readonly ILayoutService _layoutService;
+       
 
         public HeaderViewComponent(ILayoutService layoutService)
         {

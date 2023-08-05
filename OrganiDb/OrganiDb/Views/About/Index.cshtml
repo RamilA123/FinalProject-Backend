@@ -191,7 +191,43 @@
 
             <div class="row">
 
-                <div class="col-sm-12 col-md-6 col-lg-4">
+                @foreach (TeamFarmer teamFarmer in Model.TeamFarmers)
+                {
+                    <div class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="team-farmer">
+                            <div class="team-farmer-image">
+                                <div class="team-farmer-shape4">
+                                    <img src="~/assets/images/shapes/shape4.png" alt="">
+                                </div>
+                                <div class="team-farmer-shape1">
+                                    <img src="~/assets/images/shapes/shape1.png" alt="">
+                                    <div class="team-farmer-img">
+                                        <img src="~/assets/images/team-farmers/@teamFarmer.Image" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="team-farmer-content">
+                                <div class="team-farmer-shape2">
+                                    <img src="~/assets/images/shapes/shape2.png" alt="">
+                                </div>
+                                <div class="team-farmer-shape3">
+                                    <img src="~/assets/images/shapes/shape3.png" alt="">
+                                </div>
+                                <div class="team-two-title-box">
+                                    <h3 class="team-farmer-title"><a href="">@teamFarmer.FullName</a></h3>
+                                    <p class="team-farmer-subtitle">@teamFarmer.Position.Name</p>
+                                </div>
+                                <div class="team-two-social-box">
+                                    <a href="https://www.twitter.com">@Html.Raw(teamFarmer.TeamFarmerSocialMedias.Where(m => m.SocialMediaId == 5).FirstOrDefault().SocialMedia.Name)</a>
+                                    <a href="https://www.facebook.com">@Html.Raw(teamFarmer.TeamFarmerSocialMedias.Where(m => m.SocialMediaId == 4).FirstOrDefault().SocialMedia.Name)</a>
+                                    <a href="https://www.instagram.com">@Html.Raw(teamFarmer.TeamFarmerSocialMedias.Where(m => m.SocialMediaId == 6).FirstOrDefault().SocialMedia.Name)</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+              @*  <div class="col-sm-12 col-md-6 col-lg-4">
                     <div class="team-farmer">
                         <div class="team-farmer-image">
                             <div class="team-farmer-shape4">
@@ -288,7 +324,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>*@
 
             </div>
         </div>

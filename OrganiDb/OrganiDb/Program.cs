@@ -40,6 +40,8 @@ builder.Services.Configure<IdentityOptions>(opt =>
 });
 
 
+builder.Services.AddScoped<ITeamFarmerService, TeamFarmerService>();
+builder.Services.AddScoped<ISocialMediaService, SocialMediaService>();
 builder.Services.AddScoped<IBannerService,BannerService>();
 builder.Services.AddScoped<IBannerInfoService,BannerInfoService>();
 builder.Services.AddScoped<IAccountService, AccountService>();

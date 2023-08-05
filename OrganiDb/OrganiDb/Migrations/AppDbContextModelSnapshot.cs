@@ -251,84 +251,84 @@ namespace OrganiDb.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2023, 8, 4, 14, 54, 33, 863, DateTimeKind.Local).AddTicks(4320),
+                            CreatedDate = new DateTime(2023, 8, 5, 8, 55, 59, 77, DateTimeKind.Local).AddTicks(1087),
                             Image = "background2.png",
                             SoftDelete = false
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2023, 8, 4, 14, 54, 33, 863, DateTimeKind.Local).AddTicks(4338),
+                            CreatedDate = new DateTime(2023, 8, 5, 8, 55, 59, 77, DateTimeKind.Local).AddTicks(1098),
                             Image = "banner1.png",
                             SoftDelete = false
                         },
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2023, 8, 4, 14, 54, 33, 863, DateTimeKind.Local).AddTicks(4339),
+                            CreatedDate = new DateTime(2023, 8, 5, 8, 55, 59, 77, DateTimeKind.Local).AddTicks(1099),
                             Image = "banner2.png",
                             SoftDelete = false
                         },
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2023, 8, 4, 14, 54, 33, 863, DateTimeKind.Local).AddTicks(4340),
+                            CreatedDate = new DateTime(2023, 8, 5, 8, 55, 59, 77, DateTimeKind.Local).AddTicks(1100),
                             Image = "banner4.png",
                             SoftDelete = false
                         },
                         new
                         {
                             Id = 5,
-                            CreatedDate = new DateTime(2023, 8, 4, 14, 54, 33, 863, DateTimeKind.Local).AddTicks(4340),
+                            CreatedDate = new DateTime(2023, 8, 5, 8, 55, 59, 77, DateTimeKind.Local).AddTicks(1100),
                             Image = "banner5.png",
                             SoftDelete = false
                         },
                         new
                         {
                             Id = 6,
-                            CreatedDate = new DateTime(2023, 8, 4, 14, 54, 33, 863, DateTimeKind.Local).AddTicks(4341),
+                            CreatedDate = new DateTime(2023, 8, 5, 8, 55, 59, 77, DateTimeKind.Local).AddTicks(1101),
                             Image = "banner3.jpg",
                             SoftDelete = false
                         },
                         new
                         {
                             Id = 7,
-                            CreatedDate = new DateTime(2023, 8, 4, 14, 54, 33, 863, DateTimeKind.Local).AddTicks(4341),
+                            CreatedDate = new DateTime(2023, 8, 5, 8, 55, 59, 77, DateTimeKind.Local).AddTicks(1101),
                             Image = "banner6.jpg",
                             SoftDelete = false
                         },
                         new
                         {
                             Id = 8,
-                            CreatedDate = new DateTime(2023, 8, 4, 14, 54, 33, 863, DateTimeKind.Local).AddTicks(4342),
+                            CreatedDate = new DateTime(2023, 8, 5, 8, 55, 59, 77, DateTimeKind.Local).AddTicks(1102),
                             Image = "banner7.webp",
                             SoftDelete = false
                         },
                         new
                         {
                             Id = 9,
-                            CreatedDate = new DateTime(2023, 8, 4, 14, 54, 33, 863, DateTimeKind.Local).AddTicks(4342),
+                            CreatedDate = new DateTime(2023, 8, 5, 8, 55, 59, 77, DateTimeKind.Local).AddTicks(1102),
                             Image = "banner8.png",
                             SoftDelete = false
                         },
                         new
                         {
                             Id = 10,
-                            CreatedDate = new DateTime(2023, 8, 4, 14, 54, 33, 863, DateTimeKind.Local).AddTicks(4343),
+                            CreatedDate = new DateTime(2023, 8, 5, 8, 55, 59, 77, DateTimeKind.Local).AddTicks(1103),
                             Image = "banner9.jpg",
                             SoftDelete = false
                         },
                         new
                         {
                             Id = 11,
-                            CreatedDate = new DateTime(2023, 8, 4, 14, 54, 33, 863, DateTimeKind.Local).AddTicks(4343),
+                            CreatedDate = new DateTime(2023, 8, 5, 8, 55, 59, 77, DateTimeKind.Local).AddTicks(1103),
                             Image = "banner11.png",
                             SoftDelete = false
                         },
                         new
                         {
                             Id = 12,
-                            CreatedDate = new DateTime(2023, 8, 4, 14, 54, 33, 863, DateTimeKind.Local).AddTicks(4344),
+                            CreatedDate = new DateTime(2023, 8, 5, 8, 55, 59, 77, DateTimeKind.Local).AddTicks(1104),
                             Image = "banner10.webp",
                             SoftDelete = false
                         });
@@ -359,6 +359,28 @@ namespace OrganiDb.Migrations
                     b.ToTable("BannerInfos");
                 });
 
+            modelBuilder.Entity("OrganiDb.Models.Position", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("SoftDelete")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Positions");
+                });
+
             modelBuilder.Entity("OrganiDb.Models.Setting", b =>
                 {
                     b.Property<int>("Id")
@@ -376,6 +398,81 @@ namespace OrganiDb.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Settings");
+                });
+
+            modelBuilder.Entity("OrganiDb.Models.SocialMedia", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("SoftDelete")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SocialMedias");
+                });
+
+            modelBuilder.Entity("OrganiDb.Models.TeamFarmer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("FullName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PositionId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("SoftDelete")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PositionId");
+
+                    b.ToTable("TeamFarmers");
+                });
+
+            modelBuilder.Entity("OrganiDb.Models.TeamFarmerSocialMedia", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("SocialMediaId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TeamFarmerId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SocialMediaId");
+
+                    b.HasIndex("TeamFarmerId");
+
+                    b.ToTable("TeamFarmerSocialMedias");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -427,6 +524,51 @@ namespace OrganiDb.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("OrganiDb.Models.TeamFarmer", b =>
+                {
+                    b.HasOne("OrganiDb.Models.Position", "Position")
+                        .WithMany("TeamFarmers")
+                        .HasForeignKey("PositionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Position");
+                });
+
+            modelBuilder.Entity("OrganiDb.Models.TeamFarmerSocialMedia", b =>
+                {
+                    b.HasOne("OrganiDb.Models.SocialMedia", "SocialMedia")
+                        .WithMany("TeamFarmerSocialMedias")
+                        .HasForeignKey("SocialMediaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("OrganiDb.Models.TeamFarmer", "TeamFarmer")
+                        .WithMany("TeamFarmerSocialMedias")
+                        .HasForeignKey("TeamFarmerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("SocialMedia");
+
+                    b.Navigation("TeamFarmer");
+                });
+
+            modelBuilder.Entity("OrganiDb.Models.Position", b =>
+                {
+                    b.Navigation("TeamFarmers");
+                });
+
+            modelBuilder.Entity("OrganiDb.Models.SocialMedia", b =>
+                {
+                    b.Navigation("TeamFarmerSocialMedias");
+                });
+
+            modelBuilder.Entity("OrganiDb.Models.TeamFarmer", b =>
+                {
+                    b.Navigation("TeamFarmerSocialMedias");
                 });
 #pragma warning restore 612, 618
         }

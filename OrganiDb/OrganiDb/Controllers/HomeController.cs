@@ -12,6 +12,7 @@ namespace OrganiDb.Controllers
     {
         private readonly IBannerService _bannerService;
         private readonly IBannerInfoService _bannerInfoService;
+     
 
         public HomeController(IBannerService bannerService, 
                               IBannerInfoService bannerInfoService)
@@ -28,7 +29,7 @@ namespace OrganiDb.Controllers
             HomeVM model = new()
             {
                 Banners = banners,
-                BannerInfos = bannerInfos
+                BannerInfos = bannerInfos,
             };
 
             return View(model);

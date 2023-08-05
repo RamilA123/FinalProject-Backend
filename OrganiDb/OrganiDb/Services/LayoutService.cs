@@ -11,29 +11,36 @@ namespace OrganiDb.Services
         private readonly AppDbContext _context;
         private readonly IHttpContextAccessor _accessor;
         private readonly IAccountService _accountService;
+        private readonly ISocialMediaService _socialMediaService;
 
-        public LayoutService(AppDbContext context, IHttpContextAccessor accessor, IAccountService accountService)
+        public LayoutService(AppDbContext context, IHttpContextAccessor accessor, 
+                                                   IAccountService accountService, 
+                                                   ISocialMediaService socialMediaService)
         {
             _context = context;
             _accessor = accessor;
             _accountService = accountService;
+            _socialMediaService = socialMediaService;
         }
 
         public async Task<LayoutVM> GetAllDatas()
         {
             Dictionary<string, string> settingDatas = _context.Settings.AsEnumerable().ToDictionary(m => m.Key, m => m.Value);
 
+            List<SocialMedia> socialMedias = await _socialMediaService.GetAllAsync();
+
             string userId = _accessor.HttpContext?.User.FindFirstValue(ClaimTypes.NameIdentifier);
 
             AppUser user = await _accountService.FindByIdAsync(userId);
 
-            LayoutVM datas = new()
+            LayoutVM data = new()
             {
                 SettingDatas = settingDatas,
-                User = user
+                User = user,
+                SocialMedias = socialMedias
             };
 
-            return datas;
+            return data;
         }
     }
 }
