@@ -131,7 +131,20 @@
       <div class="col-sm-12 col-md-12 col-lg-12">
         <div class="services">
 
-          <div class="service">
+            @foreach (Assistance assistance in Model.Assistances)
+            {
+            <div class="service">
+            <div class="service-image">
+              <img src="~/assets/images/services/@assistance.Image" alt="">
+            </div>
+            <div class="service-text">
+              <span>@assistance.Title</span>
+              <p>@assistance.Description</p>
+            </div>
+          </div>
+            }      
+
+         @* <div class="service">
             <div class="service-image">
               <img src="~/assets/images/services/money-back.png" alt="">
             </div>
@@ -169,7 +182,7 @@
               <span>Secure Payment</span>
               <p>Your money is 100% secure</p>
             </div>
-          </div>
+          </div>*@
         </div>
 
       </div>

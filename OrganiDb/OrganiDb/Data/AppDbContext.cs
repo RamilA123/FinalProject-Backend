@@ -13,6 +13,7 @@ namespace OrganiDb.Data
 
         public DbSet<Setting> Settings { get; set; }
         public DbSet<Slider> Sliders { get; set; }
+        public DbSet<Assistance> Assistances { get; set; }
         public DbSet<Banner> Banners { get; set; }
         public DbSet<BannerInfo> BannerInfos { get; set; }
         public DbSet<Position> Positions { get; set; }
@@ -20,6 +21,7 @@ namespace OrganiDb.Data
         public DbSet<SocialMedia> SocialMedias { get; set; }
         public DbSet<TeamFarmerSocialMedia> TeamFarmerSocialMedias { get; set; }
         public DbSet<TeamFarmerHeader> TeamFarmerHeaders { get; set; }
+
 
 
 
@@ -34,6 +36,7 @@ namespace OrganiDb.Data
             modelBuilder.Entity<SocialMedia>().HasQueryFilter(m => !m.SoftDelete);
             modelBuilder.Entity<TeamFarmerHeader>().HasQueryFilter(m => !m.SoftDelete);
             modelBuilder.Entity<Slider>().HasQueryFilter(m => !m.SoftDelete);
+            modelBuilder.Entity<Assistance>().HasQueryFilter(m => !m.SoftDelete);
 
             modelBuilder.Entity<Banner>().HasData(
 

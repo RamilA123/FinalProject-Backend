@@ -226,6 +226,34 @@ namespace OrganiDb.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("OrganiDb.Models.Assistance", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("SoftDelete")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Assistances");
+                });
+
             modelBuilder.Entity("OrganiDb.Models.Banner", b =>
                 {
                     b.Property<int>("Id")
@@ -251,84 +279,84 @@ namespace OrganiDb.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2023, 8, 5, 13, 37, 28, 971, DateTimeKind.Local).AddTicks(9823),
+                            CreatedDate = new DateTime(2023, 8, 5, 18, 4, 26, 617, DateTimeKind.Local).AddTicks(8907),
                             Image = "background2.png",
                             SoftDelete = false
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2023, 8, 5, 13, 37, 28, 971, DateTimeKind.Local).AddTicks(9837),
+                            CreatedDate = new DateTime(2023, 8, 5, 18, 4, 26, 617, DateTimeKind.Local).AddTicks(8917),
                             Image = "banner1.png",
                             SoftDelete = false
                         },
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2023, 8, 5, 13, 37, 28, 971, DateTimeKind.Local).AddTicks(9838),
+                            CreatedDate = new DateTime(2023, 8, 5, 18, 4, 26, 617, DateTimeKind.Local).AddTicks(8918),
                             Image = "banner2.png",
                             SoftDelete = false
                         },
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2023, 8, 5, 13, 37, 28, 971, DateTimeKind.Local).AddTicks(9838),
+                            CreatedDate = new DateTime(2023, 8, 5, 18, 4, 26, 617, DateTimeKind.Local).AddTicks(8918),
                             Image = "banner4.png",
                             SoftDelete = false
                         },
                         new
                         {
                             Id = 5,
-                            CreatedDate = new DateTime(2023, 8, 5, 13, 37, 28, 971, DateTimeKind.Local).AddTicks(9839),
+                            CreatedDate = new DateTime(2023, 8, 5, 18, 4, 26, 617, DateTimeKind.Local).AddTicks(8919),
                             Image = "banner5.png",
                             SoftDelete = false
                         },
                         new
                         {
                             Id = 6,
-                            CreatedDate = new DateTime(2023, 8, 5, 13, 37, 28, 971, DateTimeKind.Local).AddTicks(9839),
+                            CreatedDate = new DateTime(2023, 8, 5, 18, 4, 26, 617, DateTimeKind.Local).AddTicks(8919),
                             Image = "banner3.jpg",
                             SoftDelete = false
                         },
                         new
                         {
                             Id = 7,
-                            CreatedDate = new DateTime(2023, 8, 5, 13, 37, 28, 971, DateTimeKind.Local).AddTicks(9840),
+                            CreatedDate = new DateTime(2023, 8, 5, 18, 4, 26, 617, DateTimeKind.Local).AddTicks(8920),
                             Image = "banner6.jpg",
                             SoftDelete = false
                         },
                         new
                         {
                             Id = 8,
-                            CreatedDate = new DateTime(2023, 8, 5, 13, 37, 28, 971, DateTimeKind.Local).AddTicks(9865),
+                            CreatedDate = new DateTime(2023, 8, 5, 18, 4, 26, 617, DateTimeKind.Local).AddTicks(8921),
                             Image = "banner7.webp",
                             SoftDelete = false
                         },
                         new
                         {
                             Id = 9,
-                            CreatedDate = new DateTime(2023, 8, 5, 13, 37, 28, 971, DateTimeKind.Local).AddTicks(9866),
+                            CreatedDate = new DateTime(2023, 8, 5, 18, 4, 26, 617, DateTimeKind.Local).AddTicks(8921),
                             Image = "banner8.png",
                             SoftDelete = false
                         },
                         new
                         {
                             Id = 10,
-                            CreatedDate = new DateTime(2023, 8, 5, 13, 37, 28, 971, DateTimeKind.Local).AddTicks(9867),
+                            CreatedDate = new DateTime(2023, 8, 5, 18, 4, 26, 617, DateTimeKind.Local).AddTicks(8922),
                             Image = "banner9.jpg",
                             SoftDelete = false
                         },
                         new
                         {
                             Id = 11,
-                            CreatedDate = new DateTime(2023, 8, 5, 13, 37, 28, 971, DateTimeKind.Local).AddTicks(9867),
+                            CreatedDate = new DateTime(2023, 8, 5, 18, 4, 26, 617, DateTimeKind.Local).AddTicks(8922),
                             Image = "banner11.png",
                             SoftDelete = false
                         },
                         new
                         {
                             Id = 12,
-                            CreatedDate = new DateTime(2023, 8, 5, 13, 37, 28, 971, DateTimeKind.Local).AddTicks(9868),
+                            CreatedDate = new DateTime(2023, 8, 5, 18, 4, 26, 617, DateTimeKind.Local).AddTicks(8923),
                             Image = "banner10.webp",
                             SoftDelete = false
                         });
