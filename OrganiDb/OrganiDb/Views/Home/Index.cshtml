@@ -199,75 +199,19 @@
 
       <div class="owl-carousel owl-theme loop nonloop">
 
-        <div class="col-sm-12 col-md-12 col-lg-12">
-          <div class="item image">
-            <img src="~/assets/images/categories/vegetables.jpg" alt="">
-            <div class="image-content">
-              <h5 class="vegetable">Vegetables</h5>
-              <span>3 products</span>
+          @foreach (Category category in Model.Categories)
+          {
+            <div class="col-sm-12 col-md-12 col-lg-12">
+               <div class="item image">
+                  <img src="~/assets/images/categories/@category.Image" alt="">
+                  <div class="image-content">
+                  <h5 class="vegetable">@category.Name</h5>
+                  <span>@category.Products.Where(m => m.CategoryId == category.Id).Count() products</span>
+                  </div>
+               </div>
             </div>
-          </div>
-        </div>
+          }
 
-        <div class="col-sm-12 col-md-12 col-lg-12">
-          <div class="item image">
-            <img src="~/assets/images/categories/fruits.jpg" alt="">
-            <div class="image-content">
-              <h5 class="fruit">Fruits</h5>
-              <span>3 products</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-12 col-md-12 col-lg-12">
-          <div class="item image">
-            <img src="~/assets/images/categories/sea foods.jpg" alt="">
-            <div class="image-content">
-              <h5 class="fruit">Sea Foods</h5>
-              <span>2 products</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-12 col-md-12 col-lg-12">
-          <div class="item image">
-            <img src="~/assets/images/categories/dry foods.jpg" alt="">
-            <div class="image-content">
-              <h5 class="fruit">Dry Foods</h5>
-              <span>2 products</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-12 col-md-12 col-lg-12">
-          <div class="item image">
-            <img src="~/assets/images/categories/fast foods.jpg" alt="">
-            <div class="image-content">
-              <h5 class="fruit">Fast Foods</h5>
-              <span>3 products</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-12 col-md-12 col-lg-12">
-          <div class="item image">
-            <img src="~/assets/images/categories/dairy foods.jpg" alt="">
-            <div class="image-content">
-              <h5 class="fruit">Dairy Foods</h5>
-              <span>2 products</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-12 col-md-12 col-lg-12">
-          <div class="item image">
-            <img src="~/assets/images/categories/drinks.jpg" alt="">
-            <div class="image-content">
-              <h5 class="fruit">Drinks</h5>
-              <span>1 products</span>
-            </div>
-          </div>
-        </div>
       </div>
 
     </section>

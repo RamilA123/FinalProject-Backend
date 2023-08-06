@@ -279,84 +279,84 @@ namespace OrganiDb.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2023, 8, 5, 18, 4, 26, 617, DateTimeKind.Local).AddTicks(8907),
+                            CreatedDate = new DateTime(2023, 8, 6, 8, 39, 26, 904, DateTimeKind.Local).AddTicks(2244),
                             Image = "background2.png",
                             SoftDelete = false
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2023, 8, 5, 18, 4, 26, 617, DateTimeKind.Local).AddTicks(8917),
+                            CreatedDate = new DateTime(2023, 8, 6, 8, 39, 26, 904, DateTimeKind.Local).AddTicks(2256),
                             Image = "banner1.png",
                             SoftDelete = false
                         },
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2023, 8, 5, 18, 4, 26, 617, DateTimeKind.Local).AddTicks(8918),
+                            CreatedDate = new DateTime(2023, 8, 6, 8, 39, 26, 904, DateTimeKind.Local).AddTicks(2257),
                             Image = "banner2.png",
                             SoftDelete = false
                         },
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2023, 8, 5, 18, 4, 26, 617, DateTimeKind.Local).AddTicks(8918),
+                            CreatedDate = new DateTime(2023, 8, 6, 8, 39, 26, 904, DateTimeKind.Local).AddTicks(2257),
                             Image = "banner4.png",
                             SoftDelete = false
                         },
                         new
                         {
                             Id = 5,
-                            CreatedDate = new DateTime(2023, 8, 5, 18, 4, 26, 617, DateTimeKind.Local).AddTicks(8919),
+                            CreatedDate = new DateTime(2023, 8, 6, 8, 39, 26, 904, DateTimeKind.Local).AddTicks(2258),
                             Image = "banner5.png",
                             SoftDelete = false
                         },
                         new
                         {
                             Id = 6,
-                            CreatedDate = new DateTime(2023, 8, 5, 18, 4, 26, 617, DateTimeKind.Local).AddTicks(8919),
+                            CreatedDate = new DateTime(2023, 8, 6, 8, 39, 26, 904, DateTimeKind.Local).AddTicks(2259),
                             Image = "banner3.jpg",
                             SoftDelete = false
                         },
                         new
                         {
                             Id = 7,
-                            CreatedDate = new DateTime(2023, 8, 5, 18, 4, 26, 617, DateTimeKind.Local).AddTicks(8920),
+                            CreatedDate = new DateTime(2023, 8, 6, 8, 39, 26, 904, DateTimeKind.Local).AddTicks(2259),
                             Image = "banner6.jpg",
                             SoftDelete = false
                         },
                         new
                         {
                             Id = 8,
-                            CreatedDate = new DateTime(2023, 8, 5, 18, 4, 26, 617, DateTimeKind.Local).AddTicks(8921),
+                            CreatedDate = new DateTime(2023, 8, 6, 8, 39, 26, 904, DateTimeKind.Local).AddTicks(2260),
                             Image = "banner7.webp",
                             SoftDelete = false
                         },
                         new
                         {
                             Id = 9,
-                            CreatedDate = new DateTime(2023, 8, 5, 18, 4, 26, 617, DateTimeKind.Local).AddTicks(8921),
+                            CreatedDate = new DateTime(2023, 8, 6, 8, 39, 26, 904, DateTimeKind.Local).AddTicks(2260),
                             Image = "banner8.png",
                             SoftDelete = false
                         },
                         new
                         {
                             Id = 10,
-                            CreatedDate = new DateTime(2023, 8, 5, 18, 4, 26, 617, DateTimeKind.Local).AddTicks(8922),
+                            CreatedDate = new DateTime(2023, 8, 6, 8, 39, 26, 904, DateTimeKind.Local).AddTicks(2261),
                             Image = "banner9.jpg",
                             SoftDelete = false
                         },
                         new
                         {
                             Id = 11,
-                            CreatedDate = new DateTime(2023, 8, 5, 18, 4, 26, 617, DateTimeKind.Local).AddTicks(8922),
+                            CreatedDate = new DateTime(2023, 8, 6, 8, 39, 26, 904, DateTimeKind.Local).AddTicks(2261),
                             Image = "banner11.png",
                             SoftDelete = false
                         },
                         new
                         {
                             Id = 12,
-                            CreatedDate = new DateTime(2023, 8, 5, 18, 4, 26, 617, DateTimeKind.Local).AddTicks(8923),
+                            CreatedDate = new DateTime(2023, 8, 6, 8, 39, 26, 904, DateTimeKind.Local).AddTicks(2262),
                             Image = "banner10.webp",
                             SoftDelete = false
                         });
@@ -387,6 +387,81 @@ namespace OrganiDb.Migrations
                     b.ToTable("BannerInfos");
                 });
 
+            modelBuilder.Entity("OrganiDb.Models.Brand", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("SoftDelete")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Brands");
+                });
+
+            modelBuilder.Entity("OrganiDb.Models.Category", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("SoftDelete")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("OrganiDb.Models.Discount", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<byte>("Percent")
+                        .HasColumnType("tinyint");
+
+                    b.Property<bool>("SoftDelete")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Discounts");
+                });
+
             modelBuilder.Entity("OrganiDb.Models.Position", b =>
                 {
                     b.Property<int>("Id")
@@ -407,6 +482,168 @@ namespace OrganiDb.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Positions");
+                });
+
+            modelBuilder.Entity("OrganiDb.Models.Product", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<decimal>("ActualPrice")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("BrandId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("DiscountId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Featured")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("RatingId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("SaleCount")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("SoftDelete")
+                        .HasColumnType("bit");
+
+                    b.Property<int?>("StockCount")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("UPC")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BrandId");
+
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("DiscountId");
+
+                    b.HasIndex("RatingId");
+
+                    b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("OrganiDb.Models.ProductImage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsMain")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("SoftDelete")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ProductImages");
+                });
+
+            modelBuilder.Entity("OrganiDb.Models.ProductTag", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TagId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("TagId");
+
+                    b.ToTable("ProductTags");
+                });
+
+            modelBuilder.Entity("OrganiDb.Models.Rating", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("RatingCount")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("SoftDelete")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Ratings");
+                });
+
+            modelBuilder.Entity("OrganiDb.Models.Review", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("SoftDelete")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Text")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("Reviews");
                 });
 
             modelBuilder.Entity("OrganiDb.Models.Setting", b =>
@@ -451,6 +688,9 @@ namespace OrganiDb.Migrations
                     b.Property<bool>("SoftDelete")
                         .HasColumnType("bit");
 
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Text")
                         .HasColumnType("nvarchar(max)");
 
@@ -482,6 +722,28 @@ namespace OrganiDb.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("SocialMedias");
+                });
+
+            modelBuilder.Entity("OrganiDb.Models.Tag", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("SoftDelete")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Tags");
                 });
 
             modelBuilder.Entity("OrganiDb.Models.TeamFarmer", b =>
@@ -613,6 +875,82 @@ namespace OrganiDb.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("OrganiDb.Models.Product", b =>
+                {
+                    b.HasOne("OrganiDb.Models.Brand", "Brand")
+                        .WithMany("Products")
+                        .HasForeignKey("BrandId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("OrganiDb.Models.Category", "Category")
+                        .WithMany("Products")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("OrganiDb.Models.Discount", "Discount")
+                        .WithMany("Products")
+                        .HasForeignKey("DiscountId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("OrganiDb.Models.Rating", "Rating")
+                        .WithMany("Products")
+                        .HasForeignKey("RatingId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Brand");
+
+                    b.Navigation("Category");
+
+                    b.Navigation("Discount");
+
+                    b.Navigation("Rating");
+                });
+
+            modelBuilder.Entity("OrganiDb.Models.ProductImage", b =>
+                {
+                    b.HasOne("OrganiDb.Models.Product", "Product")
+                        .WithMany("ProductImages")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("OrganiDb.Models.ProductTag", b =>
+                {
+                    b.HasOne("OrganiDb.Models.Product", "Product")
+                        .WithMany("ProductTags")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("OrganiDb.Models.Tag", "Tag")
+                        .WithMany("ProductTags")
+                        .HasForeignKey("TagId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+
+                    b.Navigation("Tag");
+                });
+
+            modelBuilder.Entity("OrganiDb.Models.Review", b =>
+                {
+                    b.HasOne("OrganiDb.Models.Product", "Product")
+                        .WithMany("Reviews")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("OrganiDb.Models.TeamFarmer", b =>
                 {
                     b.HasOne("OrganiDb.Models.Position", "Position")
@@ -643,14 +981,48 @@ namespace OrganiDb.Migrations
                     b.Navigation("TeamFarmer");
                 });
 
+            modelBuilder.Entity("OrganiDb.Models.Brand", b =>
+                {
+                    b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("OrganiDb.Models.Category", b =>
+                {
+                    b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("OrganiDb.Models.Discount", b =>
+                {
+                    b.Navigation("Products");
+                });
+
             modelBuilder.Entity("OrganiDb.Models.Position", b =>
                 {
                     b.Navigation("TeamFarmers");
                 });
 
+            modelBuilder.Entity("OrganiDb.Models.Product", b =>
+                {
+                    b.Navigation("ProductImages");
+
+                    b.Navigation("ProductTags");
+
+                    b.Navigation("Reviews");
+                });
+
+            modelBuilder.Entity("OrganiDb.Models.Rating", b =>
+                {
+                    b.Navigation("Products");
+                });
+
             modelBuilder.Entity("OrganiDb.Models.SocialMedia", b =>
                 {
                     b.Navigation("TeamFarmerSocialMedias");
+                });
+
+            modelBuilder.Entity("OrganiDb.Models.Tag", b =>
+                {
+                    b.Navigation("ProductTags");
                 });
 
             modelBuilder.Entity("OrganiDb.Models.TeamFarmer", b =>

@@ -4,9 +4,11 @@
     {
         public string Name { get; set; }
         public string Description { get; set; }
+        public int? UPC { get; set; }
+        public int? SaleCount { get; set; }
+        public int? StockCount { get; set; }
         public string Featured { get; set; }
         public decimal ActualPrice { get; set; }
-        public decimal DiscountPrice { get; set; }
         public int DiscountId { get; set; }
         public Discount Discount { get; set; }
         public int BrandId { get; set; }
