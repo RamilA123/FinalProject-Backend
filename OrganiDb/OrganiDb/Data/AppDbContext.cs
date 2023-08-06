@@ -14,6 +14,15 @@ namespace OrganiDb.Data
         public DbSet<Setting> Settings { get; set; }
         public DbSet<Slider> Sliders { get; set; }
         public DbSet<Assistance> Assistances { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Rating> Ratings { get; set; }
+        public DbSet<Discount> Discounts { get; set; }
+        public DbSet<Brand> Brands { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Tag> Tags { get; set; }
+        public DbSet<Review> Reviews { get; set; }
+        public DbSet<ProductImage> ProductImages { get; set; }
+        public DbSet<ProductTag> ProductTags { get; set; }
         public DbSet<Banner> Banners { get; set; }
         public DbSet<BannerInfo> BannerInfos { get; set; }
         public DbSet<Position> Positions { get; set; }
@@ -29,14 +38,23 @@ namespace OrganiDb.Data
         {
             base.OnModelCreating(modelBuilder);
 
+            modelBuilder.Entity<Slider>().HasQueryFilter(m => !m.SoftDelete);
+            modelBuilder.Entity<Assistance>().HasQueryFilter(m => !m.SoftDelete);
+            modelBuilder.Entity<Category>().HasQueryFilter(m => !m.SoftDelete);
+            modelBuilder.Entity<Rating>().HasQueryFilter(m => !m.SoftDelete);
+            modelBuilder.Entity<Discount>().HasQueryFilter(m => !m.SoftDelete);
+            modelBuilder.Entity<Brand>().HasQueryFilter(m => !m.SoftDelete);
+            modelBuilder.Entity<Product>().HasQueryFilter(m => !m.SoftDelete);
+            modelBuilder.Entity<Tag>().HasQueryFilter(m => !m.SoftDelete);
+            modelBuilder.Entity<Review>().HasQueryFilter(m => !m.SoftDelete);
+            modelBuilder.Entity<ProductImage>().HasQueryFilter(m => !m.SoftDelete);
             modelBuilder.Entity<Banner>().HasQueryFilter(m => !m.SoftDelete);
             modelBuilder.Entity<BannerInfo>().HasQueryFilter(m => !m.SoftDelete);
             modelBuilder.Entity<Position>().HasQueryFilter(m => !m.SoftDelete);
             modelBuilder.Entity<TeamFarmer>().HasQueryFilter(m => !m.SoftDelete);
             modelBuilder.Entity<SocialMedia>().HasQueryFilter(m => !m.SoftDelete);
             modelBuilder.Entity<TeamFarmerHeader>().HasQueryFilter(m => !m.SoftDelete);
-            modelBuilder.Entity<Slider>().HasQueryFilter(m => !m.SoftDelete);
-            modelBuilder.Entity<Assistance>().HasQueryFilter(m => !m.SoftDelete);
+         
 
             modelBuilder.Entity<Banner>().HasData(
 
