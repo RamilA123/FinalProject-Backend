@@ -1156,6 +1156,10 @@
 
     <!--COUNTDOWN-START-->
 
+    @{
+        DateTime targetTime = Model.Discount.TargetTime;
+    }
+
     <section id="countdown">
 
       <div class="col-sm-12 col-md-12 col-lg-12">
@@ -1163,14 +1167,12 @@
         <div class="countdown">
 
           <div class="countdown-image">
-            <img src="~/assets/images/backgrounds/background1.jpg" alt="">
+            <img src="~/assets/images/backgrounds/@Model.Banners.Skip(12).Take(1).FirstOrDefault().Image" alt="">
           </div>
 
           <div class="countdown-text">
-            <h1>Special Discount For All Grocery Products</h1>
-            <p>Fruits and vegetables was effective in stimulating purchases of those products and did neither lead to
-              higher expenditures in unhealthier food categories nor to higher total calories purchased. Future studies
-              in real supermarkets need to confirm these findings</p>
+            <h1>@Model.Discount.Title</h1>
+            <p>@Model.Discount.Name Discount</p>
           </div>
 
           <div class="countdown-timer">
@@ -1203,16 +1205,15 @@
 
           </div>
 
+           <div class="d-none target-time">@targetTime</div>
+
           <a asp-controller="Shop" asp-action="Index">Shop Now</a>
 
           <div class="countdown-discount">
-            <img src="~/assets/images//info-logos/discount.png" alt="">
+              <span>@Model.Discount.Percent% discount</span>
           </div>
 
         </div>
-
-
-
 
       </div>
 

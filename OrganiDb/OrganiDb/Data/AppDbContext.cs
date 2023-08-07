@@ -54,7 +54,7 @@ namespace OrganiDb.Data
             modelBuilder.Entity<TeamFarmer>().HasQueryFilter(m => !m.SoftDelete);
             modelBuilder.Entity<SocialMedia>().HasQueryFilter(m => !m.SoftDelete);
             modelBuilder.Entity<TeamFarmerHeader>().HasQueryFilter(m => !m.SoftDelete);
-         
+
 
             modelBuilder.Entity<Banner>().HasData(
 

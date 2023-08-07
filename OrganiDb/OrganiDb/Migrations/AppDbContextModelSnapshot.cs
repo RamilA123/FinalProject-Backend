@@ -279,84 +279,84 @@ namespace OrganiDb.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2023, 8, 6, 8, 39, 26, 904, DateTimeKind.Local).AddTicks(2244),
+                            CreatedDate = new DateTime(2023, 8, 7, 17, 17, 41, 365, DateTimeKind.Local).AddTicks(1504),
                             Image = "background2.png",
                             SoftDelete = false
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2023, 8, 6, 8, 39, 26, 904, DateTimeKind.Local).AddTicks(2256),
+                            CreatedDate = new DateTime(2023, 8, 7, 17, 17, 41, 365, DateTimeKind.Local).AddTicks(1516),
                             Image = "banner1.png",
                             SoftDelete = false
                         },
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2023, 8, 6, 8, 39, 26, 904, DateTimeKind.Local).AddTicks(2257),
+                            CreatedDate = new DateTime(2023, 8, 7, 17, 17, 41, 365, DateTimeKind.Local).AddTicks(1517),
                             Image = "banner2.png",
                             SoftDelete = false
                         },
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2023, 8, 6, 8, 39, 26, 904, DateTimeKind.Local).AddTicks(2257),
+                            CreatedDate = new DateTime(2023, 8, 7, 17, 17, 41, 365, DateTimeKind.Local).AddTicks(1517),
                             Image = "banner4.png",
                             SoftDelete = false
                         },
                         new
                         {
                             Id = 5,
-                            CreatedDate = new DateTime(2023, 8, 6, 8, 39, 26, 904, DateTimeKind.Local).AddTicks(2258),
+                            CreatedDate = new DateTime(2023, 8, 7, 17, 17, 41, 365, DateTimeKind.Local).AddTicks(1518),
                             Image = "banner5.png",
                             SoftDelete = false
                         },
                         new
                         {
                             Id = 6,
-                            CreatedDate = new DateTime(2023, 8, 6, 8, 39, 26, 904, DateTimeKind.Local).AddTicks(2259),
+                            CreatedDate = new DateTime(2023, 8, 7, 17, 17, 41, 365, DateTimeKind.Local).AddTicks(1518),
                             Image = "banner3.jpg",
                             SoftDelete = false
                         },
                         new
                         {
                             Id = 7,
-                            CreatedDate = new DateTime(2023, 8, 6, 8, 39, 26, 904, DateTimeKind.Local).AddTicks(2259),
+                            CreatedDate = new DateTime(2023, 8, 7, 17, 17, 41, 365, DateTimeKind.Local).AddTicks(1519),
                             Image = "banner6.jpg",
                             SoftDelete = false
                         },
                         new
                         {
                             Id = 8,
-                            CreatedDate = new DateTime(2023, 8, 6, 8, 39, 26, 904, DateTimeKind.Local).AddTicks(2260),
+                            CreatedDate = new DateTime(2023, 8, 7, 17, 17, 41, 365, DateTimeKind.Local).AddTicks(1520),
                             Image = "banner7.webp",
                             SoftDelete = false
                         },
                         new
                         {
                             Id = 9,
-                            CreatedDate = new DateTime(2023, 8, 6, 8, 39, 26, 904, DateTimeKind.Local).AddTicks(2260),
+                            CreatedDate = new DateTime(2023, 8, 7, 17, 17, 41, 365, DateTimeKind.Local).AddTicks(1520),
                             Image = "banner8.png",
                             SoftDelete = false
                         },
                         new
                         {
                             Id = 10,
-                            CreatedDate = new DateTime(2023, 8, 6, 8, 39, 26, 904, DateTimeKind.Local).AddTicks(2261),
+                            CreatedDate = new DateTime(2023, 8, 7, 17, 17, 41, 365, DateTimeKind.Local).AddTicks(1521),
                             Image = "banner9.jpg",
                             SoftDelete = false
                         },
                         new
                         {
                             Id = 11,
-                            CreatedDate = new DateTime(2023, 8, 6, 8, 39, 26, 904, DateTimeKind.Local).AddTicks(2261),
+                            CreatedDate = new DateTime(2023, 8, 7, 17, 17, 41, 365, DateTimeKind.Local).AddTicks(1521),
                             Image = "banner11.png",
                             SoftDelete = false
                         },
                         new
                         {
                             Id = 12,
-                            CreatedDate = new DateTime(2023, 8, 6, 8, 39, 26, 904, DateTimeKind.Local).AddTicks(2262),
+                            CreatedDate = new DateTime(2023, 8, 7, 17, 17, 41, 365, DateTimeKind.Local).AddTicks(1522),
                             Image = "banner10.webp",
                             SoftDelete = false
                         });
@@ -456,6 +456,12 @@ namespace OrganiDb.Migrations
 
                     b.Property<bool>("SoftDelete")
                         .HasColumnType("bit");
+
+                    b.Property<DateTime>("TargetTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

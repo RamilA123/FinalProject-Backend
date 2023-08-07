@@ -8,6 +8,7 @@ namespace OrganiDb.ViewModels.Home
         public IEnumerable<Assistance> Assistances { get; set; }
         public List<Category> Categories  { get; set; }
         public IEnumerable<Product> Products  { get; set; }
+        public Discount Discount  { get; set; }
         public List<Banner> Banners { get; set; }
         public List<BannerInfo> BannerInfos { get; set; }
     }

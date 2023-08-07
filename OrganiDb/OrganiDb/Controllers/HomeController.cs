@@ -16,13 +16,15 @@ namespace OrganiDb.Controllers
         private readonly IAssistanceService _assistanceService;
         private readonly ICategoryService _categoryService;
         private readonly IProductService _productService;
+        private readonly IDiscountService _discountService;
 
         public HomeController(IBannerService bannerService, 
                               IBannerInfoService bannerInfoService,
                               ISliderService sliderService,
                               IAssistanceService assistanceService,
                               ICategoryService categoryService,
-                              IProductService productService)
+                              IProductService productService,
+                              IDiscountService discountService)
         {
             _bannerService = bannerService;
             _bannerInfoService = bannerInfoService;
@@ -30,6 +32,7 @@ namespace OrganiDb.Controllers
             _assistanceService = assistanceService;
             _categoryService = categoryService;
             _productService = productService;
+            _discountService = discountService;
         }
 
         public async Task<IActionResult> Index()
@@ -40,6 +43,7 @@ namespace OrganiDb.Controllers
             IEnumerable<Assistance> assistances = await _assistanceService.GetAllAsync();
             List<Category> categories = await _categoryService.GetAllAsync();
             IEnumerable<Product> products = await _productService.GetAllWithIncludesAsync();
+            Discount discount = await _discountService.GetAsync();
 
             HomeVM model = new()
             {
@@ -48,7 +52,8 @@ namespace OrganiDb.Controllers
                 Sliders = sliders,
                 Assistances = assistances,
                 Categories = categories,
-                Products = products
+                Products = products,
+                Discount = discount
             };
 
             return View(model);
