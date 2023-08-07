@@ -42,6 +42,7 @@ builder.Services.Configure<IdentityOptions>(opt =>
 builder.Services.AddScoped<ISliderService,SliderService>();
 builder.Services.AddScoped<IAssistanceService,AssistanceService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<ITeamFarmerService,TeamFarmerService>();
 builder.Services.AddScoped<ISocialMediaService,SocialMediaService>();
 builder.Services.AddScoped<IBannerService,BannerService>();
