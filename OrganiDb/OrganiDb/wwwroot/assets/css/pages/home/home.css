@@ -1055,6 +1055,7 @@
    position: relative;
    padding-bottom: 10px;
    margin-bottom: 45px;
+   margin-top: 20px;
 }
 
 .products .tab-content .product:hover {
@@ -1079,7 +1080,6 @@
    height: 70%;
    position: absolute;
 }
-
 
 .products .tab-content .product-images .image2 {
    display: none;
