@@ -47,6 +47,7 @@ builder.Services.AddScoped<IDiscountService, DiscountService>();
 builder.Services.AddScoped<IBrandService, BrandService>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddScoped<IBlogService,BlogService>();
+builder.Services.AddScoped<ITagService, TagService>();
 builder.Services.AddScoped<ITeamFarmerService,TeamFarmerService>();
 builder.Services.AddScoped<ISocialMediaService,SocialMediaService>();
 builder.Services.AddScoped<IBannerService,BannerService>();

@@ -150,15 +150,12 @@
                     </div>
 
                     <div class="blog-items">
-                        <h5>Product Tags</h5>
+                        <h5>Categories</h5>
                         <ul class="product-categories">
-                            <li>Vegan Life<span>(20) products</span></li>
-                            <li>Healhty Food<span>(15) products</span></li>
-                            <li>Life Style<span>(12) products</span></li>
-                            <li>Delicious<span>(10) products</span></li>
-                            <li>Vegetables<span>(8) products</span></li>
-                            <li>Food<span>(11) products</span></li>
-                            <li>Organic<span>(13) products</span></li>
+                            @foreach (Category category in Model.Categories)
+                            {
+                                <li>@category.Name<span>(@category.Products.Where(m => m.CategoryId == category.Id).Count()) products</span></li>
+                            }
                         </ul>
 
                     </div>
@@ -166,13 +163,10 @@
                     <div class="blog-items">
                         <h5>Tags</h5>
                         <div class="tags">
-                            <span>#veganlife</span>
-                            <span>#healthyfood</span>
-                            <span>#lifestyle</span>
-                            <span>#delicious</span>
-                            <span>#vegetables</span>
-                            <span>#food</span>
-                            <span>#organic</span>
+                            @foreach (Tag tag in Model.Tags)
+                            {
+                                <span>#@tag.Name</span>
+                            }
                         </div>
 
                     </div>
