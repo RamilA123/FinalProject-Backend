@@ -27,6 +27,10 @@ namespace OrganiDb.Data
         public DbSet<BannerInfo> BannerInfos { get; set; }
         public DbSet<Position> Positions { get; set; }
         public DbSet<TeamFarmer> TeamFarmers { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Author> Authors { get; set; }
+        public DbSet<Blog_> Blogs { get; set; }
+        public DbSet<BlogReview> BlogReviews { get; set; }
         public DbSet<SocialMedia> SocialMedias { get; set; }
         public DbSet<TeamFarmerSocialMedia> TeamFarmerSocialMedias { get; set; }
         public DbSet<TeamFarmerHeader> TeamFarmerHeaders { get; set; }
@@ -54,6 +58,11 @@ namespace OrganiDb.Data
             modelBuilder.Entity<TeamFarmer>().HasQueryFilter(m => !m.SoftDelete);
             modelBuilder.Entity<SocialMedia>().HasQueryFilter(m => !m.SoftDelete);
             modelBuilder.Entity<TeamFarmerHeader>().HasQueryFilter(m => !m.SoftDelete);
+            modelBuilder.Entity<Customer>().HasQueryFilter(m => !m.SoftDelete);
+            modelBuilder.Entity<Author>().HasQueryFilter(m => !m.SoftDelete);
+            modelBuilder.Entity<Blog_>().HasQueryFilter(m => !m.SoftDelete);
+            modelBuilder.Entity<BlogReview>().HasQueryFilter(m => !m.SoftDelete);
+
 
 
             modelBuilder.Entity<Banner>().HasData(

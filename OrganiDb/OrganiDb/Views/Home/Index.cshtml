@@ -1232,97 +1232,24 @@
 
       <div class="owl-carousel owl-theme loop nonloop">
 
-        <div class="col-sm-12 col-md-12 col-lg-12">
+         @foreach (Brand brand in Model.Brands)
+         {
+           <div class="col-sm-12 col-md-12 col-lg-12">
 
-          <div class="brand">
-            <div class="brand-image">
-              <img src="~/assets/images/brands/brand1.png" alt="">
-            </div>
-            <div class="brand-content">
-              <h5 class="vegetable">Farm Fresh</h5>
-              <span>3 products</span>
-            </div>
-          </div>
+              <div class="brand">
 
-        </div>
+                  <div class="brand-image">
+                     <img src="~/assets/images/brands/@brand.Image" alt="">
+                  </div>
 
-        <div class="col-sm-12 col-md-12 col-lg-12">
-          <div class="brand">
-            <div class="brand-image">
-              <img src="~/assets/images/brands/brand2.png" alt="">
+                  <div class="brand-content">
+                     <h5 class="vegetable">@brand.Name</h5>
+                     <span>@brand.Products.Where(m => m.BrandId == brand.Id).Count() products</span>
+                  </div>
+              </div>
             </div>
-            <div class="brand-content">
-              <h5 class="fruit">Premium Quality</h5>
-              <span>3 products</span>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="col-sm-12 col-md-12 col-lg-12">
-          <div class="brand">
-            <div class="brand-image">
-              <img src="~/assets/images/brands/brand3.png" alt="">
-            </div>
-            <div class="brand-content">
-              <h5 class="fruit">Fresh Food</h5>
-              <span>2 products</span>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="col-sm-12 col-md-12 col-lg-12">
-          <div class="brand">
-            <div class="brand-image">
-              <img src="~/assets/images/brands/brand4.png" alt="">
-            </div>
-            <div class="brand-content">
-              <h5 class="fruit">Pure Vegetarian</h5>
-              <span>2 products</span>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="col-sm-12 col-md-12 col-lg-12">
-          <div class="brand">
-            <div class="brand-image">
-              <img src="~/assets/images/brands/brand5.png" alt="">
-            </div>
-            <div class="brand-content">
-              <h5 class="fruit">Organic Food</h5>
-              <span>3 products</span>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="col-sm-12 col-md-12 col-lg-12">
-          <div class="brand">
-            <div class="brand-image">
-              <img src="~/assets/images/brands/brand6.png" alt="">
-            </div>
-            <div class="brand-content">
-              <h5 class="fruit">Natural Product</h5>
-              <span>2 products</span>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="col-sm-12 col-md-12 col-lg-12">
-          <div class="brand">
-            <div class="brand-image">
-              <img src="~/assets/images/brands/brand7.png" alt="">
-            </div>
-            <div class="brand-content">
-              <h5 class="fruit">Vegan Food</h5>
-              <span>1 products</span>
-            </div>
-          </div>
-
-        </div>
+         }
+       
       </div>
 
     </section>
@@ -1341,66 +1268,26 @@
           <div id="carouselExampleFade" class="carousel slide slider carousel-fade">
             <div class="carousel-inner">
 
-              <div class="carousel-item active">
-                <div class="bg-color bg-color3">
+                @foreach (Customer customer in Model.Customers)
+                {
+                   <div class="carousel-item @(customer == Model.Customers.FirstOrDefault() ? "active" : "")">
+                        <div class="bg-color bg-color3">
 
-                  <div class="feedback-image">
-                    <img src="~/assets/images/feedbacks/feedback3.jpg" alt="">
-                  </div>
-                  <div class="feedback-name mt-3">
-                    <span>John Wilson</span>
-                  </div>
-                  <div class="feedback-position mt-2">
-                    <span>Public Relations</span>
-                  </div>
-                  <div class="feedback-description">
-                    <p>" One of the most significant selling points for fresh fruits and vegetables is that these
-                      foodstuffs are considered by dietitians, physicians and consumers themselves to be healthy "</p>
-                  </div>
-
-                </div>
-              </div>
-
-              <div class="carousel-item">
-                <div class="bg-color bg-color2">
-
-                  <div class="feedback-image">
-                    <img src="~/assets/images/feedbacks/feedback1.jpg" alt="">
-                  </div>
-                  <div class="feedback-name mt-3">
-                    <span>Jane Walker</span>
-                  </div>
-                  <div class="feedback-position mt-2">
-                    <span>Office Manager</span>
-                  </div>
-                  <div class="feedback-description">
-                    <p>" Nothing will benefit human health and increase the chances for survival of life on Earth as
-                      much as the evolution to a vegetarian diet "</p>
-                  </div>
-
-                </div>
-              </div>
-
-              <div class="carousel-item">
-                <div class="bg-color bg-color1">
-
-                  <div class="feedback-image">
-                    <img src="~/assets/images/feedbacks/feedback2.jpg" alt="">
-                  </div>
-                  <div class="feedback-name mt-3">
-                    <span>Alex Brandon</span>
-                  </div>
-                  <div class="feedback-position mt-2">
-                    <span>Finance</span>
-                  </div>
-                  <div class="feedback-description">
-                    <p>" Green strongly influences the heart and helps alleviate tension, positive qualities associated
-                      with green are generosity, humility, and cooperation "</p>
-                  </div>
-
-                </div>
-              </div>
-
+                             <div class="feedback-image">
+                                 <img src="~/assets/images/feedbacks/@customer.Image" alt="">
+                             </div>
+                             <div class="feedback-name mt-3">
+                                  <span>@customer.FullName</span>
+                             </div>
+                              <div class="feedback-position mt-2">
+                                   <span>@customer.Position.Name</span>
+                              </div>
+                              <div class="feedback-description">
+                                   <p>@customer.Description</p>
+                              </div>
+                        </div>
+                   </div>
+                }
             </div>
             <button class="carousel-control-prev prev btn" type="button" data-bs-target="#carouselExampleFade"
               data-bs-slide="prev">
@@ -1431,7 +1318,42 @@
 
       <div class="blogs">
 
-        <div class="col-sm-12 col-md-12 col-lg-4">
+          @foreach (Blog_ blog in Model.Blogs)
+          {
+                <div class="col-sm-12 col-md-12 col-lg-4">
+                    <div class="blog">
+
+                        <div class="blog-image">
+                            <img src="~/assets/images/blogs/@blog.Image" alt="">
+                        </div>
+
+                        <div class="blog-content">
+                            <div class="blog-author-date">
+                                <div class="author">
+                                    <i class="fa-solid fa-user-tie"></i>
+                                    <span>@blog.Author.FullName</span>
+                                </div>
+                                <div class="datetime">
+                                    <i class="fa-regular fa-calendar-days"></i>
+                                    <span>@blog.DateTime.ToString("MM.dd.yyyy")</span>
+                                </div>
+
+
+                            </div>
+
+                            <div class="blog-name text">
+                                <span>@blog.Title</span>
+                            </div>
+
+                            <div class="blog-description text">
+                                <p>@blog.Description</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        @*<div class="col-sm-12 col-md-12 col-lg-4">
           <div class="blog">
 
             <div class="blog-image">
@@ -1553,7 +1475,7 @@
 
             </div>
           </div>
-        </div>
+        </div>*@
 
       </div>
 

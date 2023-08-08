@@ -7,5 +7,6 @@ namespace OrganiDb.ViewModels.Blog
         public List<Banner> Banners { get; set; }
         public List<BannerInfo> BannerInfos { get; set; }
         public List<SocialMedia> SocialMedias { get; set; }
+        public List<Blog_> Blogs { get; set; }
     }
 }

@@ -862,217 +862,283 @@
    flex-wrap: wrap;
 }
 
+#filtering .products .no-discount {
+    justify-content: center;
+    margin-right: 25px;
+}
+
+#filtering .products .product-out-of-stock {
+    filter: brightness(0.7);
+}
+
+#filtering .products .out-of-stock {
+    background: #11421d;
+    color: red;
+    padding: 20px 50px;
+    font-size: 22px;
+    top: 22%;
+    margin-left: 13px;
+    transform: rotate(40deg);
+    font-weight: 500;
+    border-radius: 35px;
+    left: 10px;
+    position: absolute;
+    font-weight: 700;
+}
+
+#filtering .products .no-discount-price {
+    text-decoration: none;
+    color: green;
+}
+
+#filtering .products .tab-content .tab {
+    padding-left: 30px;
+}
+
+#filtering .products .tab-content .show.active {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 #filtering .products .tab-content a {
-   color: black;
-   text-decoration: none;
+    color: black;
+    text-decoration: none;
 }
 
 #filtering .products .tab-content .product {
-   width: 17rem !important;
-   height: 27rem;
-   border: 2px solid green;
-   border-radius: 30px;
-   position: relative;
-   padding-bottom: 10px;
-   margin-bottom: 45px;
+    width: 17rem !important;
+    height: 27rem;
+    border: 2px solid green;
+    border-radius: 30px;
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 45px;
+    margin-top: 20px;
 }
 
 #filtering .products .tab-content .product:hover {
-   cursor: pointer;
-   box-shadow: rgba(0, 0, 0, 1) 0px 5px 20px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 1) 0px 5px 20px;
 }
 
 #filtering .products .tab-content .product-images {
-   width: 270px;
-   height: 265px;
-   position: relative;
-   padding: 37px 35px;
-   margin-bottom: 0;
-   background-image: linear-gradient(45deg, #2edf27, #f9f9f9);
-   border-top-left-radius: 26px;
-   border-top-right-radius: 26px;
-   border: 3px solid green;
+    width: 270px;
+    height: 265px;
+    position: relative;
+    padding: 39px 35px;
+    margin-bottom: 0;
+    background-image: linear-gradient(45deg, #2edf27, #f9f9f9);
+    border-top-left-radius: 26px;
+    border-top-right-radius: 26px;
+    border: 3px solid green;
 }
 
 #filtering .products .tab-content .product-images img {
-   width: 70%;
-   height: 70%;
-   position: absolute;
+    width: 70%;
+    height: 70%;
+    position: absolute;
 }
 
-
 #filtering .products .tab-content .product-images .image2 {
-   display: none;
+    display: none;
 }
 
 #filtering .products .tab-content .product:hover .image1 {
-   display: none;
+    display: none;
 }
 
 #filtering .products .tab-content .product:hover .image2 {
-   display: block;
+    display: block;
 }
 
 #filtering .products .tab-content .product-add-to-wishlist {
-   position: absolute;
-   right: 10px;
-   top: 10px;
-   background: green;
-   padding: 4px 6px;
-   border-radius: 20px;
-   display: none;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background: green;
+    padding: 4px 6px;
+    border-radius: 20px;
+    display: none;
 }
 
 #filtering .products .tab-content .product-add-to-wishlist .wishlist {
-   display: none;
-   padding-left: 5px;
+    display: none;
+    padding-left: 5px;
 }
 
 #filtering .products .tab-content .product-add-to-wishlist:hover .wishlist {
-   font-size: 14px;
-   display: inline-block;
+    font-size: 14px;
+    display: inline-block;
+}
+
+#filtering .products .tab-content .product-add-to-wishlist:hover .no-wishlist {
+    font-size: 14px;
+    display: none;
 }
 
 #filtering .products .tab-content .product-add-to-wishlist svg {
-   padding: 0 2px;
-   animation: blink 0.5s infinite;
+    padding: 0 2px;
+    animation: blink 0.5s infinite;
+}
+
+#filtering .products .tab-content .product-add-to-wishlist .stop-animation {
+    animation: none;
 }
 
 #filtering .products .tab-content .product-add-to-wishlist a {
-   color: white;
+    color: white;
 }
 
 #filtering .products .tab-content .product:hover .product-add-to-wishlist {
-   display: block;
+    display: block;
 }
 
 #filtering .products .tab-content .product-shuffle-eyeglasses {
-   position: absolute;
-   top: 45%;
-   height: 0;
-   width: 100%;
-   transition: height 0.4s;
-   background-color: #216a2a;
+    position: absolute;
+    top: 46%;
+    height: 0;
+    width: 100%;
+    transition: height 0.4s;
+    background-color: #216a2a;
 }
 
-#filtering .products .tab-content .product-shuffle-eyeglasses .icons {
-   display: flex;
-   justify-content: space-around;
-   margin-top: 10px;
-   color: white;
+#filtering .tab-content .product-shuffle-eyeglasses .icons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    color: white;
 }
 
 #filtering .products .tab-content .product-shuffle-eyeglasses .vertical-line {
-   width: 1px;
-   height: 0;
-   background-color: silver;
-   display: none;
+    width: 1px;
+    height: 0;
+    background-color: silver;
+    display: none;
 }
 
 #filtering .products .tab-content .product-shuffle-eyeglasses svg {
-   display: none;
+    display: none;
 }
 
 #filtering .products .tab-content .product:hover .product-shuffle-eyeglasses {
-   height: 34px;
+    height: 35px;
 }
 
 #filtering .products .tab-content .product:hover .product-shuffle-eyeglasses .vertical-line {
-   display: block;
+    display: block;
 }
 
 #filtering .products .tab-content .product:hover .product-shuffle-eyeglasses svg {
-   animation: blink 0.5s infinite;
-   display: block;
+    animation: blink 0.5s infinite;
+    display: block;
+}
+
+#filtering .products .tab-content .product:hover .product-shuffle-eyeglasses .stop-animation {
+    animation: none;
 }
 
 #filtering .products .tab-content .product:hover .vertical-line {
-   height: 17px;
+    height: 17px;
 }
 
 #filtering .products .tab-content .product-shuffle-eyeglasses:hover {
-   height: 35px;
+    height: 35px;
 }
 
 #filtering .products .tab-content .product-shuffle-eyeglasses:hover .vertical-line {
-   height: 17px;
+    height: 17px;
 }
 
 #filtering .products .tab-content .product-featured {
-   position: absolute;
-   background-color: green;
-   padding: 10px 8px;
-   border-radius: 50%;
-   left: 10px;
-   top: 5px;
+    position: absolute;
+    background-color: green;
+    padding: 10px 8px;
+    border-radius: 50%;
+    left: 10px;
+    top: 5px;
 }
 
 #filtering .products .tab-content .product-featured span {
-   font-size: 15px;
-   color: white;
-   animation: blink 0.5s infinite;
+    font-size: 15px;
+    color: white;
+    animation: blink 0.5s infinite;
+}
+
+#filtering .products .tab-content .product-featured .stop-animation {
+    animation: none;
 }
 
 #filtering .products .tab-content .product-content {
-   text-align: center;
+    text-align: center;
+}
+
+#filtering .products .tab-content .product-content .product-rating {
+    font-size: 13px;
 }
 
 #filtering .products .tab-content .product-content .product-rating svg {
-   color: #c5c2c2;
-   font-size: 13px;
+    color: #c5c2c2;
 }
 
 #filtering .products .tab-content .product-content .product-rating .active {
-   color: green;
+    color: green;
 }
 
 #filtering .products .tab-content .product-content .product-review {
-   font-weight: 400;
-   font-size: 15px;
-   color: #877f7f;
+    font-weight: 400;
+    font-size: 15px;
+    color: #877f7f;
 }
 
 #filtering .products .tab-content .product-content .product-name {
-   margin-right: 10px;
-   font-size: 20px;
+    margin-right: 10px;
+    font-size: 20px;
 }
 
 #filtering .products .tab-content .product-content .product-price {
-   display: flex;
-   gap: 10px;
-   font-size: 17px;
-   margin-bottom: 35px;
-   margin-left: 8%;
-   font-weight: 700;
-   font-style: italic;
+    display: flex;
+    gap: 10px;
+    font-size: 17px;
+    margin-bottom: 35px;
+    margin-left: 8%;
+    font-weight: 700;
+    font-style: italic;
 }
 
 #filtering .products .tab-content .product-content .product-price .discount {
-   text-decoration: 2px line-through red;
-   color: red;
+    text-decoration: 2px line-through red;
+    color: red;
 }
 
 #filtering .products .tab-content .product-content .product-price span:nth-child(2) {
-   color: green;
+    color: green;
 }
 
 #filtering .products .tab-content .product-content .product-add-to-cart {
-   background: #37b937;
-   padding: 10px 20px;
-   border-radius: 30px;
-   color: white;
-   font-weight: 500;
-   font-size: 16px;
+    background: #37b937;
+    padding: 10px 20px;
+    border-radius: 30px;
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
 }
 
 #filtering .products .tab-content .product-content .product-add-to-cart:hover {
-   background: green;
+    background: green;
+}
+
+#filtering .products .tab-content .product-content .no-hover:hover {
+    background: #37b937;
 }
 
 #filtering .products .tab-content .product-content .product-add-to-cart svg {
-   margin-right: 10px;
-   color: white;
-   animation: blink 0.5s infinite;
+    margin-right: 10px;
+    color: white;
+    animation: blink 0.5s infinite;
+}
+
+#filtering .products .tab-content .product-content .product-add-to-cart .stop-animation {
+    animation: none;
 }
 
 #filtering .sort-by {

@@ -28,7 +28,7 @@
                     <div class="col-sm-12 col-md-6 col-lg-6">
                         <div class="social-medias">
                             
-                            <a href="https://www.facebook.com/">@Html.Raw(Model.SocialMedias.Take(1).FirstOrDefault().Name)</a>
+                            <a href="https://www.facebook.com/">@Html.Raw(Model.SocialMedias.FirstOrDefault().Name)</a>
                             <a href="https://www.twitter.com/">@Html.Raw(Model.SocialMedias.Skip(1).Take(1).FirstOrDefault().Name)</a>
                             <a href="https://www.instagram.com/">@Html.Raw(Model.SocialMedias.Skip(2).Take(1).FirstOrDefault().Name)</a>
                             <a href="https://www.linkedin.com/">@Html.Raw(Model.SocialMedias.Skip(3).Take(1).FirstOrDefault().Name)</a>

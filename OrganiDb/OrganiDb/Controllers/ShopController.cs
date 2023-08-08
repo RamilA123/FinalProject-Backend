@@ -12,23 +12,28 @@ namespace OrganiDb.Controllers
     {
         private readonly IBannerService _bannerService;
         private readonly IBannerInfoService _bannerInfoService;
+        private readonly IProductService _productService;
 
         public ShopController(IBannerService bannerService,
-                              IBannerInfoService bannerInfoService)
+                              IBannerInfoService bannerInfoService,
+                              IProductService productService)
         {
             _bannerService = bannerService;
             _bannerInfoService = bannerInfoService;
+            _productService = productService;
         }
 
         public async Task<IActionResult> Index()
         {
             List<Banner> banners = await _bannerService.GetAllAsync();
             List<BannerInfo> bannerInfos = await _bannerInfoService.GetAllAsync();
+            IEnumerable<Product> products = await _productService.GetAllAsync();
 
             ShopVM model = new()
             {
                 Banners = banners,
-                BannerInfos = bannerInfos
+                BannerInfos = bannerInfos,
+                Products = products
             };
 
             return View(model);

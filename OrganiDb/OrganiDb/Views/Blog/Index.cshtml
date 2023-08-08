@@ -70,257 +70,50 @@
             <div class="col-sm-12 col-md-6 col-lg-8">
                 <div class="left-side">
 
-                    <div class="col-sm-12 col-md-12 col-lg-12">
-                        <div class="blog">
+                   @foreach (Blog_ blog in Model.Blogs)
+                   {
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            <div class="blog">
 
-                            <div class="blog-image">
-                                <img src="~/assets/images/blogs/blog1.jpg" alt="">
-                            </div>
+                                <div class="blog-image">
+                                    <img src="~/assets/images/blogs/@blog.Image" alt="">
+                                </div>
 
-                            <div class="blog-content">
-                                <div class="blog-author-date">
-                                    <div class="author">
-                                        <i class="fa-solid fa-user-tie"></i>
-                                        <span>Dallas Joyce</span>
+                                <div class="blog-content">
+                                    <div class="blog-author-date">
+                                        <div class="author">
+                                            <i class="fa-solid fa-user-tie"></i>
+                                            <span>@blog.Author.FullName</span>
+                                        </div>
+
+                                        <div class="comment">
+                                            <i class="fa-regular fa-comment"></i>
+                                            <span>@blog.BlogReviews.Where(m => m.BlogId == blog.Id).Count() Comments</span>
+                                        </div>
+
+                                        <div class="datetime">
+                                            <i class="fa-regular fa-calendar-days"></i>
+                                            <span>@blog.DateTime.ToString("MM.dd.yyyy")</span>
+                                        </div>
+
+
                                     </div>
 
-                                    <div class="comment">
-                                        <i class="fa-regular fa-comment"></i>
-                                        <span>25 Comments</span>
+                                    <div class="blog-name text">
+                                        <span>@blog.Title</span>
                                     </div>
 
-                                    <div class="datetime">
-                                        <i class="fa-regular fa-calendar-days"></i>
-                                        <span>07.18.2023</span>
+                                    <div class="blog-description text">
+                                        <p>@blog.Description</p>
                                     </div>
 
 
                                 </div>
-
-                                <div class="blog-name text">
-                                    <span>A Life Of Veggies</span>
-                                </div>
-
-                                <div class="blog-description text">
-                                    <p>
-                                        Health is wealth, which is why a multitude of folks have switched to
-                                        plant-based food to take better
-                                        care of their physical well-being. For people that are just starting
-                                        out, they conduct thorough
-                                        research beforehand, and one of the best places to find information is a
-                                        blog. Vegetables are usually
-                                        classified on the basis of the part of the plant that is used for food.
-                                        The root vegetables include
-                                        beets, carrots, radishes, sweet potatoes, and turnips.
-                                    </p>
-                                </div>
-
 
                             </div>
 
                         </div>
-
-                    </div>
-
-                    <div class="col-sm-12 col-md-12 col-lg-12">
-                        <div class="blog">
-
-                            <div class="blog-image">
-                                <img src="~/assets/images/blogs/blog2.jpg" alt="">
-                            </div>
-
-                            <div class="blog-content">
-
-                                <div class="blog-author-date">
-
-                                    <div class="author">
-                                        <i class="fa-solid fa-user-tie"></i>
-                                        <span>George Roberts</span>
-                                    </div>
-
-                                    <div class="comment">
-                                        <i class="fa-regular fa-comment"></i>
-                                        <span>10 Comments</span>
-                                    </div>
-
-                                    <div class="datetime">
-                                        <i class="fa-regular fa-calendar-days"></i>
-                                        <span>08.12.2023</span>
-                                    </div>
-
-
-                                </div>
-
-                                <div class="blog-name text">
-                                    <span>Vegetables And Beyond</span>
-                                </div>
-
-                                <div class="blog-description text">
-                                    <p>
-                                        Vegetables are a good source of dietary fiber, a type of carbohydrate
-                                        that helps pass food through
-                                        your digestive system. Studies show that fiber may also improve vitamin
-                                        and mineral absorption in the
-                                        body, which could potentially raise your daily energy levels. Modern
-                                        vegetable farming ranges from
-                                        small-scale production for local sale to vast commercial operations
-                                        utilizing the latest advances in
-                                        automation and technology.
-                                    </p>
-                                </div>
-
-
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="col-sm-12 col-md-12 col-lg-12">
-                        <div class="blog">
-                            <div class="blog-image">
-                                <img src="~/assets/images/blogs/blog3.jpg" alt="">
-                            </div>
-
-                            <div class="blog-content">
-                                <div class="blog-author-date">
-
-                                    <div class="author">
-                                        <i class="fa-solid fa-user-tie"></i>
-                                        <span>Chris Nelson</span>
-                                    </div>
-
-                                    <div class="comment">
-                                        <i class="fa-regular fa-comment"></i>
-                                        <span>15 Comments</span>
-                                    </div>
-
-                                    <div class="datetime">
-                                        <i class="fa-regular fa-calendar-days"></i>
-                                        <span>09.15.2023</span>
-                                    </div>
-
-
-                                </div>
-
-                                <div class="blog-name text">
-                                    <span>The Ultimate Vegetarian</span>
-                                </div>
-
-                                <div class="blog-description text">
-                                    <p>
-                                        Veganism is more than just a simple diet. It’s a way of life for people
-                                        who have converted into this
-                                        philosophy. Being a vegan not only means turning your back from using
-                                        animal products, but also
-                                        refusing to purchase items that were tested on animals. During the
-                                        growing season synthetic or organic
-                                        herbicides, pesticides, and fungicides are commonly used to inhibit
-                                        damage by weeds, insects, and
-                                        diseases, respectively.
-                                    </p>
-                                </div>
-
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-12 col-md-12 col-lg-12">
-                        <div class="blog">
-                            <div class="blog-image">
-                                <img src="~/assets/images/blogs/blog4.jpg" alt="">
-                            </div>
-
-                            <div class="blog-content">
-                                <div class="blog-author-date">
-
-                                    <div class="author">
-                                        <i class="fa-solid fa-user-tie"></i>
-                                        <span>James Gosling</span>
-                                    </div>
-
-                                    <div class="comment">
-                                        <i class="fa-regular fa-comment"></i>
-                                        <span>23 Comments</span>
-                                    </div>
-
-                                    <div class="datetime">
-                                        <i class="fa-regular fa-calendar-days"></i>
-                                        <span>08.17.2023</span>
-                                    </div>
-
-
-                                </div>
-
-                                <div class="blog-name text">
-                                    <span>Deep Fried Vegetable</span>
-                                </div>
-
-                                <div class="blog-description text">
-                                    <p>
-                                        At first, plants which grew locally would have been cultivated, but as
-                                        time went on, trade brought exotic crops from elsewhere to add to
-                                        domestic types.
-                                        Fresh vegetables are subject to quick aging and
-                                        spoilage, but their storage life can be extended by such preservation
-                                        processes as dehydration, canning, freezing, fermenting, or pickling.
-                                        An alternative definition of the term is applied somewhat arbitrarily,
-                                        often by culinary and cultural tradition.
-                                    </p>
-                                </div>
-
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-12 col-md-12 col-lg-12">
-                        <div class="blog">
-                            <div class="blog-image">
-                                <img src="~/assets/images/blogs/blog5.jpg" alt="">
-                            </div>
-
-                            <div class="blog-content">
-                                <div class="blog-author-date">
-
-                                    <div class="author">
-                                        <i class="fa-solid fa-user-tie"></i>
-                                        <span>Steve Rogers</span>
-                                    </div>
-
-                                    <div class="comment">
-                                        <i class="fa-regular fa-comment"></i>
-                                        <span>12 Comments</span>
-                                    </div>
-
-                                    <div class="datetime">
-                                        <i class="fa-regular fa-calendar-days"></i>
-                                        <span>06.19.2023</span>
-                                    </div>
-
-
-                                </div>
-
-                                <div class="blog-name text">
-                                    <span>The Veggie Zone</span>
-                                </div>
-
-                                <div class="blog-description text">
-                                    <p>
-                                        Most vegetables are grown all over the world as climate permits, and
-                                        crops may be cultivated in protected environments in less suitable
-                                        locations. China is the largest producer of vegetables, and global trade
-                                        in agricultural products allows consumers to purchase vegetables grown
-                                        in faraway countries. The scale of production varies from subsistence
-                                        farmers supplying the needs of their family for food, to agribusinesses
-                                        with vast acreages of single-product crops.
-                                    </p>
-                                </div>
-
-
-                            </div>
-                        </div>
-                    </div>
+                        }
 
                 </div>
             </div>
@@ -339,60 +132,20 @@
 
                     <div class="blog-items">
 
-                        <div class="blog-item">
+                        @foreach (Blog_ blog in Model.Blogs)
+                        {
+                          <div class="blog-item">
+
                             <div class="blog-image">
-                                <img src="~/assets/images/blogs/blog1.jpg" alt="">
+                                <img src="~/assets/images/blogs/@blog.Image" alt="">
                             </div>
                             <div class="blog-description">
-                                <h3>A Life Of Veggies</h3>
-                                <span>07.18.2023</span>
+                                <h3>@blog.Title</h3>
+                                <span>@blog.DateTime.ToString("MM.dd.yyyy")</span>
                             </div>
 
-                        </div>
-
-                        <div class="blog-item">
-                            <div class="blog-image">
-                                <img src="~/assets/images/blogs/blog2.jpg" alt="">
-                            </div>
-                            <div class="blog-description">
-                                <h3>Vegetables And Beyond</h3>
-                                <span>08.12.2023</span>
-                            </div>
-
-                        </div>
-
-                        <div class="blog-item">
-                            <div class="blog-image">
-                                <img src="~/assets/images/blogs/blog3.jpg" alt="">
-                            </div>
-                            <div class="blog-description">
-                                <h3>The Ultimate Vegetarian</h3>
-                                <span>09.15.2023</span>
-                            </div>
-
-                        </div>
-
-                        <div class="blog-item">
-                            <div class="blog-image">
-                                <img src="~/assets/images/blogs/blog4.jpg" alt="">
-                            </div>
-                            <div class="blog-description">
-                                <h3>Deep Fried Vegetable</h3>
-                                <span>08.17.2023</span>
-                            </div>
-
-                        </div>
-
-                        <div class="blog-item">
-                            <div class="blog-image">
-                                <img src="~/assets/images/blogs/blog5.jpg" alt="">
-                            </div>
-                            <div class="blog-description">
-                                <h3>The Veggie Zone</h3>
-                                <span>06.19.2023</span>
-                            </div>
-
-                        </div>
+                          </div>    
+                        }
 
                     </div>
 

@@ -17,6 +17,9 @@ namespace OrganiDb.Controllers
         private readonly ICategoryService _categoryService;
         private readonly IProductService _productService;
         private readonly IDiscountService _discountService;
+        private readonly IBrandService _brandService;
+        private readonly ICustomerService _customerService;
+        private readonly IBlogService _blogService;
 
         public HomeController(IBannerService bannerService, 
                               IBannerInfoService bannerInfoService,
@@ -24,7 +27,10 @@ namespace OrganiDb.Controllers
                               IAssistanceService assistanceService,
                               ICategoryService categoryService,
                               IProductService productService,
-                              IDiscountService discountService)
+                              IDiscountService discountService,
+                              IBrandService brandService,
+                              ICustomerService customerService,
+                              IBlogService blogService)
         {
             _bannerService = bannerService;
             _bannerInfoService = bannerInfoService;
@@ -33,6 +39,9 @@ namespace OrganiDb.Controllers
             _categoryService = categoryService;
             _productService = productService;
             _discountService = discountService;
+            _brandService = brandService;
+            _customerService = customerService;
+            _blogService = blogService;
         }
 
         public async Task<IActionResult> Index()
@@ -42,8 +51,11 @@ namespace OrganiDb.Controllers
             IEnumerable<Slider> sliders = await _sliderService.GetAllAsync();
             IEnumerable<Assistance> assistances = await _assistanceService.GetAllAsync();
             List<Category> categories = await _categoryService.GetAllAsync();
-            IEnumerable<Product> products = await _productService.GetAllWithIncludesAsync();
+            IEnumerable<Product> products = await _productService.GetAllAsync();
             Discount discount = await _discountService.GetAsync();
+            List<Brand> brands = await _brandService.GetAllAsync();
+            IEnumerable<Customer> customers = await _customerService.GetAllAsync();
+            List<Blog_> blogs = await _blogService.GetAllAsync();
 
             HomeVM model = new()
             {
@@ -53,7 +65,10 @@ namespace OrganiDb.Controllers
                 Assistances = assistances,
                 Categories = categories,
                 Products = products,
-                Discount = discount
+                Discount = discount,
+                Brands = brands,
+                Customers = customers,
+                Blogs = blogs.Take(3).ToList()
             };
 
             return View(model);

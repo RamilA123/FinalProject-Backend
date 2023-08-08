@@ -100,7 +100,7 @@
                                 <div class="social-medias d-flex my-4">
 
                                     <a href="https://twitter.com/">@Html.Raw(Model.SocialMedias.Skip(1).Take(1).FirstOrDefault().Name)</a>
-                                    <a href="https://www.facebook.com/">@Html.Raw(Model.SocialMedias.Take(1).FirstOrDefault().Name)</a>
+                                    <a href="https://www.facebook.com/">@Html.Raw(Model.SocialMedias.FirstOrDefault().Name)</a>
                                     <a href="https://www.youtube.com/">@Html.Raw(Model.SocialMedias.Skip(5).Take(1).FirstOrDefault().Name)</a>
                                     <a href="https://www.google.com/">@Html.Raw(Model.SocialMedias.Skip(6).Take(1).FirstOrDefault().Name)</a>
 

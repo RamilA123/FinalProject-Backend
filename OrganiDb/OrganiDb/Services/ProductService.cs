@@ -14,7 +14,7 @@ namespace OrganiDb.Services
             _context = context;
         }
 
-        public async Task<IEnumerable<Product>> GetAllWithIncludesAsync()
+        public async Task<IEnumerable<Product>> GetAllAsync()
         {
             return await _context.Products.Include(m => m.Category).
                                      Include(m => m.Discount).
