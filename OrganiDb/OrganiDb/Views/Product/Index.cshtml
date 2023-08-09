@@ -1,0 +1,435 @@
+﻿
+@{
+    ViewData["Title"] = "Product";
+}
+@model ProductVM
+
+@section Css{
+    <link rel="stylesheet" href="~/assets/css/pages/product/product.css">
+}
+
+<!--MAIN-START-->
+
+<main>
+
+    <!--BANNER-START-->
+
+    <section id="banner">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="banner">
+                <img src="~/assets/images/banners/@Model.Banners.Skip(6).Take(1).FirstOrDefault().Image" />
+                <h1>@Model.BannerInfos.Skip(13).Take(1).FirstOrDefault().Title</h1>
+            </div>
+        </div>
+    </section>
+
+    <!--BANNER-END-->
+
+
+    <!--PRODUCT-DETAIL-START-->
+
+    <section id="product-detail" class="mt-5">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-sm-12 col-md-6 col-lg-5">
+                    <div class="left-side">
+                        @if (Model.Product.StockCount == 0)
+                        {
+                              <div class="main-image product-out-of-stock">
+                            <img src="~/assets/images/products/@Model.Product.ProductImages.Where(m => m.IsMain).FirstOrDefault().Image" alt="">
+                             <div class="out-of-stock">Out Of Stock</div>
+                        </div>
+
+                        <div class="detail-images mt-2">
+                            @foreach (ProductImage productImage in Model.Product.ProductImages.Where(m => !m.IsMain))
+                            {
+                                <img class="product-out-of-stock" src="~/assets/images/products/@productImage.Image" alt="">
+                            }
+                            </div>
+                        }
+                        else
+                        {
+                           <div class="main-image">
+                              <img src="~/assets/images/products/@Model.Product.ProductImages.Where(m => m.IsMain).FirstOrDefault().Image" alt="">
+                           </div>
+
+                          <div class="detail-images mt-2">
+                              @foreach (ProductImage productImage in Model.Product.ProductImages.Where(m => !m.IsMain))
+                              {
+                                <img src="~/assets/images/products/@productImage.Image" alt="">
+                              }
+                          </div> 
+                        }
+                      
+                    </div>
+
+
+                </div>
+
+                @if(Model.Product.StockCount == 0)
+                {
+                  <div class="col-sm-12 col-md-6 col-lg-7">
+                     <div class="right-side">
+                            <div class="product">
+                            <div class="product-category-name">
+                                <span>@Model.Product.Category.Name</span>
+                            </div>
+
+                            <div class="product-name">
+                                <span>@Model.Product.Name</span>
+                            </div>
+
+                            <div class="product-price my-2">
+                                @if(Model.Product.Discount.Percent == 0)
+                                {
+                                    <span class="@(Model.Product.Discount.Percent == 0 ? "no-discount-price" : "")">$@Model.Product.ActualPrice.ToString("0.#")</span>
+                                }
+                                else{
+                                    <span class="discount">$@Model.Product.ActualPrice.ToString("0.#")</span>
+                                    <span>$@((Model.Product.ActualPrice - (Model.Product.ActualPrice * Model.Product.Discount.Percent) / 100).ToString("0.#"))</span>
+                                    <span class="percent-discount">(@Model.Product.Discount.Percent% discount)</span>
+                                }
+                               
+                            </div>
+
+                            <div class="product-rating-review">
+                                <div class="product-rating">
+                                    @for (int i = 1; i <= ViewBag.ratingCount; i++)
+                                    {
+                                        <i class="fa-solid fa-star @(i <= Model.Product.Rating.RatingCount ? "active" : "" )"></i>
+                                    }
+                                </div>
+
+                                <div class="product-review">
+                                    <span>(@Model.Product.Reviews.Count()) Reviews</span>
+
+                                </div>
+                            </div>
+
+                            <div class="product-code-stock">
+                                <div class="product-code">
+                                    <h2>UPC</h2>
+                                    <span>@Model.Product.UPC</span>
+                                </div>
+
+                                <div class="product-stock">
+                                    <h2>Stock Status</h2>
+                                    <span>Out Of Stock</span>
+                                </div>
+                            </div>
+
+                            <div class="product-description">
+                                <p>@Model.Product.Description</p>
+
+                            </div>
+
+                            <div class="product-btns">
+                                <div class="product-add-to-cart product-add">
+                                    <a class="btn btn-success" href="cart.html">Add To Cart</a>
+
+                                </div>
+
+                                <div class="product-add-to-wishlist product-add">
+                                    <a class="btn btn-warning" href="wishlist.html">Add To Wishlist</a>
+                                </div>
+                            </div>
+
+                            <div class="product-social-medias">
+
+                                <div class="social-media-title">
+                                    <span>Share with friends</span>
+
+                                </div>
+
+                                <div class="social-media-icons">
+                                    <a href="https://www.facebook.com">@Html.Raw(Model.SocialMedias.FirstOrDefault().Name)</a>
+                                    <a href="https://www.twitter.com">@Html.Raw(Model.SocialMedias.Skip(1).Take(1).FirstOrDefault().Name)</a>
+                                    <a href="https://www.instagram.com">@Html.Raw(Model.SocialMedias.Skip(2).Take(1).FirstOrDefault().Name)</a>
+                                    <a href="https://www.pinterest.com">@Html.Raw(Model.SocialMedias.Skip(4).Take(1).FirstOrDefault().Name)</a>
+                                </div>
+                            </div>
+                        </div>
+
+                     </div>
+                  </div>
+                }
+                else
+                {
+                    <div class="col-sm-12 col-md-6 col-lg-7">
+                        <div class="right-side">
+                            <div class="product">
+                                <div class="product-category-name">
+                                    <span>@Model.Product.Category.Name</span>
+                                </div>
+
+                                <div class="product-name">
+                                    <span>@Model.Product.Name</span>
+                                </div>
+
+                                <div class="product-price my-2">
+                                    @if (Model.Product.Discount.Percent == 0)
+                                    {
+                                        <span class="@(Model.Product.Discount.Percent == 0 ? "no-discount-price" : "")">$@Model.Product.ActualPrice.ToString("0.#")</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="discount">$@Model.Product.ActualPrice.ToString("0.#")</span>
+                                        <span>$@((Model.Product.ActualPrice - (Model.Product.ActualPrice * Model.Product.Discount.Percent) / 100).ToString("0.#"))</span>
+                                        <span class="percent-discount">(@Model.Product.Discount.Percent% discount)</span>
+                                    }
+
+                                </div>
+
+                                <div class="product-rating-review">
+                                    <div class="product-rating">
+                                        @for (int i = 1; i <= ViewBag.ratingCount; i++)
+                                        {
+                                            <i class="fa-solid fa-star @(i <= Model.Product.Rating.RatingCount ? "active" : "" )"></i>
+                                        }
+                                    </div>
+
+                                    <div class="product-review">
+                                        <span>(@Model.Product.Reviews.Count()) Reviews</span>
+
+                                    </div>
+                                </div>
+
+                                <div class="product-code-stock">
+                                    <div class="product-code">
+                                        <h2>UPC</h2>
+                                        <span>@Model.Product.UPC</span>
+                                    </div>
+
+                                    <div class="product-stock">
+                                        <h2>Stock Status</h2>
+                                        <span>In Stock</span>
+                                    </div>
+                                </div>
+
+                                <div class="product-description">
+                                    <p>@Model.Product.Description</p>
+
+                                </div>
+
+                                <div class="product-btns">
+                                    <div class="product-add-to-cart product-add">
+                                        <a class="btn btn-success" href="cart.html">Add To Cart</a>
+
+                                    </div>
+
+                                    <div class="product-add-to-wishlist product-add">
+                                        <a class="btn btn-warning" href="wishlist.html">Add To Wishlist</a>
+                                    </div>
+                                </div>
+
+                                <div class="product-social-medias">
+
+                                    <div class="social-media-title">
+                                        <span>Share with friends</span>
+
+                                    </div>
+
+                                    <div class="social-media-icons">
+                                        <a href="https://www.facebook.com">@Html.Raw(Model.SocialMedias.FirstOrDefault().Name)</a>
+                                        <a href="https://www.twitter.com">@Html.Raw(Model.SocialMedias.Skip(1).Take(1).FirstOrDefault().Name)</a>
+                                        <a href="https://www.instagram.com">@Html.Raw(Model.SocialMedias.Skip(2).Take(1).FirstOrDefault().Name)</a>
+                                        <a href="https://www.pinterest.com">@Html.Raw(Model.SocialMedias.Skip(4).Take(1).FirstOrDefault().Name)</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                }
+
+               
+            </div>
+        </div>
+    </section>
+
+    <!--PRODUCT-DETAIL-END-->
+
+
+
+    <!--DESCRIPTION-START-->
+
+    <section id="description">
+        <div class="container">
+            <div class="col-ms-12 col-md-12 col-lg-12">
+                <div class="description">
+                    <h2>Description</h2>
+                    <p>@Model.Product.Description</p>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!--DESCRIPTION-END-->
+
+
+    <!--REVIEW-START-->
+
+    <section id="review" class="mt-5">
+        <div class="container">
+            <div class="col-sm-12 col-md-12 col-lg-12 parent">
+                <h3>2 Reviews</h3>
+
+                <div class="review-content">
+
+                    <div class="review-user-image">
+                        <img src="~/assets/images/reviews/user2.jpg" alt="">
+                    </div>
+
+                    <div class="review-user-description">
+
+
+                        <div class="user-fullname-rating">
+
+                            <div class="user-fullname">
+                                <span>John Wilson</span>
+                            </div>
+
+                            <div class="user-rating">
+                                <i class="fa-solid fa-star active" id="1"></i>
+                                <i class="fa-solid fa-star active" id="2"></i>
+                                <i class="fa-solid fa-star active" id="3"></i>
+                                <i class="fa-solid fa-star" id="4"></i>
+                                <i class="fa-solid fa-star" id="5"></i>
+                            </div>
+
+
+                        </div>
+
+                        <div class="user-description">
+                            <p>
+                                Adopting a new healthier lifestyle can involve changing diet to include more fresh
+                                fruit and vegetables as well as increasing levels of exercise.
+                            </p>
+                            <span>johnwilson_123@gmail.com</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="review-content">
+
+                    <div class="review-user-image">
+                        <img src="~/assets/images/reviews/user1.jpg" alt="">
+                    </div>
+
+                    <div class="review-user-description">
+
+
+                        <div class="user-fullname-rating">
+
+                            <div class="user-fullname">
+                                <span>Linda Morgan</span>
+                            </div>
+
+                            <div class="user-rating">
+                                <i class="fa-solid fa-star active" id="1"></i>
+                                <i class="fa-solid fa-star active" id="2"></i>
+                                <i class="fa-solid fa-star active" id="3"></i>
+                                <i class="fa-solid fa-star active" id="4"></i>
+                                <i class="fa-solid fa-star" id="5"></i>
+                            </div>
+
+
+                        </div>
+
+                        <div class="user-description">
+                            <p>
+                                Green strongly influences the heart and helps alleviate tension. Positive qualities
+                                associated with green are generosity, humility, and cooperation. Foods of the green
+                                vibration are all green fruits and green vegetables.
+                            </p>
+                            <span>lindamorgan78@gmail.com</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        </div>
+
+    </section>
+
+    <!--REVIEW-END-->
+
+
+
+    <!--ADD-REVIEW-START-->
+
+    <section id="add-review" class="mt-5 pb-5">
+        <div class="container">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <h2>Add a review</h2>
+
+                <div class="rating">
+                    <div class="rating-title">
+                        <span>Rate this product?</span>
+
+                    </div>
+
+                    <div class="rating-icon">
+                        <i class="fa-solid fa-star" id="1"></i>
+                        <i class="fa-solid fa-star" id="2"></i>
+                        <i class="fa-solid fa-star" id="3"></i>
+                        <i class="fa-solid fa-star" id="4"></i>
+                        <i class="fa-solid fa-star" id="5"></i>
+                    </div>
+                </div>
+
+                <form>
+                    <div class="comment-description comment mt-4">
+                        <i class="fa-solid fa-message"></i>
+                        <textarea type="text" cols="100%" rows="13" placeholder="Write a comment"></textarea>
+                    </div>
+
+                    <div class="comment-name-email mt-3">
+                        <div class="comment-name comment">
+                            <i class="fa-solid fa-user"></i>
+                            <input class="form-control name" type="text" placeholder="FullName">
+
+                        </div>
+
+                        <div class="comment-email comment">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input class="form-control email" type="email" placeholder="Email Address">
+                        </div>
+                    </div>
+
+                    <div class="submit-btn mt-5">
+                        <button class="btn btn-success submit" type="submit">Submit a review</button>
+                    </div>
+                </form>
+
+                <div class="alert alert-danger mt-4 d-none" role="alert">
+                    Fields are required. Can't be empty
+                </div>
+            </div>
+        </div>
+        </div>
+
+    </section>
+
+    <!--ADD-REVIEW-END-->
+
+</main>
+
+
+<!--MAIN-END-->
+@section Scripts{
+    <script src="~/assets/js/product.js"></script>
+}
+
+
+
+

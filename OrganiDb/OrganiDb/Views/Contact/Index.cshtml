@@ -126,7 +126,7 @@
             </div>
 
             <div class="contact-image mt-5">
-              <img src="~/assets/images/cities/city1.jpeg" alt="">
+              <img src="~/assets/images/cities/city1_.jpg" alt="">
               <div class="contact-content">
                  <p>1429 Netus Rd NY 48247, New York</p>
                  <span>+1 (646) 555-7212</span>  
@@ -235,45 +235,18 @@
     <section id="city" class="my-5">
       <h1>Our Stores</h1>
       <div class="row" style="width: 100%;">
-        <div class="col-ms-12 col-md-6 col-lg-3">
-          <div class="city city1" style="background-image: url(assets/images/cities/city2.jpg);">
-          </div>
-          <div class="city-address">
-            <p>St. Mark's Place, New York</p>
-            <span>+1 (646) 555-5993</span>
-          </div>
 
-        </div>
-
-        <div class="col-ms-12 col-md-6 col-lg-3">
-          <div class="city city2" style="background-image: url(assets/images/cities/city3.jpg);">
-          </div>
-          <div class="city-address">
-            <p>Kichijoji Sun Road 45, Tokio</p>
-            <span>+1 (646) 555-3899</span>
-          </div>
-
-        </div>
-
-        <div class="col-ms-12 col-md-6 col-lg-3">
-          <div class="city city3" style="background-image: url(assets/images/cities/city4.jpg);">
-          </div>
-          <div class="city-address">
-            <p>Lugarno Torrig Road 73, Italy</p>
-            <span>+1 (646) 555-4099</span>
-          </div>
-
-        </div>
-
-        <div class="col-ms-12 col-md-6 col-lg-3">
-          <div class="city city4" style="background-image: url(assets/images/cities/city5.jpg);">
-          </div>
-          <div class="city-address">
-            <p>Ru Château Road 35, France</p>
-            <span>+1 (646) 555-5772</span>
-          </div>
-
-        </div>
+          @foreach (City city in Model.Cities)
+          {
+                <div class="col-ms-12 col-md-6 col-lg-3">
+                    <div class="city city1" style="background-image: url(assets/images/cities/@city.Image);">
+                    </div>
+                    <div class="city-address">
+                        <p>@city.Address @city.Name</p>
+                        <span>@city.PhoneNumber</span>
+                    </div>
+                </div>
+           }
 
       </div>
 

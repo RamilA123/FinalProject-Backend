@@ -13,9 +13,16 @@ namespace OrganiDb.Services
         {
             _context = context;
         }
+
         public async Task<IEnumerable<Rating>> GetAllAsync()
         {
             return await _context.Ratings.Include(m => m.Products).ToListAsync(); 
         }
+
+        public async Task<int> GetCountAsync()
+        {
+            return await _context.Ratings.CountAsync();
+        }
     }
+    
 }

@@ -1019,14 +1019,15 @@
     color: red;
     padding: 20px 50px;
     font-size: 22px;
-    top: 22%;
-    margin-left: 13px;
+    top: 40%;
+    margin-left: 10px;
     transform: rotate(40deg);
     font-weight: 500;
     border-radius: 35px;
     left: 10px;
     position: absolute;
     font-weight: 700;
+    z-index: 1;
 }
 
 .products .no-discount-price {
@@ -1307,7 +1308,7 @@
 }
 
 #category .owl-item {
-   margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 #category .owl-item .image {
@@ -1471,7 +1472,7 @@
     font-size: 35px;
     position: absolute;
     bottom: 37%;
-    left: 12%;
+    left: 10%;
 }
 
 #countdown .countdown .countdown-timer .countdown-item {

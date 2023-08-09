@@ -182,9 +182,10 @@
                                <div class="product card product-out-of-stock" style="width: 18rem;">
 
                                    <div class="product-images">
-                                       <a href="product.html">
+                                        <a asp-controller="Product" asp-action="Index" asp-route-id="@product.Id">
                                            <img class="image1" src="~/assets/images/products/@product.ProductImages.Where(m => m.IsMain).FirstOrDefault().Image" alt="">
-                                           <img class="image2" src="~/assets/images/products/@product.ProductImages.Where(m => m.IsMain).Skip(1).Take(1).FirstOrDefault().Image" alt="">
+                                           <img class="image2" src="~/assets/images/products/@product.ProductImages.Where(m => !m.IsMain).FirstOrDefault().Image" alt="">
+                                           <div class="out-of-stock">Out Of Stock</div>
                                        </a>
 
                                    </div>
@@ -236,9 +237,6 @@
                                         </a>
 
                                    </div>
-
-                                   <div class="out-of-stock">Out Of Stock</div>
-
                                 </div>
                             </div>
                         }
@@ -249,9 +247,9 @@
                                 <div class="product card" style="width: 18rem;">
 
                                     <div class="product-images">
-                                        <a href="product.html">
+                                        <a asp-controller="Product" asp-action="Index" asp-route-id="@product.Id">
                                             <img class="image1" src="~/assets/images/products/@product.ProductImages.Where(m => m.IsMain).FirstOrDefault().Image" alt="">
-                                            <img class="image2" src="~/assets/images/products/@product.ProductImages.Where(m => m.IsMain).Skip(1).Take(1).FirstOrDefault().Image" alt="">
+                                            <img class="image2" src="~/assets/images/products/@product.ProductImages.Where(m => !m.IsMain).FirstOrDefault().Image" alt="">
                                         </a>
                                     </div>
 
