@@ -13,6 +13,7 @@ namespace OrganiDb.Data
 
         public DbSet<Setting> Settings { get; set; }
         public DbSet<Slider> Sliders { get; set; }
+        public DbSet<About_> Abouts { get; set; }
         public DbSet<Assistance> Assistances { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Rating> Ratings { get; set; }
@@ -30,6 +31,7 @@ namespace OrganiDb.Data
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Author> Authors { get; set; }
         public DbSet<Blog_> Blogs { get; set; }
+        public DbSet<City> Cities { get; set; }
         public DbSet<BlogReview> BlogReviews { get; set; }
         public DbSet<SocialMedia> SocialMedias { get; set; }
         public DbSet<TeamFarmerSocialMedia> TeamFarmerSocialMedias { get; set; }
@@ -62,6 +64,8 @@ namespace OrganiDb.Data
             modelBuilder.Entity<Author>().HasQueryFilter(m => !m.SoftDelete);
             modelBuilder.Entity<Blog_>().HasQueryFilter(m => !m.SoftDelete);
             modelBuilder.Entity<BlogReview>().HasQueryFilter(m => !m.SoftDelete);
+            modelBuilder.Entity<About_>().HasQueryFilter(m => !m.SoftDelete);
+            modelBuilder.Entity<City>().HasQueryFilter(m => !m.SoftDelete);
 
 
 

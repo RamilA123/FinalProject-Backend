@@ -9,5 +9,8 @@ namespace OrganiDb.ViewModels.About
         public List<TeamFarmer> TeamFarmers { get; set; }
         public TeamFarmerHeader TeamFarmerHeader { get; set; }
         public List<TeamFarmerSocialMedia> TeamFarmerSocialMedias { get; set; }
+        public About_ About  { get; set; }
+        public List<Brand> Brands  { get; set; }
+        public IEnumerable<Customer> Customers  { get; set; }
     }
 }

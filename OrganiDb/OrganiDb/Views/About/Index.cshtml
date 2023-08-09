@@ -62,75 +62,38 @@
 
             <div class="col-sm-12 col-md-6 col-lg-6">
                 <div class="right-side">
-
                     <div class="about-content">
                         <div class="about-title">
-                            <h2>Vegetables and Fruits</h2>
+                            <h2>@Model.About.Title</h2>
                         </div>
 
                         <div class="about-description mt-4">
-                            <p>
-                                Fruits and vegetables contain important vitamins, minerals and plant chemicals.
-                                There are many varieties of fruit and vegetables available and many ways to prepare, cook and serve
-                                them.
-                                A diet high in fruit and vegetables can help protect you against cancer, diabetes and heart disease.
-                            </p>
+                            <p>@Model.About.Description</p>
                         </div>
                     </div>
 
                     <div class="about-services">
 
                         <div class="service-item">
-                            <div class="service">
-                                <div class="service-image">
-                                    <img src="~/assets/images/services/money-back.png" alt="">
-                                </div>
-                                <div class="service-text">
-                                    <span>Return Policy</span>
-                                    <p>Money back guarantee</p>
-                                </div>
-                            </div>
+                            @foreach (Assistance assistance in Model.About.Assistances)
+                            {
+                              <div class="service">
 
-                            <div class="service">
                                 <div class="service-image">
-                                    <img src="~/assets/images/services/free-delivery.png" alt="">
+                                    <img src="~/assets/images/services/@assistance.Image" alt="">
                                 </div>
+
                                 <div class="service-text">
-                                    <span>Free Shipping</span>
-                                    <p>On all orders over $60.00</p>
+                                    <span>@assistance.Title</span>
+                                    <p>@assistance.Description</p>
                                 </div>
-                            </div>
+                              </div>
+                            }
                         </div>
-
-                        <div class="service-item">
-
-                            <div class="service">
-                                <div class="service-image">
-                                    <img src="~/assets/images/services/shopping-store.png" alt="">
-                                </div>
-                                <div class="service-text">
-                                    <span>Store Locator</span>
-                                    <p>Find your nearest store</p>
-                                </div>
-                            </div>
-
-                            <div class="service">
-                                <div class="service-image">
-                                    <img src="~/assets/images/services/payment-protection.png" alt="">
-                                </div>
-                                <div class="service-text">
-                                    <span>Secure Payment</span>
-                                    <p>Your money is 100% secure</p>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
-
                 </div>
             </div>
         </div>
-
         </div>
 
     </section>
@@ -142,35 +105,12 @@
     <section id="brand">
         <div class="col-sm-12 col-md-12 col-lg-12">
             <div class="brands">
-
-                <div class="brand-item">
-                    <img src="~/assets/images/brands/brand1.png" alt="">
-                </div>
-
-                <div class="brand-item">
-                    <img src="~/assets/images/brands/brand2.png" alt="">
-                </div>
-
-                <div class="brand-item">
-                    <img src="~/assets/images/brands/brand3.png" alt="">
-                </div>
-
-                <div class="brand-item">
-                    <img src="~/assets/images/brands/brand4.png" alt="">
-                </div>
-
-                <div class="brand-item">
-                    <img src="~/assets/images/brands/brand5.png" alt="">
-                </div>
-
-                <div class="brand-item">
-                    <img src="~/assets/images/brands/brand6.png" alt="">
-                </div>
-
-                <div class="brand-item">
-                    <img src="~/assets/images/brands/brand7.png" alt="">
-                </div>
-
+                @foreach (Brand brand in Model.Brands)
+                {
+                    <div class="brand-item">
+                        <img src="~/assets/images/brands/@brand.Image" alt="">
+                    </div>
+                }
             </div>
         </div>
 
@@ -252,75 +192,28 @@
 
                     <div class="carousel-inner carousel">
 
-                        <div class="carousel-item active">
+                        @foreach (Customer customer in Model.Customers)
+                        {
+                            <div class="carousel-item @(customer == Model.Customers.FirstOrDefault() ? "active" : "")">
 
-                            <div class="bg-color bg-color1">
+                                <div class="bg-color bg-color1">
 
-                                <div class="feedback-image">
-                                    <img src="~/assets/images/feedbacks/feedback4.jpg" alt="">
-                                </div>
-                                <div class="feedback-name mt-3">
-                                    <span>William Smith</span>
-                                </div>
-                                <div class="feedback-position mt-2">
-                                    <span>Sales Manager</span>
-                                </div>
-                                <div class="feedback-description">
-                                    <p>
-                                        " Mostly describes different categories of vegetable by the part we eat and lists some in
-                                        different categories. Doesn't really explain much about why we eat different parts of different
-                                        vegetables or what we get from them. "
-                                    </p>
-                                </div>
+                                    <div class="feedback-image">
+                                        <img src="~/assets/images/feedbacks/@customer.Image" alt="">
+                                    </div>
+                                    <div class="feedback-name mt-3">
+                                        <span>@customer.FullName</span>
+                                    </div>
+                                    <div class="feedback-position mt-2">
+                                        <span>@customer.Position.Name</span>
+                                    </div>
+                                    <div class="feedback-description">
+                                        <p>@customer.Description</p>
+                                    </div>
 
+                                </div>
                             </div>
-                        </div>
-                        <div class="carousel-item">
-
-                            <div class="bg-color bg-color2">
-
-                                <div class="feedback-image">
-                                    <img src="~/assets/images/feedbacks/feedback5.jpg" alt="">
-                                </div>
-                                <div class="feedback-name mt-3">
-                                    <span>Linda Morgan</span>
-                                </div>
-                                <div class="feedback-position mt-2">
-                                    <span>Human Resources</span>
-                                </div>
-                                <div class="feedback-description">
-                                    <p>
-                                        " Nutrition is both a quantity and a quality issue, and vegetables in all their many forms ensure
-                                        an adequate intake of most vitamins and nutrients, dietary fibers, and phytochemicals to solve
-                                        many of these nutrition problems. "
-                                    </p>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-
-                            <div class="bg-color bg-color3">
-
-                                <div class="feedback-image">
-                                    <img src="~/assets/images/feedbacks/feedback6.jpg" alt="">
-                                </div>
-                                <div class="feedback-name mt-3">
-                                    <span>David Neelson</span>
-                                </div>
-                                <div class="feedback-position mt-2">
-                                    <span>Administrator</span>
-                                </div>
-                                <div class="feedback-description">
-                                    <p>
-                                        " The promotion of healthy vegetable products has coincided with a surging consumer interested in
-                                        the healthy functionality of food. Because each vegetable contains a unique combination of
-                                        phytonutriceuticals. "
-                                    </p>
-                                </div>
-
-                            </div>
-                        </div>
+                        }
 
                     </div>
 

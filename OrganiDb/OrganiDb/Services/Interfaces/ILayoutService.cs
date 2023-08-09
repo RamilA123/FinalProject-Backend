@@ -4,6 +4,6 @@ namespace OrganiDb.Services.Interfaces
 {
     public interface ILayoutService
     {
-        Task<LayoutVM> GetAllDatas();
+        Task<LayoutVM> GetAllDatasAsync();
     }
 }

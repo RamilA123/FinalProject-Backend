@@ -37,7 +37,9 @@ namespace OrganiDb.Controllers
             _layoutService = layoutService;
             _bannerInfoService = bannerInfoService;
         }
-       
+    
+        
+
         [HttpGet]
         public async Task<IActionResult> Register()
         {
@@ -193,7 +195,7 @@ namespace OrganiDb.Controllers
         {
             List<Banner> banners = await _bannerService.GetAllAsync();
             List<BannerInfo> bannerInfos = await _bannerInfoService.GetAllAsync();
-            LayoutVM data = await _layoutService.GetAllDatas();
+            LayoutVM data = await _layoutService.GetAllDatasAsync();
 
             ForgotPasswordVM model = new()
             {
@@ -245,7 +247,7 @@ namespace OrganiDb.Controllers
 
             List<BannerInfo> bannerInfos = await _bannerInfoService.GetAllAsync();
 
-            LayoutVM data = await _layoutService.GetAllDatas();
+            LayoutVM data = await _layoutService.GetAllDatasAsync();
 
             if (userId == null || token == null) return BadRequest();
 

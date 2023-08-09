@@ -21,7 +21,7 @@ namespace OrganiDb.Controllers
 
         public async Task <IActionResult> Index()
         {
-            LayoutVM data = await _layoutService.GetAllDatas();
+            LayoutVM data = await _layoutService.GetAllDatasAsync();
             List<Banner> banners = await _bannerService.GetAllAsync();
             List<BannerInfo> bannerInfos = await _bannerInfoService.GetAllAsync();
 

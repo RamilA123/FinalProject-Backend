@@ -81,7 +81,7 @@
 
                   <div class="info">
                     <span>Visit Store</span>
-                    <p>1429 Netus Rd, NY 48247, New York</p>
+                    <p>@Model.Data.SettingDatas["FooterAddress"]</p>
                   </div>
 
                 </div>
@@ -93,7 +93,7 @@
                   </div>
                   <div class="info">
                     <span>Have Question?</span>
-                    <p>+1 (646) 555-7212</p>
+                    <p>@Model.Data.SettingDatas["HeaderPhoneNumber"]</p>
                   </div>
 
                 </div>
@@ -106,7 +106,7 @@
 
                   <div class="info">
                     <span>Write Email</span>
-                    <p>organi@gmail.com</p>
+                    <p>@Model.Data.SettingDatas["HeaderEmail"]</p>
                   </div>
 
                 </div>
@@ -127,7 +127,11 @@
 
             <div class="contact-image mt-5">
               <img src="~/assets/images/cities/city1.jpeg" alt="">
-              <p>1429 Netus Rd, NY 48247, New York <br> USA</p>
+              <div class="contact-content">
+                 <p>1429 Netus Rd NY 48247, New York</p>
+                 <span>+1 (646) 555-7212</span>  
+              </div>
+                  
             </div>
 
           </div>

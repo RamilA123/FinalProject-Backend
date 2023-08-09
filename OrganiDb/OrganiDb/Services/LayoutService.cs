@@ -23,7 +23,7 @@ namespace OrganiDb.Services
             _socialMediaService = socialMediaService;
         }
 
-        public async Task<LayoutVM> GetAllDatas()
+        public async Task<LayoutVM> GetAllDatasAsync()
         {
             Dictionary<string, string> settingDatas = _context.Settings.AsEnumerable().ToDictionary(m => m.Key, m => m.Value);
 
