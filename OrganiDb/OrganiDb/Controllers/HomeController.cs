@@ -4,6 +4,7 @@ using OrganiDb.Data;
 using OrganiDb.Models;
 using OrganiDb.Services.Interfaces;
 using OrganiDb.ViewModels.Home;
+using System.Data.Common;
 using System.Diagnostics;
 
 namespace OrganiDb.Controllers
@@ -57,6 +58,10 @@ namespace OrganiDb.Controllers
             IEnumerable<Customer> customers = await _customerService.GetAllAsync();
             List<Blog_> blogs = await _blogService.GetAllAsync();
 
+            int productCount = products.Count();
+
+            ViewBag.productCount = productCount;
+
             HomeVM model = new()
             {
                 Banners = banners,
@@ -72,6 +77,37 @@ namespace OrganiDb.Controllers
             };
 
             return View(model);
+        }
+
+
+        [HttpGet]
+        public async Task<IActionResult> ShowMoreOrLessForFeatured(int skip)
+        {
+            IEnumerable<Product> dbPorducts = await _productService.GetAllAsync();
+
+            dbPorducts = dbPorducts.OrderByDescending(m => m.Id).Skip(skip).Take(4).ToList();
+
+            return PartialView("_ProductsPartial", dbPorducts);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> ShowMoreOrLessForSale(int skip)
+        {
+            IEnumerable<Product> dbPorducts = await _productService.GetAllAsync();
+
+            dbPorducts = dbPorducts.OrderByDescending(m => m.SaleCount).Skip(skip).Take(4).ToList();
+
+            return PartialView("_ProductsPartial", dbPorducts);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> ShowMoreOrLessForRated(int skip)
+        {
+            IEnumerable<Product> dbPorducts = await _productService.GetAllAsync();
+
+            dbPorducts = dbPorducts.OrderByDescending(m => m.Rating.RatingCount).Skip(skip).Take(4).ToList();
+
+            return PartialView("_ProductsPartial", dbPorducts);
         }
     }
 }
