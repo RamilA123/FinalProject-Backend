@@ -326,6 +326,7 @@
    font-size: 12px;
    top: -10px;
    right: 15px;
+   font-weight: bolder;
 }
 
 #header .middle-side .items .icons a svg {
@@ -904,9 +905,13 @@
    color: white;
 }
 
+#blog .right-side .blog-items .blog-item:hover .blog-image img {
+   transform: scale(1.2);
+}
+
 #blog .right-side .blog-items .blog-item .blog-image {
    border-radius: 10px;
-   width: 130px;
+   width: 100px;
    height: 90px;
    overflow: hidden;
 }
@@ -916,10 +921,7 @@
    height: 100%;
    border-radius: inherit;
    transition: transform 0.4s;
-}
-
-#blog .right-side .blog-items .blog-item .blog-image img:hover {
-   transform: scale(1.2);
+   object-fit: cover;
 }
 
 #blog .right-side .blog-items .blog-item .blog-description {
