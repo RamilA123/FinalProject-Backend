@@ -173,7 +173,7 @@
 
             <div class="tab-content mt-4" id="pills-tabContent">
 
-                <partial name="_ProductsPartial" model="Model.Products" />
+                <partial name="_ProductsPartial" model="Model.PaginatedProducts.Datas" />
 
             </div>
 
@@ -181,11 +181,22 @@
 
         <nav aria-label="Page navigation example">
             <ul class="pagination">
-              <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item"><a class="page-link" href="#">Next</a></li>
+
+              <li class="page-item @(Model.PaginatedProducts.HasPrevious ? "" : "disabled")" >
+                 <a class="page-link" asp-route-page="@(Model.PaginatedProducts.CurrentPage - 1)">Previous</a>
+              </li>
+
+              @for (int i = 1; i <= Model.PaginatedProducts.TotalPage; i++)
+              {
+              <li class="page-item @(Model.PaginatedProducts.CurrentPage == i ? "disabled" : "")">
+                  <a class="page-link @(Model.PaginatedProducts.CurrentPage == i ? "active-color" : "" )" asp-route-page="@i">@i</a>
+              </li>
+              }
+
+              <li class="page-item @(Model.PaginatedProducts.HasNext ? "" : "disabled")">
+                 <a class="page-link" asp-route-page="@(Model.PaginatedProducts.CurrentPage + 1)">Next</a>
+              </li>
+
             </ul>
           </nav>
 

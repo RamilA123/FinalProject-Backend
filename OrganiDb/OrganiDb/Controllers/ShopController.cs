@@ -1,10 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using OrganiDb.Data;
+using OrganiDb.Helpers;
 using OrganiDb.Models;
 using OrganiDb.Services.Interfaces;
 using OrganiDb.ViewModels.Home;
 using OrganiDb.ViewModels.Shop;
+using System.Collections.Generic;
 
 namespace OrganiDb.Controllers
 {
@@ -36,21 +38,33 @@ namespace OrganiDb.Controllers
             _brandService = brandService;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page = 1, int take = 15)
         {
             List<Banner> banners = await _bannerService.GetAllAsync();
+
             List<BannerInfo> bannerInfos = await _bannerInfoService.GetAllAsync();
-            IEnumerable<Product> products = await _productService.GetAllAsync();
+
             List<Category> categories = await _categoryService.GetAllAsync();
+
             IEnumerable<Rating> ratings = await _ratingService.GetAllAsync();
+
             List<Tag> tags = await _tagService.GetAllAsync();
+
             List<Brand> brands = await _brandService.GetAllAsync();
 
+            IEnumerable<Product> products = await _productService.GetPaginatedDatasAsync(page,take);
+
+            int productCount = await _productService.GetCountAsync();
+
+            int totalPage = (int)Math.Ceiling((decimal)productCount / take);
+
+            Pagination<Product> paginatedProducts = new(products,page,totalPage);
+         
             ShopVM model = new()
             {
                 Banners = banners,
                 BannerInfos = bannerInfos,
-                Products = products,
+                PaginatedProducts = paginatedProducts,
                 Categories = categories,
                 Ratings = ratings,
                 Tags = tags,
