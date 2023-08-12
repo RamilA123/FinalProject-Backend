@@ -17,5 +17,15 @@ namespace OrganiDb.Services
         {
             return await _context.Blogs.Include(m => m.Author).Include(m => m.BlogReviews).ToListAsync();
         }
+
+        public async Task<int> GetCountAsync()
+        {
+            return await _context.Blogs.CountAsync();
+        }
+
+        public async Task<List<Blog_>> GetPaginatedDatasAsync(int page, int take)
+        {
+            return await _context.Blogs.Include(m => m.Author).Include(m => m.BlogReviews).Skip((page-1)*take).Take(take).ToListAsync();
+        }
     }
 }

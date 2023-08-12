@@ -36,6 +36,11 @@ namespace OrganiDb.Services
                                      Include(m => m.Reviews).FirstOrDefaultAsync(m => m.Id == id);
         }
 
+        public async Task<Product> GetByIdWithImagesAsync(int? id)
+        {
+            return await _context.Products.Include(m => m.ProductImages).FirstOrDefaultAsync(m => m.Id == id);
+        }
+
         public async Task<int> GetCountAsync()
         {
             return await _context.Products.CountAsync();

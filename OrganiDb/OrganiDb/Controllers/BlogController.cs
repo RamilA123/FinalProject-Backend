@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using OrganiDb.Data;
+using OrganiDb.Helpers;
 using OrganiDb.Models;
 using OrganiDb.Services.Interfaces;
 using OrganiDb.ViewModels.Blog;
@@ -33,21 +34,33 @@ namespace OrganiDb.Controllers
             _categoryService = categoryService;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page = 1, int take = 3)
         {
             List<Banner> banners = await _bannerService.GetAllAsync();
+
             List<BannerInfo> bannerInfos = await _bannerInfoService.GetAllAsync();
+
             List<SocialMedia> socialMedias = await _socialMediaService.GetAllAsync();
-            List<Blog_> blogs = await _blogService.GetAllAsync();
+
             List<Category> categories = await _categoryService.GetAllAsync();
+
             List<Tag> tags = await _tagService.GetAllAsync();
 
+            List<Blog_> blogs = await _blogService.GetPaginatedDatasAsync(page, take);
+
+            int blogCount = await _blogService.GetCountAsync();
+
+            int totalPage = (int) Math.Ceiling((decimal)blogCount / take);
+
+            Pagination<Blog_> paginatedBlogs = new(blogs,page,totalPage);
+                
+           
             BlogVM model = new()
             {
                 Banners = banners,
                 BannerInfos = bannerInfos,
                 SocialMedias = socialMedias,
-                Blogs = blogs,
+                PaginatedBlogs = paginatedBlogs,
                 Categories = categories,
                 Tags = tags,
             };

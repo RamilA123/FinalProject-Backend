@@ -47,16 +47,16 @@ for (const flag of flags) {
 // FLAG
 
 
-//UP-ARROW
+// UP-ARROW
 let upArrow = document.querySelector(".up-arrow");
 
 upArrow.addEventListener("click", function () {
     window.scrollTo(0,0);
 })
-//UP-ARROW
+// UP-ARROW
 
 
-//DROPDOWN-MENU-START
+// DROPDOWN-MENU
 let dropdownTitles = document.querySelectorAll(".drop-down-title")
 let dropdownMenues = document.querySelectorAll(".drop-down-menu")
 
@@ -87,11 +87,13 @@ for (const dropdown of dropdownMenues) {
         this.previousElementSibling.firstElementChild.children[2].style.color = "";
     })
 }
+// DROPDOWN-MENU
 
-//DROPDOWN-MENU-END
 
 
-//PRODUCT-DETAIL
+
+
+// PRODUCT-DETAIL
 let detailImages = document.querySelectorAll(".detail-images img");
 detailImages.forEach(image => {
     image.addEventListener("click", function () {
@@ -100,10 +102,13 @@ detailImages.forEach(image => {
         this.setAttribute("src", mainImage);
     })
 });
-//PRODUCT-DETAIL
+// PRODUCT-DETAIL
 
 
-//REVIEW-START
+
+
+
+// REVIEW
 let ratingCount = 0
 
 $(document).ready(function () {
@@ -122,10 +127,10 @@ $(document).ready(function () {
 
     })
 })
-//REVIEW-END
+// REVIEW
 
 
-//ADD-REVIEW-START
+// ADD-REVIEW
 let btn = document.querySelector("#add-review .submit");
 let parent = document.querySelector("#review .parent");
 let textArea = document.querySelector("#add-review textarea");
@@ -268,6 +273,5 @@ btn.addEventListener("click", function (e) {
         emailInput.value = "";
     }
 })
-
-//ADD-REVIEW-END
+// ADD-REVIEW
 

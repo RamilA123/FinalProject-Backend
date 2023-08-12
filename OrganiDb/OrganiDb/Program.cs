@@ -39,6 +39,9 @@ builder.Services.Configure<IdentityOptions>(opt =>
     opt.Lockout.AllowedForNewUsers = true;
 });
 
+
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.AddScoped<IBasketService, BasketService>();
 builder.Services.AddScoped<ISliderService,SliderService>();
 builder.Services.AddScoped<IAssistanceService,AssistanceService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();

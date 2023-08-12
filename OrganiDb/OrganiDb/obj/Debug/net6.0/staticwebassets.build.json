@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "eT4YO2Ygzmev4dGOJvuWoMO8sWi/OpWAAom9X+X/jVw=",
+  "Hash": "KkWhrhRz4e9WY2b59xXkspXy2aIo+Oyg51qWbTg3V+g=",
   "Source": "OrganiDb",
   "BasePath": "_content/OrganiDb",
   "Mode": "Default",
@@ -4981,6 +4981,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\js\\about.js"
     },
     {
+      "Identity": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\js\\basket.js",
+      "SourceId": "OrganiDb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\",
+      "BasePath": "_content/OrganiDb",
+      "RelativePath": "assets/js/basket.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\js\\basket.js"
+    },
+    {
       "Identity": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\js\\blog.js",
       "SourceId": "OrganiDb",
       "SourceType": "Discovered",
@@ -5049,12 +5066,12 @@
       "OriginalItemSpec": "wwwroot\\assets\\js\\forgot-password.js"
     },
     {
-      "Identity": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\js\\home_.js",
+      "Identity": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\js\\home.js",
       "SourceId": "OrganiDb",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\",
       "BasePath": "_content/OrganiDb",
-      "RelativePath": "assets/js/home_.js",
+      "RelativePath": "assets/js/home.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -5063,7 +5080,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\js\\home_.js"
+      "OriginalItemSpec": "wwwroot\\assets\\js\\home.js"
     },
     {
       "Identity": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\js\\login.js",

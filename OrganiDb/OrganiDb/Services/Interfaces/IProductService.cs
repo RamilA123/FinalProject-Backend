@@ -6,6 +6,7 @@ namespace OrganiDb.Services.Interfaces
     {
         Task<IEnumerable<Product>> GetAllAsync();
         Task<IEnumerable<Product>> GetPaginatedDatasAsync(int page,int take);
+        Task<Product> GetByIdWithImagesAsync(int? id);
         Task<Product> GetByIdAsync(int? id);
         Task<int> GetCountAsync();
     }

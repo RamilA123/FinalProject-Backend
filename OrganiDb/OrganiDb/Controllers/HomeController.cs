@@ -58,6 +58,7 @@ namespace OrganiDb.Controllers
             IEnumerable<Customer> customers = await _customerService.GetAllAsync();
             List<Blog_> blogs = await _blogService.GetAllAsync();
 
+
             int productCount = products.Count();
 
             ViewBag.productCount = productCount;
