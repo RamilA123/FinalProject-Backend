@@ -50,7 +50,15 @@ namespace OrganiDb.Services
             foreach (BasketVM product in basket)
             {
                 Product dbProduct = await _productService.GetByIdAsync(product.Id);
-                grandTotalPrice += dbProduct.ActualPrice * product.Count;
+                if(dbProduct.Discount.Percent == 0)
+                {
+                    grandTotalPrice += dbProduct.ActualPrice * product.Count;
+                }
+                else
+                {
+                    grandTotalPrice += (dbProduct.ActualPrice - (dbProduct.ActualPrice * dbProduct.Discount.Percent) / 100) * product.Count;
+                }
+               
             }
 
             int grandTotalCount = basket.Sum(m => m.Count);
@@ -80,12 +88,11 @@ namespace OrganiDb.Services
         {
 
             List<BasketVM> existedProducts = JsonSerializer.Deserialize<List<BasketVM>>(_accesssorService.HttpContext.Request.Cookies["basket"]);
-
+         
             decimal grandTotalPrice = 0;
             decimal totalPrice = 0;
             decimal productPrice = 0;
             int count = 0;
-
 
             foreach (BasketVM existedProduct in existedProducts)
             {
@@ -115,17 +122,18 @@ namespace OrganiDb.Services
                 {
                     if (dbProduct.Discount.Percent == 0)
                     {
-                        totalPrice = dbProduct.ActualPrice * existedProduct.Count;
+                        totalPrice = dbProduct.ActualPrice;
                     }
 
                     else
                     {
-                        totalPrice = (dbProduct.ActualPrice - (dbProduct.ActualPrice * dbProduct.Discount.Percent) / 100); ;
+                        totalPrice = (dbProduct.ActualPrice - (dbProduct.ActualPrice * dbProduct.Discount.Percent) / 100);
                     }
                 }
-
                 grandTotalPrice += totalPrice;
             }
+
+         
 
             int grandTotalCount = existedProducts.Sum(m => m.Count);
 
@@ -161,12 +169,12 @@ namespace OrganiDb.Services
                         {
                             totalPrice = dbProduct.ActualPrice * (existedProduct.Count - 1);
                             existedProduct.Count--;
-                            count = existedProduct.Count;
                         }
                         else
                         {
                             totalPrice = dbProduct.ActualPrice;
                         }
+                        count = existedProduct.Count;
                     }
 
                     else
@@ -175,13 +183,12 @@ namespace OrganiDb.Services
                         {
                             totalPrice = (dbProduct.ActualPrice - (dbProduct.ActualPrice * dbProduct.Discount.Percent) / 100) * (existedProduct.Count - 1);
                             existedProduct.Count--;
-                            count = existedProduct.Count;
                         }
                         else
                         {
                             totalPrice = dbProduct.ActualPrice - (dbProduct.ActualPrice * dbProduct.Discount.Percent) / 100;
                         }
-
+                        count = existedProduct.Count;
                     }
                 }
                 else
