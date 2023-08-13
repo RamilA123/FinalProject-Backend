@@ -21,7 +21,6 @@ namespace OrganiDb.Controllers
         public CartController(IBannerService bannerService,
                               IBannerInfoService bannerInfoService, 
                               IBasketService basketService,
-                              IHttpContextAccessor accessorService,
                               IProductService productService,
                               IHttpContextAccessor accesssorService)
         {
@@ -53,6 +52,8 @@ namespace OrganiDb.Controllers
                         Description = product.Description,
                         Count = existedProduct.Count,
                         Price = product.ActualPrice,
+                        DiscountPrice = product.ActualPrice - (product.ActualPrice * product.Discount.Percent) / 100,
+                        Percent = product.Discount.Percent,
                         TotalPrice = product.ActualPrice * existedProduct.Count
                     });
                 }
@@ -89,6 +90,22 @@ namespace OrganiDb.Controllers
 
             return Ok(responseProduct);
             
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> IncreaseCount(int? id)
+        {
+            BasketCountResponse response = await _basketService.IncreaseProductCount(id);
+
+            return Ok(response);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> DecreaseCount(int? id)
+        {
+            BasketCountResponse response = await _basketService.DecresaseProductCount(id);
+
+            return Ok(response);
         }
     }
 }

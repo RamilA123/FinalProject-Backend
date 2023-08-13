@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "u/Md84tiAA9Rs5CFhjg8CInagI2ihGitiLCNhGOtXjHeI1d+xWlyGQLZoBf3jQM4k7UwsDacCTdPY9tEbIeuTw==",
+  "dgSpecHash": "kCMSHCa/vRUqUJS8F99d8Fn8y9vWT8HJQuISgAK3uaKyDCsTWPKAXFuLGiv1GSBodiGsxj61X/yr0BWpu4Lcuw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\OrganiDb.csproj",
+  "projectFilePath": "C:\\Users\\FX706HCB\\Desktop\\New folder (2)\\FinalProject-Backend\\OrganiDb\\OrganiDb\\OrganiDb.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\FX706HCB\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
     "C:\\Users\\FX706HCB\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",

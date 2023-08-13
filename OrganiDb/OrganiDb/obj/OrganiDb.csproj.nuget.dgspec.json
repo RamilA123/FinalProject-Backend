@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\OrganiDb.csproj": {}
+    "C:\\Users\\FX706HCB\\Desktop\\New folder (2)\\FinalProject-Backend\\OrganiDb\\OrganiDb\\OrganiDb.csproj": {}
   },
   "projects": {
-    "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\OrganiDb.csproj": {
+    "C:\\Users\\FX706HCB\\Desktop\\New folder (2)\\FinalProject-Backend\\OrganiDb\\OrganiDb\\OrganiDb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\OrganiDb.csproj",
+        "projectUniqueName": "C:\\Users\\FX706HCB\\Desktop\\New folder (2)\\FinalProject-Backend\\OrganiDb\\OrganiDb\\OrganiDb.csproj",
         "projectName": "OrganiDb",
-        "projectPath": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\OrganiDb.csproj",
+        "projectPath": "C:\\Users\\FX706HCB\\Desktop\\New folder (2)\\FinalProject-Backend\\OrganiDb\\OrganiDb\\OrganiDb.csproj",
         "packagesPath": "C:\\Users\\FX706HCB\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\obj\\",
+        "outputPath": "C:\\Users\\FX706HCB\\Desktop\\New folder (2)\\FinalProject-Backend\\OrganiDb\\OrganiDb\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

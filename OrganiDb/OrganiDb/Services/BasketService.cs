@@ -56,7 +56,7 @@ namespace OrganiDb.Services
             int grandTotalCount = basket.Sum(m => m.Count);
 
 
-            return new BasketDeleteResponse { GrandTotalPrice = grandTotalPrice, GrandTotalCount = grandTotalCount };   
+            return new BasketDeleteResponse { GrandTotalPrice = grandTotalPrice, GrandTotalCount = grandTotalCount };
         }
 
         public List<BasketVM> GetAllAsync()
@@ -74,6 +74,143 @@ namespace OrganiDb.Services
             }
 
             return basket;
+        }
+
+        public async Task<BasketCountResponse> IncreaseProductCount(int? id)
+        {
+
+            List<BasketVM> existedProducts = JsonSerializer.Deserialize<List<BasketVM>>(_accesssorService.HttpContext.Request.Cookies["basket"]);
+
+            decimal grandTotalPrice = 0;
+            decimal totalPrice = 0;
+            decimal productPrice = 0;
+            int count = 0;
+
+
+            foreach (BasketVM existedProduct in existedProducts)
+            {
+                BasketVM existProduct = existedProducts.FirstOrDefault(m => m.Id == id);
+                Product dbProduct = await _productService.GetByIdAsync(existedProduct.Id);
+
+                if (existedProduct.Id == id)
+                {
+                    if (dbProduct.Discount.Percent == 0)
+                    {
+                        totalPrice = dbProduct.ActualPrice * (existedProduct.Count + 1);
+                        productPrice = totalPrice;
+                        existedProduct.Count++;
+                        count = existedProduct.Count;
+                    }
+
+                    else
+                    {
+                        totalPrice = (dbProduct.ActualPrice - (dbProduct.ActualPrice * dbProduct.Discount.Percent) / 100) * (existedProduct.Count + 1);
+                        productPrice = totalPrice;
+                        existedProduct.Count++;
+                        count = existedProduct.Count;
+                    }
+
+                }
+                else
+                {
+                    if (dbProduct.Discount.Percent == 0)
+                    {
+                        totalPrice = dbProduct.ActualPrice * existedProduct.Count;
+                    }
+
+                    else
+                    {
+                        totalPrice = (dbProduct.ActualPrice - (dbProduct.ActualPrice * dbProduct.Discount.Percent) / 100); ;
+                    }
+                }
+
+                grandTotalPrice += totalPrice;
+            }
+
+            int grandTotalCount = existedProducts.Sum(m => m.Count);
+
+            _accesssorService.HttpContext.Response.Cookies.Append("basket", JsonSerializer.Serialize(existedProducts));
+
+            return new BasketCountResponse
+            {
+                TotalPrice = productPrice,
+                GrandTotalPrice = grandTotalPrice,
+                GrandTotalCount = grandTotalCount,
+                Count = count
+            };
+        }
+
+        public async Task<BasketCountResponse> DecresaseProductCount(int? id)
+        {
+            List<BasketVM> existedProducts = JsonSerializer.Deserialize<List<BasketVM>>(_accesssorService.HttpContext.Request.Cookies["basket"]);
+
+            decimal grandTotalPrice = 0;
+            decimal totalPrice = 0;
+            int count = 0;
+
+            foreach (BasketVM existedProduct in existedProducts)
+            {
+                BasketVM existProduct = existedProducts.FirstOrDefault(m => m.Id == id);
+                Product dbProduct = await _productService.GetByIdAsync(existedProduct.Id);
+
+                if (existedProduct.Id == id)
+                {
+                    if (dbProduct.Discount.Percent == 0)
+                    {
+                        if (existedProduct.Count > 1)
+                        {
+                            totalPrice = dbProduct.ActualPrice * (existedProduct.Count - 1);
+                            existedProduct.Count--;
+                            count = existedProduct.Count;
+                        }
+                        else
+                        {
+                            totalPrice = dbProduct.ActualPrice;
+                        }
+                    }
+
+                    else
+                    {
+                        if (existedProduct.Count > 1)
+                        {
+                            totalPrice = (dbProduct.ActualPrice - (dbProduct.ActualPrice * dbProduct.Discount.Percent) / 100) * (existedProduct.Count - 1);
+                            existedProduct.Count--;
+                            count = existedProduct.Count;
+                        }
+                        else
+                        {
+                            totalPrice = dbProduct.ActualPrice - (dbProduct.ActualPrice * dbProduct.Discount.Percent) / 100;
+                        }
+
+                    }
+                }
+                else
+                {
+                    if (dbProduct.Discount.Percent == 0)
+                    {
+                        totalPrice = dbProduct.ActualPrice * existedProduct.Count;
+                    }
+
+                    else
+                    {
+                        totalPrice = (dbProduct.ActualPrice - (dbProduct.ActualPrice * dbProduct.Discount.Percent) / 100); ;
+                    }
+                }
+
+                grandTotalPrice += totalPrice;
+            }
+
+            int grandTotalCount = existedProducts.Sum(m => m.Count);
+
+            _accesssorService.HttpContext.Response.Cookies.Append("basket", JsonSerializer.Serialize(existedProducts));
+
+            return new BasketCountResponse
+            {
+                TotalPrice = totalPrice,
+                GrandTotalPrice = grandTotalPrice,
+                GrandTotalCount = grandTotalCount,
+                Count = count
+            };
         }
 
     }

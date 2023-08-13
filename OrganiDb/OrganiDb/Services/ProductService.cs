@@ -38,7 +38,7 @@ namespace OrganiDb.Services
 
         public async Task<Product> GetByIdWithImagesAsync(int? id)
         {
-            return await _context.Products.Include(m => m.ProductImages).FirstOrDefaultAsync(m => m.Id == id);
+            return await _context.Products.Include(m => m.ProductImages).Include(m => m.Discount).FirstOrDefaultAsync(m => m.Id == id);
         }
 
         public async Task<int> GetCountAsync()

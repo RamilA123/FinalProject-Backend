@@ -110,15 +110,15 @@
                             </div>
 
 
-                            <div class="cart">
-                                <a asp-controller="Cart" asp-action="Index"><i class="fa-solid fa-cart-shopping"></i></a>
-                                <sup class="cart-count">0</sup>
-                            </div>
+                            <a asp-controller="Cart" asp-action="Index" class="cart">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <sup class="cart-count">@Model.BasketCount</sup>
+                            </a>
 
-                            <div class="wishlist">
-                                <a asp-controller="Wishlist" asp-action="Index"><i class="fa-solid fa-heart"></i></a>
+                            <a asp-controller="Wishlist" asp-action="Index" class="wishlist">
+                                <i class="fa-solid fa-heart"></i>
                                 <sup>0</sup>
-                            </div>
+                            </a>
 
 
                         </div>

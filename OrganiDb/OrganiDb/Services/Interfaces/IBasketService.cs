@@ -9,6 +9,8 @@ namespace OrganiDb.Services.Interfaces
         List<BasketVM> GetAllAsync();
         void AddProduct(List<BasketVM> basket, Product product);
         Task<BasketDeleteResponse> DeleteProduct(int? id);
+        Task<BasketCountResponse> IncreaseProductCount(int? id);
+        Task<BasketCountResponse> DecresaseProductCount(int? id);
 
     }
 }

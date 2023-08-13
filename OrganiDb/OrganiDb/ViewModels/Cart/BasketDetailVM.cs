@@ -8,6 +8,8 @@
         public string Description { get; set; }
         public int Count { get; set; }
         public decimal Price { get; set; }
+        public decimal DiscountPrice { get; set; }
+        public byte Percent { get; set; }
         public decimal TotalPrice { get; set; }
     }
 }

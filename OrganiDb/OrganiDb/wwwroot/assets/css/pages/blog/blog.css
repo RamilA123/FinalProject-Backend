@@ -316,10 +316,6 @@
 }
 
 
-#header .middle-side .items .icons svg:hover {
-   color: #54b72b;
-}
-
 #header .middle-side .items .icons sup {
    background: #0ad50a;
    padding: 0px 5px;
@@ -333,6 +329,10 @@
 #header .middle-side .items .icons a svg {
    cursor: pointer;
    color: black;
+}
+
+#header .middle-side .items .icons a:hover svg {
+   color: #54b72b;
 }
 
 #header .middle-side .flags {

@@ -315,11 +315,6 @@
    cursor: pointer;
 }
 
-
-#header .middle-side .items .icons svg:hover {
-   color: #54b72b;
-}
-
 #header .middle-side .items .icons sup {
    background: #0ad50a;
    padding: 0px 5px;
@@ -333,6 +328,10 @@
 #header .middle-side .items .icons a svg {
    cursor: pointer;
    color: black;
+}
+
+#header .middle-side .items .icons a:hover svg {
+   color: #54b72b;
 }
 
 #header .middle-side .flags {
@@ -665,22 +664,20 @@
    background: #f1f3f2;
 }
 
-#cart-table .cart {
+#cart-table .cart-products {
    display: flex;
    margin-top: 50px;
    margin-left: 50px;
 }
 
-#cart-table .cart .cart-info {
+#cart-table .cart-products .cart-info {
    background: #daffee;
    border: 3px dotted green;
    padding: 15px 25px;
-   margin-left: 70px;
-   margin-right: 70px;
-   margin-top: 31%;
+   margin: 17% 10%;
 }
 
-#cart-table .cart .cart-info h3 {
+#cart-table .cart-products .cart-info h3 {
    border-bottom: 1px solid green;
    padding-bottom: 30px;
    margin-bottom: 15px;
@@ -688,7 +685,7 @@
    text-align: center;
 }
 
-#cart-table .cart .cart-info h5 {
+#cart-table .cart-products .cart-info h5 {
    font-size: 20px;
    font-weight: 500;
    font-style: italic;
@@ -698,11 +695,11 @@
    margin-bottom: 20px;
 }
 
-#cart-table .cart .cart-info h5 span {
+#cart-table .cart-products .cart-info h5 span {
    float: right;
 }
 
-#cart-table .cart .cart-info h4 {
+#cart-table .cart-products .cart-info h4 {
    font-weight: 500;
    margin-bottom: 25px;
    border-bottom: 1px solid green;
@@ -712,13 +709,13 @@
    color: #176c17;
 }
 
-#cart-table .cart .cart-info h6 {
+#cart-table .cart-products .cart-info h6 {
    font-weight: 500;
    margin-bottom: 20px;
 }
 
 
-#cart-table .cart .cart-info ul {
+#cart-table .cart-products .cart-info ul {
    list-style-type: none;
    padding: 0;
    line-height: 35px;
@@ -727,45 +724,45 @@
    padding-bottom: 30px;
 }
 
-#cart-table .cart .cart-info ul li {
+#cart-table .cart-products .cart-info ul li {
    font-size: 18px;
    color: #343434;
    font-style: italic;
    color: #605e5e;
 }
 
-#cart-table .cart .cart-info ul li .input-label {
+#cart-table .cart-products .cart-info ul li .input-label {
    display: inline-block;
 }
 
-#cart-table .cart .cart-info ul li .input-label:hover {
+#cart-table .cart-products .cart-info ul li .input-label:hover {
    cursor: pointer;
 }
 
-#cart-table .cart .cart-info ul li .input-label:hover input,
+#cart-table .cart-products .cart-info ul li .input-label:hover input,
 label {
    cursor: pointer;
 }
 
-#cart-table .cart .cart-info .payment img {
+#cart-table .cart-products .cart-info .payment img {
    transition: all 0.4s;
 }
 
-#cart-table .cart .cart-info .payment img:hover {
+#cart-table .cart-products .cart-info .payment img:hover {
    transform: scale(1.1);
    cursor: pointer;
 }
 
-#cart-table .cart .cart-info .payment p {
+#cart-table .cart-products .cart-info .payment p {
    margin-top: 10px;
    color: #4e4e4e;
 }
 
-#cart-table .cart .cart-info ul li span {
+#cart-table .cart-products .cart-info ul li span {
    float: right;
 }
 
-#cart-table .cart .cart-info ul li input {
+#cart-table .cart-products .cart-info ul li input {
    margin-right: 5px;
    position: relative;
    top: 5px;
@@ -774,16 +771,16 @@ label {
    border: none;
 }
 
-#cart-table .cart .cart-info ul li input:checked {
+#cart-table .cart-products .cart-info ul li input:checked {
    box-shadow: 0 0 15px green;
 }
 
-#cart-table .cart .cart-info .shipping-btn {
+#cart-table .cart-products .cart-info .shipping-btn {
    text-align: center;
    margin: 35px 0;
 }
 
-#cart-table .cart .cart-info .shipping-btn button {
+#cart-table .cart-products .cart-info .shipping-btn button {
    background: #1b996b;
    padding: 10px 55px;
    font-size: 18px;
@@ -791,7 +788,7 @@ label {
    border: none;
 }
 
-#cart-table .cart .cart-info .shipping-btn button:hover {
+#cart-table .cart-products .cart-info .shipping-btn button:hover {
    background: #18b97e;
 }
 
@@ -826,29 +823,32 @@ label {
 }
 
 #cart-table .table .image {
-   padding-top: 25px;
+   width: 200px;
+   height: 180px;
+   padding: 20px;
 }
 
 #cart-table .table .image img {
    width: 100%;
+   height: 100%;
    transition: all 0.4s;
 }
 
 #cart-table .table .image img:hover {
    cursor: pointer;
-   transform: scale(1.2);
+   transform: scale(1.1);
 }
 
 #cart-table .table .cell {
-   padding: 75px 35px;
+   padding: 85px 20px;
 }
 
 #cart-table .table .quantity {
-   padding: 70px 35px;
+   padding: 80px 20px;
 }
 
 #cart-table .table .description {
-   padding: 55px 10px;
+    padding: 55px 10px;
 }
 
 #cart-table .table .cell button {
@@ -890,7 +890,7 @@ label {
    height: 40px;
    border-radius: 5px;
    border: none;
-   padding-left: 5px;
+   padding-left: 7px;
    color: black;
    font-weight: 500;
    background: #e5fde5;
