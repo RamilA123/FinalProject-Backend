@@ -1,7 +1,10 @@
-﻿// ADD-PRODUCT-TO-BASKET
+﻿
+// ADD-PRODUCT-TO-BASKET
 $(document).ready(function () {
+
     $(document).on("click", ".product-add-to-cart", function (e) {
         e.preventDefault();
+        console.log("Ramil")
 
         let productId = $(this).attr("data-id");
 
@@ -27,8 +30,12 @@ $(document).ready(function () {
 // ADD-PRODUCT-TO-BASKET
 
 
+
+
+
 // DELETE-PRODUCT-FROM-BASKET
 $(document).ready(function () {
+
     $(document).on("click", ".product-delete-from-cart", function () {
 
         $(this).parent().parent().remove();
@@ -60,12 +67,12 @@ $(document).ready(function () {
 
 
 
-// INCREASE-DECREASE-PRODUCT-COUNT
 
+// INCREASE-DECREASE-PRODUCT-COUNT
 $(document).ready(function () {
 
     $(document).on("click", "#cart-table .plus", function () {
-        debugger
+      
         let productId = $(this).attr("data-id");
 
         let totalPrice = $(this).parent().parent().next().next();
@@ -79,7 +86,7 @@ $(document).ready(function () {
             type: "Get",
             data: data,
             success: function (res) {
-                inputValue.val(res.count);
+                inputValue.val(res.productCount);
                 $(".cart-count").text((res.grandTotalCount));
                 $(".grand-total-price").text(res.grandTotalPrice);
                 totalPrice.text("$" + res.totalPrice);
@@ -88,7 +95,7 @@ $(document).ready(function () {
     })
 
     $(document).on("click", "#cart-table .minus", function () {
-        debugger
+        
         let productId = $(this).attr("data-id");
 
         let totalPrice = $(this).parent().parent().next().next();
@@ -102,14 +109,13 @@ $(document).ready(function () {
             type: "Get",
             data: data,
             success: function (res) {
-                inputValue.val(res.count);
+                inputValue.val(res.productCount);
                 $(".cart-count").text((res.grandTotalCount));
                 $(".grand-total-price").text(res.grandTotalPrice);
                 totalPrice.text("$" + res.totalPrice);
             }
         })
     })
-
 })
 // INCREASE-DECREASE-PRODUCT-COUNT
 

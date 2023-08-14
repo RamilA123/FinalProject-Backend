@@ -88,7 +88,7 @@ namespace OrganiDb.Services
         {
 
             List<BasketVM> existedProducts = JsonSerializer.Deserialize<List<BasketVM>>(_accesssorService.HttpContext.Request.Cookies["basket"]);
-         
+
             decimal grandTotalPrice = 0;
             decimal totalPrice = 0;
             decimal productPrice = 0;
@@ -99,8 +99,8 @@ namespace OrganiDb.Services
                 BasketVM existProduct = existedProducts.FirstOrDefault(m => m.Id == id);
                 Product dbProduct = await _productService.GetByIdAsync(existedProduct.Id);
 
-                if (existedProduct.Id == id)
-                {
+               if(existedProduct.Id == id)
+               {
                     if (dbProduct.Discount.Percent == 0)
                     {
                         totalPrice = dbProduct.ActualPrice * (existedProduct.Count + 1);
@@ -116,24 +116,22 @@ namespace OrganiDb.Services
                         existedProduct.Count++;
                         count = existedProduct.Count;
                     }
-
-                }
-                else
-                {
+                    grandTotalPrice += totalPrice;
+               }
+               else
+               {
                     if (dbProduct.Discount.Percent == 0)
                     {
-                        totalPrice = dbProduct.ActualPrice;
+                        grandTotalPrice += (dbProduct.ActualPrice * existedProduct.Count);
                     }
-
                     else
                     {
-                        totalPrice = (dbProduct.ActualPrice - (dbProduct.ActualPrice * dbProduct.Discount.Percent) / 100);
+                        grandTotalPrice += (dbProduct.ActualPrice - (dbProduct.ActualPrice * dbProduct.Discount.Percent) / 100) * (existedProduct.Count);
                     }
-                }
-                grandTotalPrice += totalPrice;
+                   
+               }
+              
             }
-
-         
 
             int grandTotalCount = existedProducts.Sum(m => m.Count);
 
@@ -141,10 +139,10 @@ namespace OrganiDb.Services
 
             return new BasketCountResponse
             {
-                TotalPrice = productPrice,
+                TotalPrice = totalPrice,
                 GrandTotalPrice = grandTotalPrice,
                 GrandTotalCount = grandTotalCount,
-                Count = count
+                ProductCount = count
             };
         }
 
@@ -154,6 +152,7 @@ namespace OrganiDb.Services
 
             decimal grandTotalPrice = 0;
             decimal totalPrice = 0;
+            decimal productPrice = 0;
             int count = 0;
 
             foreach (BasketVM existedProduct in existedProducts)
@@ -168,13 +167,17 @@ namespace OrganiDb.Services
                         if (existedProduct.Count > 1)
                         {
                             totalPrice = dbProduct.ActualPrice * (existedProduct.Count - 1);
+                            productPrice = totalPrice;
                             existedProduct.Count--;
+                            count = existedProduct.Count;
                         }
                         else
                         {
                             totalPrice = dbProduct.ActualPrice;
+                            productPrice = totalPrice;
+                            count = existedProduct.Count;
                         }
-                        count = existedProduct.Count;
+                       
                     }
 
                     else
@@ -182,29 +185,33 @@ namespace OrganiDb.Services
                         if (existedProduct.Count > 1)
                         {
                             totalPrice = (dbProduct.ActualPrice - (dbProduct.ActualPrice * dbProduct.Discount.Percent) / 100) * (existedProduct.Count - 1);
+                            productPrice = totalPrice;
                             existedProduct.Count--;
+                            count = existedProduct.Count;
                         }
                         else
                         {
-                            totalPrice = dbProduct.ActualPrice - (dbProduct.ActualPrice * dbProduct.Discount.Percent) / 100;
+                            totalPrice = (dbProduct.ActualPrice - (dbProduct.ActualPrice * dbProduct.Discount.Percent) / 100);
+                            productPrice = totalPrice;
+                            count = existedProduct.Count;
                         }
-                        count = existedProduct.Count;
+                      
                     }
+                   grandTotalPrice -= totalPrice;  
+                   
                 }
                 else
                 {
                     if (dbProduct.Discount.Percent == 0)
                     {
-                        totalPrice = dbProduct.ActualPrice * existedProduct.Count;
+                        grandTotalPrice -= (dbProduct.ActualPrice * existedProduct.Count);
                     }
 
                     else
                     {
-                        totalPrice = (dbProduct.ActualPrice - (dbProduct.ActualPrice * dbProduct.Discount.Percent) / 100); ;
+                        grandTotalPrice -= (dbProduct.ActualPrice - (dbProduct.ActualPrice * dbProduct.Discount.Percent) / 100) * (existedProduct.Count);
                     }
                 }
-
-                grandTotalPrice += totalPrice;
             }
 
             int grandTotalCount = existedProducts.Sum(m => m.Count);
@@ -214,9 +221,9 @@ namespace OrganiDb.Services
             return new BasketCountResponse
             {
                 TotalPrice = totalPrice,
-                GrandTotalPrice = grandTotalPrice,
+                GrandTotalPrice = -(grandTotalPrice),
                 GrandTotalCount = grandTotalCount,
-                Count = count
+                ProductCount = count
             };
         }
 

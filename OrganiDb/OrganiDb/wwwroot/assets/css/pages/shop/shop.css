@@ -927,7 +927,7 @@
     width: 270px;
     height: 265px;
     position: relative;
-    padding: 35px;
+    padding: 20px 35px;
     margin-bottom: 0;
     background-image: linear-gradient(45deg, #2edf27, #f9f9f9);
     border-top-left-radius: 26px;

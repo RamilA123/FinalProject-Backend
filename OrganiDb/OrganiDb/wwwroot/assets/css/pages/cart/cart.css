@@ -820,6 +820,7 @@ label {
 
 #cart-table .table td {
    color: white;
+   text-align: center;
 }
 
 #cart-table .table .image {
