@@ -3,18 +3,19 @@
 $(document).ready(function () {
 
     $(document).on("click", ".product-add-to-cart", function (e) {
+   
         e.preventDefault();
-        console.log("Ramil")
-
+      
         let productId = $(this).attr("data-id");
 
         let data = { id: productId }
 
         $.ajax({
-            url: "Cart/AddToCart",
+            url: "/Cart/AddToCart",
             type: "Post",
             data: data,
             success: function (res) {
+              
                 $(".cart-count").text(res);
                 Swal.fire({
                     position: 'center',

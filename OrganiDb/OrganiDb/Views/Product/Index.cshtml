@@ -121,13 +121,11 @@
 
                             <div class="product-description">
                                 <p>@Model.Product.Description</p>
-
                             </div>
 
                             <div class="product-btns">
-                                <div class="product-add-to-cart product-add">
-                                    <a class="btn btn-success" href="cart.html">Add To Cart</a>
-
+                                <div class="product-add">
+                                     <a class="btn btn-success" href="cart.html">Add To Cart</a>
                                 </div>
 
                                 <div class="product-add-to-wishlist product-add">
@@ -171,12 +169,12 @@
                                 <div class="product-price my-2">
                                     @if (Model.Product.Discount.Percent == 0)
                                     {
-                                        <span class="@(Model.Product.Discount.Percent == 0 ? "no-discount-price" : "")">$@Model.Product.ActualPrice.ToString("0.#")</span>
+                                        <span class="@(Model.Product.Discount.Percent == 0 ? "no-discount-price" : "")">$@Model.Product.ActualPrice.ToString("0.####")</span>
                                     }
                                     else
                                     {
-                                        <span class="discount">$@Model.Product.ActualPrice.ToString("0.#")</span>
-                                        <span>$@((Model.Product.ActualPrice - (Model.Product.ActualPrice * Model.Product.Discount.Percent) / 100).ToString("0.#"))</span>
+                                        <span class="discount">$@Model.Product.ActualPrice.ToString("0.####")</span>
+                                        <span>$@((Model.Product.ActualPrice - (Model.Product.ActualPrice * Model.Product.Discount.Percent) / 100).ToString("0.####"))</span>
                                         <span class="percent-discount">(@Model.Product.Discount.Percent% discount)</span>
                                     }
 
@@ -214,8 +212,8 @@
                                 </div>
 
                                 <div class="product-btns">
-                                    <div class="product-add-to-cart product-add">
-                                        <a class="btn btn-success" href="cart.html">Add To Cart</a>
+                                    <div class="product-add">
+                                        <a class="btn btn-success product-add-to-cart" data-id="@Model.Product.Id">Add To Cart</a>
                                     </div>
 
                                     <div class="product-add-to-wishlist product-add">
@@ -428,6 +426,8 @@
 <!--MAIN-END-->
 @section Scripts{
     <script src="~/assets/js/product.js"></script>
+    <script src="~/assets/js/basket.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 }
 
 

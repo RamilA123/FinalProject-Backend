@@ -126,6 +126,7 @@ namespace OrganiDb.Services
                     }
                     else
                     {
+                        decimal a = (dbProduct.ActualPrice - (dbProduct.ActualPrice * dbProduct.Discount.Percent) / 100);
                         grandTotalPrice += (dbProduct.ActualPrice - (dbProduct.ActualPrice * dbProduct.Discount.Percent) / 100) * (existedProduct.Count);
                     }
                    

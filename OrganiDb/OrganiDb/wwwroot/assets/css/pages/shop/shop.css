@@ -891,6 +891,7 @@
 #filtering .products .no-discount-price {
     text-decoration: none;
     color: green;
+    margin-left: 20px;
 }
 
 #filtering .products .tab-content .tab {
@@ -1099,12 +1100,12 @@
 
 #filtering .products .tab-content .product-content .product-price {
     display: flex;
-    gap: 10px;
-    font-size: 17px;
+    gap: 7px;
+    font-size: 16px;
     margin-bottom: 35px;
-    margin-left: 4%;
     font-weight: 700;
     font-style: italic;
+    justify-content: center;
 }
 
 #filtering .products .tab-content .product-content .product-price .discount {

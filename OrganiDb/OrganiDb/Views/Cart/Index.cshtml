@@ -66,13 +66,13 @@
                                     </td>
                                     @if (product.Percent == 0)
                                     {
-                                        <td class="cell">$@product.Price.ToString("0.#")</td>
-                                        <td style="width: 100px" class="cell"> $@product.TotalPrice.ToString("0.#")</td>
+                                        <td class="cell">$@product.Price.ToString("0.####")</td>
+                                        <td style="width: 100px" class="cell"> $@product.TotalPrice.ToString("0.####")</td>
                                     }
                                     else
                                     {
-                                        <td class="cell">$@product.DiscountPrice.ToString("0.#")</td>
-                                        <td style="width: 100px" class="cell">$@((product.DiscountPrice * product.Count).ToString("0.#"))</td>
+                                        <td class="cell">$@product.DiscountPrice.ToString("0.####")</td>
+                                        <td style="width: 100px" class="cell">$@((product.DiscountPrice * product.Count).ToString("0.####"))</td>
                                     }
 
                                     <td class="cell button">
@@ -126,7 +126,7 @@
                             </li>
                         </ul>
 
-                        <h5>Grand Total:<span>$</span><span class="grand-total-price">@grandTotalPrice.ToString("0.#")</span></h5>
+                        <h5>Grand Total:<span>$</span><span class="grand-total-price">@grandTotalPrice.ToString("0.####")</span></h5>
 
                         <div class="payment">
                             <h6>WE ACCEPT:</h6>

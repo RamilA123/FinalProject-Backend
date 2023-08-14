@@ -50,12 +50,12 @@
                     <h6 class="product-price @(product.Discount.Percent == 0 ? "no-discount" : "")">
                         @if (product.Discount.Percent == 0)
                         {
-                            <span class="@(product.Discount.Percent == 0 ? "no-discount-price" : "")">$@product.ActualPrice.ToString("0.#") price</span>
+                            <span class="@(product.Discount.Percent == 0 ? "no-discount-price" : "")">$@product.ActualPrice.ToString("0.####") price</span>
                         }
                         else
                         {
-                            <span class="discount">$@product.ActualPrice.ToString("0.#")</span>
-                            <span>$@((product.ActualPrice - (product.ActualPrice * product.Discount.Percent) / 100).ToString("0.#"))</span>
+                            <span class="discount">$@product.ActualPrice.ToString("0.####")</span>
+                            <span>$@((product.ActualPrice - (product.ActualPrice * product.Discount.Percent) / 100).ToString("0.####"))</span>
                             <span>(@product.Discount.Percent% discount)</span>
                         }
                     </h6>
@@ -115,12 +115,12 @@
                     <h6 class="product-price @(product.Discount.Percent == 0 ? "no-discount" : "")">
                         @if (product.Discount.Percent == 0)
                         {
-                            <span class="@(product.Discount.Percent == 0 ? "no-discount-price" : "")">$@product.ActualPrice.ToString("0.#") price</span>
+                            <span class="@(product.Discount.Percent == 0 ? "no-discount-price" : "")">$@product.ActualPrice.ToString("0.####") price</span>
                         }
                         else
                         {
-                            <span class="discount">$@product.ActualPrice.ToString("0.#")</span>
-                            <span>$@((product.ActualPrice - (product.ActualPrice * product.Discount.Percent) / 100).ToString("0.#"))</span>
+                            <span class="discount">$@product.ActualPrice.ToString("0.####")</span>
+                            <span>$@((product.ActualPrice - (product.ActualPrice * product.Discount.Percent) / 100).ToString("0.####"))</span>
                             <span>(@product.Discount.Percent% discount)</span>
                         }
                     </h6>

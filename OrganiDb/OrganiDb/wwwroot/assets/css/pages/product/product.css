@@ -862,7 +862,7 @@
     font-weight: 500;
 }
 
-#product-detail .product .product-btns .product-add-to-cart a:hover {
+#product-detail .product .product-btns .product-add a:hover {
     background-color: green;
 }
 

@@ -1032,16 +1032,12 @@
 .products .no-discount-price {
     text-decoration: none;
     color: green;
+    margin-left: 20px;
 }
 
 .products .tab-content .tab {
    padding-left: 30px;
    justify-content: center;
-}
-
-.products .tab-content .show.active {
-/*   display: flex;
-   flex-wrap: wrap;*/
 }
 
 .products .tab-content a {
@@ -1241,12 +1237,12 @@
 
 .products .tab-content .product-content .product-price {
    display: flex;
-   gap: 10px;
-   font-size: 17px;
+   gap: 7px;
+   font-size: 16px;
    margin-bottom: 35px;
-   margin-left: 8%;
    font-weight: 700;
    font-style: italic;
+   justify-content: center;
 }
 
 .products .tab-content .product-content .product-price .discount {
