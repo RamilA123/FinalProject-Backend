@@ -18,7 +18,7 @@
                 </div>
 
                 <div class="product-add-to-wishlist">
-                    <a href="#">
+                    <a href="#" class="add-to-wishlist">
                         <span class="no-wishlist wishlist">Add to wishlist</span>
                         <i class="@(product.StockCount == 0 ? "stop-animation" : "") fa-regular fa-heart"></i>
                         <i class="fa-solid fa-heart d-none"></i>
@@ -82,7 +82,7 @@
                 </div>
 
                 <div class="product-add-to-wishlist">
-                    <a href="#">
+                    <a class="add-to-wishlist" data-id="@product.Id">
                         <span class="wishlist">Add to wishlist</span>
                         <i class="fa-regular fa-heart"></i>
                         <i class="fa-solid fa-heart d-none"></i>

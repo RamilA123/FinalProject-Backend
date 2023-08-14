@@ -1165,6 +1165,10 @@
       "PackagePath": "staticwebassets\\assets\\js\\about.js"
     },
     {
+      "Id": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\js\\add-to-wishlist.js",
+      "PackagePath": "staticwebassets\\assets\\js\\add-to-wishlist.js"
+    },
+    {
       "Id": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\js\\basket.js",
       "PackagePath": "staticwebassets\\assets\\js\\basket.js"
     },

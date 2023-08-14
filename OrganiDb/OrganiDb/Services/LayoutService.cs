@@ -3,6 +3,7 @@ using OrganiDb.Models;
 using OrganiDb.Services.Interfaces;
 using OrganiDb.ViewModels;
 using OrganiDb.ViewModels.Cart;
+using OrganiDb.ViewModels.Wishlist;
 using System.Security.Claims;
 using System.Text.Json;
 
@@ -28,15 +29,22 @@ namespace OrganiDb.Services
         public async Task<LayoutVM> GetAllDatasAsync()
         {
             List<BasketVM> existedproducts = new List<BasketVM>();
+            List<WishlistViewModel> existedWishlistproducts = new List<WishlistViewModel>();
 
             Dictionary<string, string> settingDatas = _context.Settings.AsEnumerable().ToDictionary(m => m.Key, m => m.Value);
 
-            if (_accessorService.HttpContext.Request.Cookies["Basket"] != null)
+            if (_accessorService.HttpContext.Request.Cookies["basket"] != null)
             {
                 existedproducts = JsonSerializer.Deserialize<List<BasketVM>>(_accessorService.HttpContext?.Request.Cookies["basket"]);
             }
 
+            if (_accessorService.HttpContext.Request.Cookies["wishlist"] != null)
+            {
+                existedWishlistproducts = JsonSerializer.Deserialize<List<WishlistViewModel>>(_accessorService.HttpContext?.Request.Cookies["wishlist"]);
+            }
+
             int basketCount = existedproducts.Sum(m => m.Count);
+            int wishlistCount = existedWishlistproducts.Sum(m => m.Count);
 
             List<SocialMedia> socialMedias = await _socialMediaService.GetAllAsync();
 
@@ -49,7 +57,8 @@ namespace OrganiDb.Services
                 SettingDatas = settingDatas,
                 User = user,
                 BasketCount = basketCount,
-                SocialMedias = socialMedias
+                SocialMedias = socialMedias,
+                WishlistCount = wishlistCount,
             };
 
             return data;

@@ -42,6 +42,7 @@ builder.Services.Configure<IdentityOptions>(opt =>
 
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddScoped<IBasketService, BasketService>();
+builder.Services.AddScoped<IWishlistService, WishlistService>();
 builder.Services.AddScoped<ISliderService,SliderService>();
 builder.Services.AddScoped<IAssistanceService,AssistanceService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
