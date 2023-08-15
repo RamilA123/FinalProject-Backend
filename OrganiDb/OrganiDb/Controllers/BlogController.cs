@@ -34,8 +34,21 @@ namespace OrganiDb.Controllers
             _categoryService = categoryService;
         }
 
-        public async Task<IActionResult> Index(int page = 1, int take = 3)
+        public async Task<IActionResult> Index(string searchText, int page = 1, int take = 3)
         {
+            List<Blog_> blogs;
+
+            if(searchText != null)
+            {
+                blogs = await _blogService.GetAllAsync();
+
+                blogs = blogs.Where(m => m.Title.ToLower().Contains(searchText.ToLower())).ToList();
+            }
+            else
+            {
+                blogs = await _blogService.GetPaginatedDatasAsync(page, take);
+            }
+
             List<Banner> banners = await _bannerService.GetAllAsync();
 
             List<BannerInfo> bannerInfos = await _bannerInfoService.GetAllAsync();
@@ -45,8 +58,6 @@ namespace OrganiDb.Controllers
             List<Category> categories = await _categoryService.GetAllAsync();
 
             List<Tag> tags = await _tagService.GetAllAsync();
-
-            List<Blog_> blogs = await _blogService.GetPaginatedDatasAsync(page, take);
 
             int blogCount = await _blogService.GetCountAsync();
 

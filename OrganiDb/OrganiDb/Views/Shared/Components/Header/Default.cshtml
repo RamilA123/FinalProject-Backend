@@ -88,12 +88,10 @@
                                 </div>
                                 <div class="search-design2">
                                 </div>
-
-                                <form>
-                                    <input type="text" class="form-control" placeholder="Search anything ... ">
-                                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-                                </form>
-
+                                @using (Html.BeginForm("Index", "Shop", FormMethod.Get, new  { @class = "search-products" })){
+                                   <input type="text" class="form-control" placeholder="Search anything ... " name="searchText">
+                                   <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                }
                             </div>
                         </div>
                     </div>
@@ -205,7 +203,6 @@
                                 <div class="horizontal-line"></div>
                             </li>
 
-
                             <div class="drop-down">
 
                                 <div class="drop-down-title">
@@ -214,7 +211,8 @@
                                 <div class="horizontal-line"></div>
                                 <i class="fa-solid fa-chevron-down hover"></i>
                             </li>
-                    </div>
+
+                        </div>
 
 
                     <div class="drop-down-menu">

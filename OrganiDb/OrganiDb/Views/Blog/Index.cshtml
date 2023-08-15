@@ -124,10 +124,11 @@
 
                     <div class="blog-items search my-5">
                         <h3>Search Blogs</h3>
-                        <form>
-                            <input type="text" placeholder="Search">
+                            @using(Html.BeginForm("Index", "Blog", FormMethod.Get, new { @class = "search-blogs" }))
+                            {
+                            <input type="text" placeholder="Search" name="searchText">
                             <button type="submit" class="btn btn-success mt-3">Search</button>
-                        </form>
+                            }
                     </div>
 
                     <div class="blog-items">

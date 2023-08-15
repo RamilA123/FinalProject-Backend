@@ -38,8 +38,22 @@ namespace OrganiDb.Controllers
             _brandService = brandService;
         }
 
-        public async Task<IActionResult> Index(int page = 1, int take = 15)
+        [HttpGet]
+        public async Task<IActionResult> Index(string searchText, int page = 1, int take = 15)
         {
+            IEnumerable<Product> products;
+
+            if (searchText != null)
+            {
+                products = await _productService.GetAllAsync();
+
+                products = products.Where(m => m.Name.ToLower().Contains(searchText.ToLower())).ToList();
+            }
+            else{
+
+                products = await _productService.GetPaginatedDatasAsync(page, take);
+            }
+                
             List<Banner> banners = await _bannerService.GetAllAsync();
 
             List<BannerInfo> bannerInfos = await _bannerInfoService.GetAllAsync();
@@ -52,14 +66,13 @@ namespace OrganiDb.Controllers
 
             List<Brand> brands = await _brandService.GetAllAsync();
 
-            IEnumerable<Product> products = await _productService.GetPaginatedDatasAsync(page,take);
-
             int productCount = await _productService.GetCountAsync();
 
             int totalPage = (int)Math.Ceiling((decimal)productCount / take);
 
-            Pagination<Product> paginatedProducts = new(products,page,totalPage);
-         
+            Pagination<Product> paginatedProducts = new(products, page, totalPage);
+
+
             ShopVM model = new()
             {
                 Banners = banners,
@@ -70,8 +83,9 @@ namespace OrganiDb.Controllers
                 Tags = tags,
                 Brands = brands
             };
-
+                
             return View(model);
+            
         }
     }
 }
