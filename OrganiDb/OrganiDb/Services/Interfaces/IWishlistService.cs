@@ -9,6 +9,6 @@ namespace OrganiDb.Services.Interfaces
     {
         List<WishlistViewModel> GetAllAsync();
         void AddProduct(List<WishlistViewModel> wishlist, Product product);
-        Task<BasketDeleteResponse> DeleteProduct(int? id);
+        WishlistDeleteResponse DeleteProduct(int? id);
     }
 }

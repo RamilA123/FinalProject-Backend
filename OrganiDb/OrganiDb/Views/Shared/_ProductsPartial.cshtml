@@ -1,8 +1,8 @@
 ﻿@model IEnumerable<Product>
 
+
 @foreach (Product product in Model)
 {
-
     @if (product.StockCount == 0)
     {
         <div class="col-sm-12 col-md-6 col-lg-3">

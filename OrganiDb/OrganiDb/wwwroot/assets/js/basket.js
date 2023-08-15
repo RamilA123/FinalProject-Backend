@@ -22,7 +22,7 @@ $(document).ready(function () {
                     icon: 'success',
                     title: 'Product added to cart',
                     showConfirmButton: false,
-                    timer: 1500
+                    timer: 1000
                 })
             }
             })

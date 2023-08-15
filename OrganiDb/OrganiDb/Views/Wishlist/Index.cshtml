@@ -52,12 +52,12 @@
                                     {
 
                                         <tr>
-                                            <td>
-                                                <i class="fa-solid fa-trash-can trash"></i>
-                                                <img src="~/assets/images/products/@product.Image" alt="">
+                                            <td class="image">
+                                                 <i data-id="@product.Id" class="fa-solid fa-trash-can trash product-delete-from-wishlist"></i>
+                                                 <img src="~/assets/images/products/@product.Image" alt="">
                                             </td>
                                             <td class="cell">@product.Name</td>
-                                            <td class="cell">@product.Description</td>
+                                            <td><p>@product.Description</p></td>
                                             @if (product.Percent == 0)
                                             {
                                                 <td class="cell">$@product.Price.ToString("0.####")</td>
@@ -72,52 +72,6 @@
                                             </td>
                                         </tr>
                                     }
-
-
-
-                                    @* <tr>
-                                <td>
-                                <i class="fa-solid fa-trash-can trash"></i>
-                                <img src="~/assets/images/products/pizza1.png" alt="">
-                                </td>
-                                <td class="cell">Pizza</td>
-                                <td class="cell">Description</td>
-                                <td class="cell">$70</td>
-                                <td class="cell">
-                                <button class="btn btn-danger rounded-5">Add To Cart</button>
-                                </td>
-                                </tr>
-
-
-                                <tr>
-                                <td>
-                                <i class="fa-solid fa-trash-can trash"></i>
-                                <img src="~/assets/images/products/carrot1.png" alt="">
-                                </td>
-                                <td class="cell">Carrot</td>
-                                <td class="cell">Description</td>
-                                <td class="cell">$80</td>
-                                <td class="cell">
-                                <button class="btn btn-danger rounded-5">Add To Cart</button>
-                                </td>
-                                </tr>
-
-                                <tr>
-                                <td>
-                                <i class="fa-solid fa-trash-can trash"></i>
-                                <img src="~/assets/images/products/hamburger1.png" alt="">
-                                </td>
-                                <td class="cell">Burger</td>
-                                <td class="cell">Description</td>
-                                <td class="cell">$35</td>
-                                <td class="cell">
-                                <button class="btn btn-danger rounded-5">Add To Cart</button>
-                                </td>
-                                </tr>*@
-
-
-
-
                                 </tbody>
                             </table>
                         </div>
@@ -141,7 +95,7 @@
                         </p>
 
                         <div class="shop-btn">
-                            <a class="btn btn-success rounded-5" href="shop.html">Return To Shop</a>
+                            <a class="btn btn-success rounded-5" asp-controller="Shop" asp-action="Index">Return To Shop</a>
                         </div>
 
                     </div>
@@ -165,7 +119,7 @@
                         </p>
 
                         <div class="shop-btn">
-                            <a class="btn btn-success rounded-5" href="shop.html">Return To Shop</a>
+                            <a class="btn btn-success rounded-5" asp-controller="Shop" asp-action="Index">Return To Shop</a>
                         </div>
 
                     </div>
@@ -188,5 +142,6 @@
 @section Scripts{
     <script src="~/assets/js/wishlist.js"></script>
     <script src="~/assets/js/basket.js"></script>
+    <script src="~/assets/js/add-to-wishlist_.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 }

@@ -34,9 +34,19 @@ namespace OrganiDb.Services
             _accesssorService.HttpContext.Response.Cookies.Append("wishlist", JsonSerializer.Serialize(wishlist));
         }
 
-        public Task<BasketDeleteResponse> DeleteProduct(int? id)
+        public WishlistDeleteResponse DeleteProduct(int? id)
         {
-            throw new NotImplementedException();
+            List<WishlistViewModel> wishlist = JsonSerializer.Deserialize<List<WishlistViewModel>>(_accesssorService.HttpContext.Request.Cookies["wishlist"]);
+
+            WishlistViewModel existedProduct = wishlist.FirstOrDefault(m => m.Id == id);
+
+            wishlist.Remove(existedProduct);
+
+            _accesssorService.HttpContext.Response.Cookies.Append("wishlist", JsonSerializer.Serialize(wishlist));
+
+            int grandTotalCount = wishlist.Sum(m => m.Count);
+
+            return new WishlistDeleteResponse { GrandTotalCount = grandTotalCount };
         }
 
         public List<WishlistViewModel> GetAllAsync()

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using OrganiDb.Models;
+using OrganiDb.Responses;
 using OrganiDb.Services;
 using OrganiDb.Services.Interfaces;
 using OrganiDb.ViewModels.Cart;
@@ -78,6 +79,14 @@ namespace OrganiDb.Controllers
             int grandTotalCount = wishlist.Sum(m => m.Count);
 
             return Ok(grandTotalCount);
+        }
+
+        [HttpPost]
+        public IActionResult DeleteFromWishlist(int? id)
+        {
+           WishlistDeleteResponse wishlist = _wishlistService.DeleteProduct(id);
+
+            return Ok(wishlist);
         }
     }
 }

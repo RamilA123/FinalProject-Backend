@@ -824,9 +824,9 @@ label {
 }
 
 #cart-table .table .image {
-   width: 200px;
-   height: 180px;
-   padding: 20px;
+    width: 170px;
+    height: 180px;
+    padding: 25px 10px;
 }
 
 #cart-table .table .image img {
@@ -841,15 +841,15 @@ label {
 }
 
 #cart-table .table .cell {
-   padding: 85px 20px;
-}
-
-#cart-table .table .quantity {
-   padding: 80px 20px;
+   padding: 75px 20px;
 }
 
 #cart-table .table .description {
-    padding: 75px 10px;
+   padding-top: 45px;
+}
+
+#cart-table .table .description p {
+   width: 395px;
 }
 
 #cart-table .table .cell button {
@@ -943,7 +943,7 @@ input::-webkit-outer-spin-button {
 
 #cart-table .cart-empty .alert .shop-btn {
    text-align: center;
-   margin-bottom: 50px;
+   margin-bottom: 25px;
 }
 
 #cart-table .cart-empty .alert .shop-btn a {

@@ -36,9 +36,9 @@
                     <div class="left-side">
                         @if (Model.Product.StockCount == 0)
                         {
-                              <div class="main-image product-out-of-stock">
+                          <div class="main-image product-out-of-stock">
                             <img src="~/assets/images/products/@Model.Product.ProductImages.Where(m => m.IsMain).FirstOrDefault().Image" alt="">
-                             <div class="out-of-stock">Out Of Stock</div>
+                          <div class="out-of-stock">Out Of Stock</div>
                         </div>
 
                         <div class="detail-images mt-2">
@@ -48,6 +48,7 @@
                             }
                             </div>
                         }
+
                         else
                         {
                            <div class="main-image">
@@ -217,7 +218,7 @@
                                     </div>
 
                                     <div class="product-add-to-wishlist product-add">
-                                        <a class="btn btn-warning" href="wishlist.html">Add To Wishlist</a>
+                                        <a class="btn btn-warning add-to-wishlist" data-id="@Model.Product.Id">Add To Wishlist</a>
                                     </div>
                                 </div>
 
@@ -427,7 +428,7 @@
 @section Scripts{
     <script src="~/assets/js/product.js"></script>
     <script src="~/assets/js/basket.js"></script>
-    <script src="~/assets/js/add-to-wishlist.js"></script>
+    <script src="~/assets/js/add-to-wishlist_.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 }
 

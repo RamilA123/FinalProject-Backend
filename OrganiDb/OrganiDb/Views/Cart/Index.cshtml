@@ -29,7 +29,7 @@
 
         <!--CART-TABLE-START-->
 
-        <section id="cart-table" class="py-5">
+        <section id="cart-table" class="py-1">
       
         @if(Model.Baskets.Count != 0)
         {
@@ -54,10 +54,14 @@
                             {
                                 <tr>
 
-                                    <td class="image"><img src="~/assets/images/products/@product.Image" alt=""></td>
+                                    <td>
+                                        <div class="image">
+                                            <img src="~/assets/images/products/@product.Image" alt="">
+                                        </div>
+                                    </td>
                                     <td class="cell">@product.Name</td>
-                                    <td class="description">@product.Description</td>
-                                    <td class="quantity">
+                                    <td class="description"><p>@product.Description</p></td>
+                                    <td class="cell quantity">
                                         <div class="count">
                                             <i data-id="@product.Id" class="fa-solid fa-plus plus"></i>
                                             <input class="input" type="number" value="@product.Count">
@@ -186,7 +190,7 @@
                         </p>
 
                         <div class="shop-btn">
-                            <a class="btn btn-success rounded-5" href="shop.html">Return To Shop</a>
+                            <a class="btn btn-success rounded-5" asp-controller="Shop" asp-action="Index">Return To Shop</a>
                         </div>
 
                     </div>

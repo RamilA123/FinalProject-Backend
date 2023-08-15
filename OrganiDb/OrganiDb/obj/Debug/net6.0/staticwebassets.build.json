@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "RwdyKGZWLwCpAEbfLyIBIKU+OmBnJkuIRlR7tQC6eiw=",
+  "Hash": "iQ2lPYopqpKMo025q1D+3SF1TqmlKR2Q+4anVTTi5tA=",
   "Source": "OrganiDb",
   "BasePath": "_content/OrganiDb",
   "Mode": "Default",
@@ -4981,12 +4981,12 @@
       "OriginalItemSpec": "wwwroot\\assets\\js\\about.js"
     },
     {
-      "Identity": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\js\\add-to-wishlist.js",
+      "Identity": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\js\\add-to-wishlist_.js",
       "SourceId": "OrganiDb",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\",
       "BasePath": "_content/OrganiDb",
-      "RelativePath": "assets/js/add-to-wishlist.js",
+      "RelativePath": "assets/js/add-to-wishlist_.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -4995,7 +4995,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\js\\add-to-wishlist.js"
+      "OriginalItemSpec": "wwwroot\\assets\\js\\add-to-wishlist_.js"
     },
     {
       "Identity": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\js\\basket.js",
