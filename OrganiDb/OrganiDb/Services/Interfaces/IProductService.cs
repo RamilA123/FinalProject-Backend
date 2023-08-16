@@ -11,5 +11,7 @@ namespace OrganiDb.Services.Interfaces
         Task<int> GetCountAsync();
         IEnumerable<Product> SearchByProducts(IEnumerable<Product> products, string searchText);
         Task<IEnumerable<Product>> FilterByCategoryAsync(int? id);
+        Task<IEnumerable<Product>> FilterByPriceAsync(string minumumValue, string maximumValue);
+        Task<IEnumerable<Product>> FilterByRatingAsync(int? id);
     }
 }

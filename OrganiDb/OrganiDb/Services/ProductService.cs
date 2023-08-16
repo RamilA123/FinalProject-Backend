@@ -27,6 +27,47 @@ namespace OrganiDb.Services
                                      Include(m => m.Reviews).ToListAsync();
         }
 
+        public async Task<IEnumerable<Product>> FilterByPriceAsync(string minumumValue, string maximumValue)
+        {
+            List<Product> filteredProducts = new List<Product>();
+            
+            IEnumerable<Product> products = await GetAllAsync();
+
+            foreach (Product product in products)
+            {
+              if (product.Discount.Percent == 0)
+              {
+                 if (product.ActualPrice >= Decimal.Parse(minumumValue) && product.ActualPrice <= Decimal.Parse(maximumValue))
+                 {
+                        filteredProducts.Add(product);
+                 }
+              }
+
+              else
+              {
+                    if (product.ActualPrice - (product.ActualPrice * product.Discount.Percent) / 100 >= Decimal.Parse(minumumValue) 
+                    && product.ActualPrice - (product.ActualPrice * product.Discount.Percent) / 100 <= Decimal.Parse(maximumValue))
+                    {
+                        filteredProducts.Add(product);
+                    }
+              }
+
+            }
+
+            return filteredProducts;
+        }
+
+        public async Task<IEnumerable<Product>> FilterByRatingAsync(int? id)
+        {
+            return await _context.Products.Where(m => m.RatingId == id).Include(m => m.Category).
+                                     Include(m => m.Discount).
+                                     Include(m => m.Brand).
+                                     Include(m => m.Rating).
+                                     Include(m => m.ProductImages).
+                                     Include(m => m.ProductTags).
+                                     Include(m => m.Reviews).ToListAsync();
+        }
+
         public async Task<IEnumerable<Product>> GetAllAsync()
         {
             return await _context.Products.Include(m => m.Category).

@@ -1216,12 +1216,12 @@
    font-size: 13px;
 }
 
-.products .tab-content .product-content .product-rating svg {
-   color: #c5c2c2;
-}
-
 .products .tab-content .product-content .product-rating .active {
    color: green;
+}
+
+.products .tab-content .product-content .product-rating .non-active {
+   color: #c5c2c2;
 }
 
 .products .tab-content .product-content .product-review {

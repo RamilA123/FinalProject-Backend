@@ -5,7 +5,7 @@
 {
     @if (product.StockCount == 0)
     {
-        <div class="col-sm-12 col-md-6 col-lg-3" category-id="@product.CategoryId">
+        <div class="col-sm-12 col-md-6 col-lg-3" rating-id="@product.RatingId" category-id="@product.CategoryId">
             <div class="product card product-out-of-stock" style="width: 18rem;">
 
                 <div class="product-images">
@@ -42,7 +42,7 @@
                     <div class="product-rating">
                         @for (int i = 1; i <= 5; i++)
                         {
-                            <i class="fa-solid fa-star @(i <= product.Rating.RatingCount ? "active" : "")"></i>
+                            <i class="fa-solid fa-star @(i <= product.Rating.RatingCount ? "active" : "non-active")"></i>
                         }
                     </div>
                     <span class="product-review">Reviews (@product.Reviews.Count)</span>
@@ -71,8 +71,8 @@
 
     else
     {
-        <div class="col-sm-12 col-md-6 col-lg-3" category-id="@product.CategoryId">
-            <div class="product card" category-id="@product.Id" style="width: 18rem;">
+        <div class="col-sm-12 col-md-6 col-lg-3" rating-id="@product.RatingId" category-id="@product.CategoryId">
+            <div class="product card" style="width: 18rem;">
 
                 <div class="product-images">
                     <a asp-controller="Product" asp-action="Index" asp-route-id="@product.Id">
@@ -106,7 +106,7 @@
                     <div class="product-rating">
                         @for (int i = 1; i <= 5; i++)
                         {
-                            <i class="fa-solid fa-star @(i <= product.Rating.RatingCount ? "active" : "")"></i>
+                            <i class="fa-solid fa-star @(i <= product.Rating.RatingCount ? "active" : "non-active")"></i>
                         }
                     </div>
 

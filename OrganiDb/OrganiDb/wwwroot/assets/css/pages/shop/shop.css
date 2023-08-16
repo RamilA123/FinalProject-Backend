@@ -840,16 +840,16 @@
    box-shadow: 0 0 15px green;
 }
 
-#filtering .left-side .filter ul li svg {
-   color: #cbc9c9;
-}
-
 #filtering .left-side .filter ul li svg:hover {
    cursor: pointer;
 }
 
 #filtering .left-side .filter ul li .active {
    color: green;
+}
+
+#filtering .left-side .filter ul li .non-active {
+   color: #cbc9c9;
 }
 
 #filtering .left-side .filter ul li span {
@@ -1082,12 +1082,12 @@
     font-size: 13px;
 }
 
-#filtering .products .tab-content .product-content .product-rating svg {
-    color: #c5c2c2;
-}
-
 #filtering .products .tab-content .product-content .product-rating .active {
     color: green;
+}
+
+#filtering .products .tab-content .product-content .product-rating .non-active {
+    color: #c5c2c2;
 }
 
 #filtering .products .tab-content .product-content .product-review {

@@ -68,12 +68,12 @@
 
             <div class="filter my-5">
               <h5 class="my-2">Filter By Price</h5>
-              <div class="filter-by-price my-3">
-                <input type="text" placeholder="Minimum">
+              <div class="filter-price my-3">
+                <input class="minimum" type="text" placeholder="Minimum">
                 <input class="maximum" type="text" placeholder="Maximum">
               </div>
               <div class="filter-btn">
-                <a href="">Filter</a>
+                <a href="#" class="filter-by-price">Filter</a>
               </div>
             </div>
 
@@ -85,11 +85,11 @@
                   {
                       <li>
                           <div class="filter-by-rating filter-by">
-                             <input class="form-check-input" type="checkbox">
+                             <input class="form-check-input rating-filter" data-id="@rating.Id" type="checkbox">
                              <label class="star" for="">
                                 @for (int i = 1; i <= Model.Ratings.Count(); i++)
                                 {
-                                   <i class="fa-solid fa-star @(i <= rating.RatingCount ? "active" : "" )"></i>
+                                   <i class="fa-solid fa-star @(i <= rating.RatingCount ? "active" : "non-active")"></i>
                                 }
                              </label>
                           </div>

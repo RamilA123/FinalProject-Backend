@@ -96,7 +96,41 @@ namespace OrganiDb.Controllers
 
             IEnumerable<Product> products = await _productService.FilterByCategoryAsync(id);
 
+            if (products == null) return NotFound();
+
             return PartialView("_ProductsPartial",products);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetPaginatedDatas(int page = 1, int take = 15)
+        {
+            IEnumerable<Product> products = await _productService.GetPaginatedDatasAsync(page, take);
+
+            return PartialView("_ProductsPartial", products);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> FilterByPrice(string minumumValue, string maximumValue)
+        {
+            if (minumumValue == null || maximumValue == null) return BadRequest();
+
+            IEnumerable<Product> products = await _productService.FilterByPriceAsync(minumumValue, maximumValue);
+
+            if (products == null) return NotFound();
+
+            return PartialView("_ProductsPartial", products);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> FilterByRating(int? id)
+        {
+            if (id == null) return BadRequest();
+
+            IEnumerable<Product> products = await _productService.FilterByRatingAsync(id);
+
+            if (products == null) return NotFound();
+
+            return PartialView("_ProductsPartial", products);
         }
     }
 }
