@@ -787,10 +787,13 @@
    background: green
 }
 
-#filtering .left-side .filter .filter-by-rating {
-   font-size: 16px;
+#filtering .left-side .filter .filter-by {
+   display: inline-block;
 }
 
+#filtering .left-side .filter .filter-rating {
+   font-size: 16px;
+}
 
 #filtering .left-side .filter ul {
    list-style-type: none;

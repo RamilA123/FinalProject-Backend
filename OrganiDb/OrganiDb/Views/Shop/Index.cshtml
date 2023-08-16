@@ -48,13 +48,15 @@
 
             <div class="filter my-5">
               <h5 class="my-2">Filter By Category</h5>
-              <div class="filter-by-category">
+              <div class="filter-category">
                 <ul>
                     @foreach (Category category in Model.Categories)
                     {
                          <li>
-                              <input class="form-check-input" type="checkbox">
-                              <label for="">@category.Name</label>
+                             <div class="filter-by-category filter-by">
+                                 <input class="form-check-input category-filter" data-id="@category.Id" type="checkbox">
+                                 <label for="">@category.Name</label>
+                             </div>
                               <span>(@category.Products.Where(m => m.CategoryId == category.Id).Count()) products</span>
                          </li>
                     }
@@ -77,18 +79,20 @@
 
             <div class="filter my-5">
               <h5 class="my-2">Filter By Rating</h5>
-              <div class="filter-by-rating">
+              <div class="filter-rating">
                 <ul>
                   @foreach (Rating rating in Model.Ratings.OrderByDescending(m => m.RatingCount))
                   {
                       <li>
-                        <input class="form-check-input" type="checkbox">
-                           <label class="star" for="">
-                               @for (int i = 1; i <= Model.Ratings.Count(); i++)
-                               {
-                                    <i class="fa-solid fa-star @(i <= rating.RatingCount ? "active" : "" )"></i>
-                               }
-                           </label>
+                          <div class="filter-by-rating filter-by">
+                             <input class="form-check-input" type="checkbox">
+                             <label class="star" for="">
+                                @for (int i = 1; i <= Model.Ratings.Count(); i++)
+                                {
+                                   <i class="fa-solid fa-star @(i <= rating.RatingCount ? "active" : "" )"></i>
+                                }
+                             </label>
+                          </div>
                         <span>(@rating.Products.Where(m => m.RatingId == rating.Id).Count()) products</span>
                       </li>
                   }
@@ -107,8 +111,10 @@
                     @foreach (Tag tag in Model.Tags)
                     {
                         <li>
-                           <input class="form-check-input" type="checkbox">
-                           <label for="">@tag.Name</label>
+                            <div class="filter-by-tag filter-by">
+                                <input class="form-check-input" type="checkbox">
+                                <label for="">@tag.Name</label>
+                            </div>
                            <span>(@tag.ProductTags.Where(m => m.TagId == tag.Id).Where(m => m.ProductId == m.Product.Id).Count()) products</span>
                         </li>
                     }
@@ -126,9 +132,11 @@
                     @foreach (Brand brand in Model.Brands)
                     {
                          <li>
-                              <input class="form-check-input" type="checkbox">
-                              <label for="">@brand.Name</label>
-                              <span>(@brand.Products.Where(m => m.BrandId == brand.Id).Count()) products</span>
+                             <div class="filter-by-brand filter-by">
+                                  <input class="form-check-input" type="checkbox">
+                                  <label for="">@brand.Name</label>
+                             </div>
+                             <span>(@brand.Products.Where(m => m.BrandId == brand.Id).Count()) products</span>
                          </li>
                     }
                 </ul>
@@ -171,7 +179,7 @@
 
         <div class="right-side products mt-5">
 
-            <div class="tab-content mt-4" id="pills-tabContent">
+                <div class="tab-content mt-4 filtering-products" id="pills-tabContent">
 
                 <partial name="_ProductsPartial" model="Model.PaginatedProducts.Datas" />
 
@@ -218,6 +226,7 @@
 @section Scripts{
     <script src="~/assets/js/shop.js"></script>
     <script src="~/assets/js/basket.js"></script>
-    <script src="~/assets/js/add-to-wishlist_.js"></script>
+    <script src="~/assets/js/add-to-wishlist.js"></script>
+    <script src="~/assets/js/filter.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 }

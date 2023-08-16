@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using MailKit.Search;
+using Microsoft.EntityFrameworkCore;
 using OrganiDb.Data;
 using OrganiDb.Models;
 using OrganiDb.Services.Interfaces;
@@ -26,6 +27,11 @@ namespace OrganiDb.Services
         public async Task<List<Blog_>> GetPaginatedDatasAsync(int page, int take)
         {
             return await _context.Blogs.Include(m => m.Author).Include(m => m.BlogReviews).Skip((page-1)*take).Take(take).ToListAsync();
+        }
+
+        public List<Blog_> SearchByBlogs(List<Blog_> blogs, string searchText)
+        {
+            return blogs.Where(m => m.Title.ToLower().Contains(searchText.ToLower())).ToList();
         }
     }
 }

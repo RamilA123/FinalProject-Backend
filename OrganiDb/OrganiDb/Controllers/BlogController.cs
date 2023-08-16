@@ -42,7 +42,7 @@ namespace OrganiDb.Controllers
             {
                 blogs = await _blogService.GetAllAsync();
 
-                blogs = blogs.Where(m => m.Title.ToLower().Contains(searchText.ToLower())).ToList();
+                blogs = _blogService.SearchByBlogs(blogs, searchText);
             }
             else
             {

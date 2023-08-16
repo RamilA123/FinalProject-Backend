@@ -1165,8 +1165,8 @@
       "PackagePath": "staticwebassets\\assets\\js\\about.js"
     },
     {
-      "Id": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\js\\add-to-wishlist_.js",
-      "PackagePath": "staticwebassets\\assets\\js\\add-to-wishlist_.js"
+      "Id": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\js\\add-to-wishlist.js",
+      "PackagePath": "staticwebassets\\assets\\js\\add-to-wishlist.js"
     },
     {
       "Id": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\js\\basket.js",
@@ -1183,6 +1183,10 @@
     {
       "Id": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\js\\contact.js",
       "PackagePath": "staticwebassets\\assets\\js\\contact.js"
+    },
+    {
+      "Id": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\js\\filter.js",
+      "PackagePath": "staticwebassets\\assets\\js\\filter.js"
     },
     {
       "Id": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\js\\forgot-password.js",

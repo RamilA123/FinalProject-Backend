@@ -9,5 +9,7 @@ namespace OrganiDb.Services.Interfaces
         Task<Product> GetByIdWithImagesAsync(int? id);
         Task<Product> GetByIdAsync(int? id);
         Task<int> GetCountAsync();
+        IEnumerable<Product> SearchByProducts(IEnumerable<Product> products, string searchText);
+        Task<IEnumerable<Product>> FilterByCategoryAsync(int? id);
     }
 }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "iQ2lPYopqpKMo025q1D+3SF1TqmlKR2Q+4anVTTi5tA=",
+  "Hash": "EzcX26BDlAawjrfVsVpROU09WcOvZ4oaDE8MBafdTPc=",
   "Source": "OrganiDb",
   "BasePath": "_content/OrganiDb",
   "Mode": "Default",
@@ -4981,12 +4981,12 @@
       "OriginalItemSpec": "wwwroot\\assets\\js\\about.js"
     },
     {
-      "Identity": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\js\\add-to-wishlist_.js",
+      "Identity": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\js\\add-to-wishlist.js",
       "SourceId": "OrganiDb",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\",
       "BasePath": "_content/OrganiDb",
-      "RelativePath": "assets/js/add-to-wishlist_.js",
+      "RelativePath": "assets/js/add-to-wishlist.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -4995,7 +4995,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\js\\add-to-wishlist_.js"
+      "OriginalItemSpec": "wwwroot\\assets\\js\\add-to-wishlist.js"
     },
     {
       "Identity": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\js\\basket.js",
@@ -5064,6 +5064,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\js\\contact.js"
+    },
+    {
+      "Identity": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\js\\filter.js",
+      "SourceId": "OrganiDb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\",
+      "BasePath": "_content/OrganiDb",
+      "RelativePath": "assets/js/filter.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\js\\filter.js"
     },
     {
       "Identity": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\js\\forgot-password.js",

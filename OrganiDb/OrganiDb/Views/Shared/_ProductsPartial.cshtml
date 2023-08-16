@@ -5,7 +5,7 @@
 {
     @if (product.StockCount == 0)
     {
-        <div class="col-sm-12 col-md-6 col-lg-3">
+        <div class="col-sm-12 col-md-6 col-lg-3" category-id="@product.CategoryId">
             <div class="product card product-out-of-stock" style="width: 18rem;">
 
                 <div class="product-images">
@@ -71,8 +71,8 @@
 
     else
     {
-        <div class="col-sm-12 col-md-6 col-lg-3">
-            <div class="product card" style="width: 18rem;">
+        <div class="col-sm-12 col-md-6 col-lg-3" category-id="@product.CategoryId">
+            <div class="product card" category-id="@product.Id" style="width: 18rem;">
 
                 <div class="product-images">
                     <a asp-controller="Product" asp-action="Index" asp-route-id="@product.Id">

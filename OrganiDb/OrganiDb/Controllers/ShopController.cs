@@ -47,7 +47,7 @@ namespace OrganiDb.Controllers
             {
                 products = await _productService.GetAllAsync();
 
-                products = products.Where(m => m.Name.ToLower().Contains(searchText.ToLower())).ToList();
+                products = _productService.SearchByProducts(products, searchText);
             }
             else{
 
@@ -86,6 +86,17 @@ namespace OrganiDb.Controllers
                 
             return View(model);
             
+        }
+
+
+        [HttpGet]
+        public async Task<IActionResult> FilterByCategory(int? id)
+        {
+            if (id == null) return BadRequest();
+
+            IEnumerable<Product> products = await _productService.FilterByCategoryAsync(id);
+
+            return PartialView("_ProductsPartial",products);
         }
     }
 }
