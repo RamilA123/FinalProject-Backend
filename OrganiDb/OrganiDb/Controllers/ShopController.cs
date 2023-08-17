@@ -89,6 +89,14 @@ namespace OrganiDb.Controllers
         }
 
         [HttpGet]
+        public async Task<IActionResult> GetPaginatedDatas(int page = 1, int take = 15)
+        {
+            IEnumerable<Product> products = await _productService.GetPaginatedDatasAsync(page, take);
+
+            return PartialView("_ProductsPartial", products);
+        }
+
+        [HttpGet]
         public async Task<IActionResult> FilterByCategory(int? id)
         {
             if (id == null) return BadRequest();
@@ -98,14 +106,6 @@ namespace OrganiDb.Controllers
             if (products == null) return NotFound();
 
             return PartialView("_ProductsPartial",products);
-        }
-
-        [HttpGet]
-        public async Task<IActionResult> GetPaginatedDatas(int page = 1, int take = 15)
-        {
-            IEnumerable<Product> products = await _productService.GetPaginatedDatasAsync(page, take);
-
-            return PartialView("_ProductsPartial", products);
         }
 
         [HttpGet]
@@ -150,6 +150,46 @@ namespace OrganiDb.Controllers
             if (id == null) return BadRequest();
 
             IEnumerable<Product> products = await _productService.FilterByBrandAsync(id);
+
+            if (products == null) return NotFound();
+
+            return PartialView("_ProductsPartial", products);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> SortByDescendingPrice()
+        {
+            IEnumerable<Product> products = await _productService.SortByDescendingPrice();
+
+            if (products == null) return NotFound();
+
+            return PartialView("_ProductsPartial", products);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> SortByAscendingPrice()
+        {
+            IEnumerable<Product> products = await _productService.SortByAscendingPrice();
+
+            if (products == null) return NotFound();
+
+            return PartialView("_ProductsPartial", products);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> SortByAscendingName()
+        {
+            IEnumerable<Product> products = await _productService.SortByAscendingName();
+
+            if (products == null) return NotFound();
+
+            return PartialView("_ProductsPartial", products);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> SortByDescendingName()
+        {
+            IEnumerable<Product> products = await _productService.SortByDescendingName();
 
             if (products == null) return NotFound();
 

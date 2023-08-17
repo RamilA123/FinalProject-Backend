@@ -181,6 +181,7 @@ $(document).ready(function () {
 
 
 
+
 // FILTER-BY-TAG
 $(document).ready(function () {
 
@@ -252,6 +253,8 @@ $(document).ready(function () {
     })
 })
 // FILTER-BY-TAG
+
+
 
 
 // FILTER-BY-BRAND

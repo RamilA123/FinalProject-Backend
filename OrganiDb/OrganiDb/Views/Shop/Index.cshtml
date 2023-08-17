@@ -167,19 +167,19 @@
             <div class="sort-by">
               <span>Sort by</span>
 
-              <select id="">
-                <option value="option1">Price - Low to High</option>
-                <option value="option2">Price - High to Low</option>
-                <option value="option3">Name - A to Z</option>
-                <option value="option4">Name - Z to A</option>
+              <select id="sorting">
+                <option value="descending-by-price"> Price - High to Low</option>
+                <option value="ascending-by-price">Price - Low to High</option>
+                <option value="ascending-by-name">Name - A to Z</option>
+                <option value="descending-by-name">Name - Z to A</option>
               </select>
 
             </div>
           </div>
 
-        <div class="right-side products mt-5">
+        <div class="right-side products">
 
-                <div class="tab-content mt-4 filtering-products" id="pills-tabContent">
+                <div class="tab-content filtering-products" id="pills-tabContent">
 
                 <partial name="_ProductsPartial" model="Model.PaginatedProducts.Datas" />
 
@@ -228,5 +228,6 @@
     <script src="~/assets/js/basket.js"></script>
     <script src="~/assets/js/add-to-wishlist.js"></script>
     <script src="~/assets/js/filtering.js"></script>
+    <script src="~/assets/js/sorting_.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 }

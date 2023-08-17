@@ -29,6 +29,7 @@ namespace OrganiDb.Services
         public async Task<LayoutVM> GetAllDatasAsync()
         {
             List<BasketVM> existedproducts = new List<BasketVM>();
+
             List<WishlistViewModel> existedWishlistproducts = new List<WishlistViewModel>();
 
             Dictionary<string, string> settingDatas = _context.Settings.AsEnumerable().ToDictionary(m => m.Key, m => m.Value);
@@ -44,6 +45,7 @@ namespace OrganiDb.Services
             }
 
             int basketCount = existedproducts.Sum(m => m.Count);
+
             int wishlistCount = existedWishlistproducts.Sum(m => m.Count);
 
             List<SocialMedia> socialMedias = await _socialMediaService.GetAllAsync();

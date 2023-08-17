@@ -99,6 +99,42 @@ namespace OrganiDb.Services
                                     Include(m => m.Reviews).ToListAsync();
         }
 
+        public async Task<IEnumerable<Product>> SortByDescendingPrice()
+        {
+            IEnumerable<Product> products = await GetAllAsync();
+
+            products = products.OrderByDescending(m => m.ActualPrice).ToList();
+
+            return products;
+        }
+
+        public async Task<IEnumerable<Product>> SortByAscendingPrice()
+        {
+            IEnumerable<Product> products = await GetAllAsync();
+
+            products = products.OrderBy(m => m.ActualPrice).ToList();
+
+            return products;
+        }
+
+        public async Task<IEnumerable<Product>> SortByAscendingName()
+        {
+            IEnumerable<Product> products = await GetAllAsync();
+
+            products = products.OrderBy(m => m.Name).ToList();
+
+            return products;
+        }
+
+        public async Task<IEnumerable<Product>> SortByDescendingName()
+        {
+            IEnumerable<Product> products = await GetAllAsync();
+
+            products = products.OrderByDescending(m => m.Name).ToList();
+
+            return products;
+        }
+
         public async Task<IEnumerable<Product>> GetAllAsync()
         {
             return await _context.Products.Include(m => m.Category).
@@ -146,5 +182,6 @@ namespace OrganiDb.Services
         {
             return products.Where(m => m.Name.ToLower().Contains(searchText.ToLower())).ToList();
         }
+
     }
 }
