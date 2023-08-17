@@ -1,11 +1,11 @@
 ﻿@model IEnumerable<Product>
 
-
 @foreach (Product product in Model)
 {
+    
     @if (product.StockCount == 0)
     {
-        <div class="col-sm-12 col-md-6 col-lg-3" rating-id="@product.RatingId" category-id="@product.CategoryId">
+        <div class="col-sm-12 col-md-6 col-lg-3" brand-id="@product.BrandId" tag-id="@product.ProductTags.FirstOrDefault().TagId" rating-id="@product.RatingId" category-id="@product.CategoryId">
             <div class="product card product-out-of-stock" style="width: 18rem;">
 
                 <div class="product-images">
@@ -71,7 +71,7 @@
 
     else
     {
-        <div class="col-sm-12 col-md-6 col-lg-3" rating-id="@product.RatingId" category-id="@product.CategoryId">
+        <div class="col-sm-12 col-md-6 col-lg-3" brand-id="@product.BrandId" tag-id="@product.ProductTags.FirstOrDefault().TagId" rating-id="@product.RatingId" category-id="@product.CategoryId">
             <div class="product card" style="width: 18rem;">
 
                 <div class="product-images">

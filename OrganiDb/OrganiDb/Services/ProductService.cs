@@ -68,6 +68,37 @@ namespace OrganiDb.Services
                                      Include(m => m.Reviews).ToListAsync();
         }
 
+        public async Task<IEnumerable<Product>> FilterByTagAsync(int? id)
+        {
+            List<Product> products = new List<Product>();
+
+            IEnumerable<Product> dbProducts = await GetAllAsync();
+
+            foreach (Product product in dbProducts) 
+            {
+                foreach (ProductTag productTag in product.ProductTags)
+                {
+                    if(productTag.TagId == id)
+                    {
+                        products.Add(product);
+                    }
+                }
+            }
+
+            return products;
+        }
+
+        public async Task<IEnumerable<Product>> FilterByBrandAsync(int? id)
+        {
+            return await _context.Products.Where(m => m.BrandId == id).Include(m => m.Category).
+                                    Include(m => m.Discount).
+                                    Include(m => m.Brand).
+                                    Include(m => m.Rating).
+                                    Include(m => m.ProductImages).
+                                    Include(m => m.ProductTags).
+                                    Include(m => m.Reviews).ToListAsync();
+        }
+
         public async Task<IEnumerable<Product>> GetAllAsync()
         {
             return await _context.Products.Include(m => m.Category).

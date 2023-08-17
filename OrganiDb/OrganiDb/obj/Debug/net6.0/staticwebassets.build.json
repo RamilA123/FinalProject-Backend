@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "EzcX26BDlAawjrfVsVpROU09WcOvZ4oaDE8MBafdTPc=",
+  "Hash": "uBMw5ufzJqe8O1xxa+OdwEvWtvfUSkNHM6UrIY7C2Fk=",
   "Source": "OrganiDb",
   "BasePath": "_content/OrganiDb",
   "Mode": "Default",
@@ -5066,12 +5066,12 @@
       "OriginalItemSpec": "wwwroot\\assets\\js\\contact.js"
     },
     {
-      "Identity": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\js\\filter.js",
+      "Identity": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\js\\filtering.js",
       "SourceId": "OrganiDb",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\",
       "BasePath": "_content/OrganiDb",
-      "RelativePath": "assets/js/filter.js",
+      "RelativePath": "assets/js/filtering.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -5080,7 +5080,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\js\\filter.js"
+      "OriginalItemSpec": "wwwroot\\assets\\js\\filtering.js"
     },
     {
       "Identity": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\js\\forgot-password.js",

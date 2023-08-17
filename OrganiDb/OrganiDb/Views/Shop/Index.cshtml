@@ -106,13 +106,13 @@
 
             <div class="filter my-5">
               <h5 class="my-2">Filter By Tag</h5>
-              <div class="filter-by-tag">
+              <div class="filter-tag">
                 <ul>
                     @foreach (Tag tag in Model.Tags)
                     {
                         <li>
                             <div class="filter-by-tag filter-by">
-                                <input class="form-check-input" type="checkbox">
+                                <input class="form-check-input tag-filter" data-id="@tag.Id" type="checkbox">
                                 <label for="">@tag.Name</label>
                             </div>
                            <span>(@tag.ProductTags.Where(m => m.TagId == tag.Id).Where(m => m.ProductId == m.Product.Id).Count()) products</span>
@@ -127,13 +127,13 @@
 
             <div class="filter my-5">
               <h5 class="my-2">Filter By Brand</h5>
-              <div class="filter-by-brand">
+              <div class="filter-brand">
                 <ul>
                     @foreach (Brand brand in Model.Brands)
                     {
                          <li>
                              <div class="filter-by-brand filter-by">
-                                  <input class="form-check-input" type="checkbox">
+                                  <input class="form-check-input" data-id="@brand.Id" type="checkbox">
                                   <label for="">@brand.Name</label>
                              </div>
                              <span>(@brand.Products.Where(m => m.BrandId == brand.Id).Count()) products</span>
@@ -227,6 +227,6 @@
     <script src="~/assets/js/shop.js"></script>
     <script src="~/assets/js/basket.js"></script>
     <script src="~/assets/js/add-to-wishlist.js"></script>
-    <script src="~/assets/js/filter.js"></script>
+    <script src="~/assets/js/filtering.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 }

@@ -88,7 +88,6 @@ namespace OrganiDb.Controllers
             
         }
 
-
         [HttpGet]
         public async Task<IActionResult> FilterByCategory(int? id)
         {
@@ -127,6 +126,30 @@ namespace OrganiDb.Controllers
             if (id == null) return BadRequest();
 
             IEnumerable<Product> products = await _productService.FilterByRatingAsync(id);
+
+            if (products == null) return NotFound();
+
+            return PartialView("_ProductsPartial", products);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> FilterByTag(int? id)
+        {
+            if (id == null) return BadRequest();
+
+            IEnumerable<Product> products = await _productService.FilterByTagAsync(id);
+
+            if (products == null) return NotFound();
+
+            return PartialView("_ProductsPartial", products);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> FilterByBrand(int? id)
+        {
+            if (id == null) return BadRequest();
+
+            IEnumerable<Product> products = await _productService.FilterByBrandAsync(id);
 
             if (products == null) return NotFound();
 

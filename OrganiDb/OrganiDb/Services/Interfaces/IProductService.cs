@@ -13,5 +13,8 @@ namespace OrganiDb.Services.Interfaces
         Task<IEnumerable<Product>> FilterByCategoryAsync(int? id);
         Task<IEnumerable<Product>> FilterByPriceAsync(string minumumValue, string maximumValue);
         Task<IEnumerable<Product>> FilterByRatingAsync(int? id);
+        Task<IEnumerable<Product>> FilterByTagAsync(int? id);
+        Task<IEnumerable<Product>> FilterByBrandAsync(int? id);
+
     }
 }
