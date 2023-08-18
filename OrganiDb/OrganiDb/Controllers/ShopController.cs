@@ -45,9 +45,7 @@ namespace OrganiDb.Controllers
 
             if (searchText != null)
             {
-                products = await _productService.GetAllAsync();
-
-                products = _productService.SearchByProducts(products, searchText);
+                products = await _productService.SearchByProductsAsync(searchText);
             }
             else{
 
@@ -159,7 +157,7 @@ namespace OrganiDb.Controllers
         [HttpGet]
         public async Task<IActionResult> SortByDescendingPrice()
         {
-            IEnumerable<Product> products = await _productService.SortByDescendingPrice();
+            IEnumerable<Product> products = await _productService.SortByDescendingPriceAsync();
 
             if (products == null) return NotFound();
 
@@ -169,7 +167,7 @@ namespace OrganiDb.Controllers
         [HttpGet]
         public async Task<IActionResult> SortByAscendingPrice()
         {
-            IEnumerable<Product> products = await _productService.SortByAscendingPrice();
+            IEnumerable<Product> products = await _productService.SortByAscendingPriceAsync();
 
             if (products == null) return NotFound();
 
@@ -179,7 +177,7 @@ namespace OrganiDb.Controllers
         [HttpGet]
         public async Task<IActionResult> SortByAscendingName()
         {
-            IEnumerable<Product> products = await _productService.SortByAscendingName();
+            IEnumerable<Product> products = await _productService.SortByAscendingNameAsync();
 
             if (products == null) return NotFound();
 
@@ -189,7 +187,7 @@ namespace OrganiDb.Controllers
         [HttpGet]
         public async Task<IActionResult> SortByDescendingName()
         {
-            IEnumerable<Product> products = await _productService.SortByDescendingName();
+            IEnumerable<Product> products = await _productService.SortByDescendingNameAsync();
 
             if (products == null) return NotFound();
 

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "WJPOFTc6UhyBHPt7O93BhdIgrvEHFkL9Q2B8GCrZ3TY=",
+  "Hash": "7AiWhQjHvxBdOHFRPQ+Y67qkVRdkCkCccdS4f530C2A=",
   "Source": "OrganiDb",
   "BasePath": "_content/OrganiDb",
   "Mode": "Default",
@@ -5219,12 +5219,12 @@
       "OriginalItemSpec": "wwwroot\\assets\\js\\shop.js"
     },
     {
-      "Identity": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\js\\sorting_.js",
+      "Identity": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\js\\sortby.js",
       "SourceId": "OrganiDb",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\",
       "BasePath": "_content/OrganiDb",
-      "RelativePath": "assets/js/sorting_.js",
+      "RelativePath": "assets/js/sortby.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -5233,7 +5233,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\js\\sorting_.js"
+      "OriginalItemSpec": "wwwroot\\assets\\js\\sortby.js"
     },
     {
       "Identity": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\js\\verify-email.js",

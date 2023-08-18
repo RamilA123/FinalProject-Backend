@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Blog_>
+
+@foreach (Blog_ blog in Model)
+{
+    <div class="col-sm-12 col-md-12 col-lg-12">
+        <div class="blog">
+
+            <div class="blog-image">
+                <img src="~/assets/images/blogs/@blog.Image" alt="">
+            </div>
+
+            <div class="blog-content">
+
+                <div class="blog-author-date">
+                    <div class="author">
+                        <i class="fa-solid fa-user-tie"></i>
+                        <span>@blog.Author.FullName</span>
+                    </div>
+
+                    <div class="comment">
+                        <i class="fa-regular fa-comment"></i>
+                        <span>@blog.BlogReviews.Where(m => m.BlogId == blog.Id).Count() Comments</span>
+                    </div>
+
+                    <div class="datetime">
+                        <i class="fa-regular fa-calendar-days"></i>
+                        <span>@blog.DateTime.ToString("MM.dd.yyyy")</span>
+                    </div>
+
+                </div>
+
+                <div class="blog-name text">
+                    <span>@blog.Title</span>
+                </div>
+
+                <div class="blog-description text">
+                    <p>@blog.Description</p>
+                </div>
+            </div>
+        </div>
+    </div>
+}

@@ -99,7 +99,7 @@ namespace OrganiDb.Services
                                     Include(m => m.Reviews).ToListAsync();
         }
 
-        public async Task<IEnumerable<Product>> SortByDescendingPrice()
+        public async Task<IEnumerable<Product>> SortByDescendingPriceAsync()
         {
             IEnumerable<Product> products = await GetAllAsync();
 
@@ -108,7 +108,7 @@ namespace OrganiDb.Services
             return products;
         }
 
-        public async Task<IEnumerable<Product>> SortByAscendingPrice()
+        public async Task<IEnumerable<Product>> SortByAscendingPriceAsync()
         {
             IEnumerable<Product> products = await GetAllAsync();
 
@@ -117,7 +117,7 @@ namespace OrganiDb.Services
             return products;
         }
 
-        public async Task<IEnumerable<Product>> SortByAscendingName()
+        public async Task<IEnumerable<Product>> SortByAscendingNameAsync()
         {
             IEnumerable<Product> products = await GetAllAsync();
 
@@ -126,7 +126,7 @@ namespace OrganiDb.Services
             return products;
         }
 
-        public async Task<IEnumerable<Product>> SortByDescendingName()
+        public async Task<IEnumerable<Product>> SortByDescendingNameAsync()
         {
             IEnumerable<Product> products = await GetAllAsync();
 
@@ -178,9 +178,13 @@ namespace OrganiDb.Services
                                      Include(m => m.Reviews).Skip((page - 1) * take).Take(take).ToListAsync();
         }
 
-        public IEnumerable<Product> SearchByProducts(IEnumerable<Product> products, string searchText)
+        public async Task<IEnumerable<Product>> SearchByProductsAsync(string searchText)
         {
-            return products.Where(m => m.Name.ToLower().Contains(searchText.ToLower())).ToList();
+            IEnumerable<Product> products = await GetAllAsync();
+
+            products = products.Where(m => m.Name.ToLower().Contains(searchText.ToLower())).ToList();
+
+            return products;
         }
 
     }

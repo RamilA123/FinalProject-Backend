@@ -29,9 +29,31 @@ namespace OrganiDb.Services
             return await _context.Blogs.Include(m => m.Author).Include(m => m.BlogReviews).Skip((page-1)*take).Take(take).ToListAsync();
         }
 
-        public List<Blog_> SearchByBlogs(List<Blog_> blogs, string searchText)
+        public async Task<List<Blog_>> SearchByBlogsAsync(string searchText)
         {
-            return blogs.Where(m => m.Title.ToLower().Contains(searchText.ToLower())).ToList();
+            List<Blog_> blogs = await GetAllAsync();
+
+            blogs = blogs.Where(m => m.Title.ToLower().Contains(searchText.ToLower())).ToList();
+
+            return blogs;
+        }
+
+        public async Task<List<Blog_>> SortByAscendingTitleAsync()
+        {
+            List<Blog_> blogs = await GetAllAsync();
+
+            blogs = blogs.OrderBy(m => m.Title).ToList();
+
+            return blogs;
+        }
+
+        public async Task<List<Blog_>> SortByDescendingTitleAsync()
+        {
+            List<Blog_> blogs = await GetAllAsync();
+
+            blogs = blogs.OrderByDescending(m => m.Title).ToList();
+
+            return blogs;
         }
     }
 }

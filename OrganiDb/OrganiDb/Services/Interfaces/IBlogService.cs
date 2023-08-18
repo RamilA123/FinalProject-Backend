@@ -7,6 +7,8 @@ namespace OrganiDb.Services.Interfaces
         Task<List<Blog_>> GetAllAsync();
         Task<List<Blog_>> GetPaginatedDatasAsync(int page,int take);
         Task<int> GetCountAsync();
-        List<Blog_> SearchByBlogs(List<Blog_> blogs, string searchText);   
+        Task<List<Blog_>> SearchByBlogsAsync(string searchText);
+        Task<List<Blog_>> SortByAscendingTitleAsync();
+        Task<List<Blog_>> SortByDescendingTitleAsync();
     }
 }

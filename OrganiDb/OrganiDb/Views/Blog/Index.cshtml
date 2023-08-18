@@ -54,11 +54,9 @@
             <div class="sort-by">
                 <span>Sort by</span>
 
-                <select id="">
-                    <option value="option1">Price - Low to High</option>
-                    <option value="option2">Price - High to Low</option>
-                    <option value="option3">Name - A to Z</option>
-                    <option value="option4">Name - Z to A</option>
+                <select id="sorting">
+                    <option value="ascending-by-title">Title - A to Z</option>
+                    <option value="descending-by-title">Title - Z to A</option>
                 </select>
 
             </div>
@@ -68,52 +66,9 @@
         <div class="row">
 
             <div class="col-sm-12 col-md-6 col-lg-8">
-                <div class="left-side">
+                <div class="left-side sorting-blogs">
 
-                   @foreach (Blog_ blog in Model.PaginatedBlogs.Datas)
-                   {
-                        <div class="col-sm-12 col-md-12 col-lg-12">
-                            <div class="blog">
-
-                                <div class="blog-image">
-                                    <img src="~/assets/images/blogs/@blog.Image" alt="">
-                                </div>
-
-                                <div class="blog-content">
-                                    <div class="blog-author-date">
-                                        <div class="author">
-                                            <i class="fa-solid fa-user-tie"></i>
-                                            <span>@blog.Author.FullName</span>
-                                        </div>
-
-                                        <div class="comment">
-                                            <i class="fa-regular fa-comment"></i>
-                                            <span>@blog.BlogReviews.Where(m => m.BlogId == blog.Id).Count() Comments</span>
-                                        </div>
-
-                                        <div class="datetime">
-                                            <i class="fa-regular fa-calendar-days"></i>
-                                            <span>@blog.DateTime.ToString("MM.dd.yyyy")</span>
-                                        </div>
-
-
-                                    </div>
-
-                                    <div class="blog-name text">
-                                        <span>@blog.Title</span>
-                                    </div>
-
-                                    <div class="blog-description text">
-                                        <p>@blog.Description</p>
-                                    </div>
-
-
-                                </div>
-
-                            </div>
-
-                        </div>
-                        }
+                   <partial name="_BlogsPartial" model="Model.PaginatedBlogs.Datas" />
 
                 </div>
             </div>
@@ -224,4 +179,5 @@
 
 @section Scripts{
     <script src="~/assets/js/blog.js"></script>
+    <script src="~/assets/js/sortby.js"></script>
 }

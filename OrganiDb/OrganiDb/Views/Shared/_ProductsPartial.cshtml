@@ -82,11 +82,23 @@
                 </div>
 
                 <div class="product-add-to-wishlist">
-                    <a class="add-to-wishlist" data-id="@product.Id">
-                        <span class="wishlist">Add to wishlist</span>
-                        <i class="fa-regular fa-heart"></i>
-                        <i class="fa-solid fa-heart d-none"></i>
-                    </a>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <a class="add-to-wishlist" data-id="@product.Id">
+                            <span class="wishlist">Add to wishlist</span>
+                            <i class="fa-regular fa-heart"></i>
+                            <i class="fa-solid fa-heart d-none"></i>
+                        </a>
+                    }
+                    else
+                    {
+                        <a class="add-to-wishlist">
+                            <span class="wishlist">Add to wishlist</span>
+                            <i class="fa-regular fa-heart"></i>
+                            <i class="fa-solid fa-heart d-none"></i>
+                        </a>
+                    }
+                    
                 </div>
 
                 <div class="product-shuffle-eyeglasses">
@@ -125,8 +137,15 @@
                         }
                     </h6>
 
-                    <a href="" data-id="@product.Id" class="product-add-to-cart"><i class="fas fa-shopping-basket"></i>Add to cart</a>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <a href="" data-id="@product.Id" class="product-add-to-cart"><i class="fas fa-shopping-basket"></i>Add to cart</a>
+                    }
 
+                    else
+                    {
+                        <a href="" class="product-add-to-cart"><i class="fas fa-shopping-basket"></i>Add to cart</a>
+                    }
                 </div>
 
             </div>

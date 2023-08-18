@@ -40,9 +40,7 @@ namespace OrganiDb.Controllers
 
             if(searchText != null)
             {
-                blogs = await _blogService.GetAllAsync();
-
-                blogs = _blogService.SearchByBlogs(blogs, searchText);
+                blogs = await _blogService.SearchByBlogsAsync(searchText);
             }
             else
             {
@@ -77,6 +75,22 @@ namespace OrganiDb.Controllers
             };
 
             return View(model);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> SortByAscendingTitle()
+        {
+            List<Blog_> blogs = await _blogService.SortByAscendingTitleAsync();
+
+            return PartialView("_BlogsPartial", blogs);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> SortByDescendingTitle()
+        {
+            List<Blog_> blogs = await _blogService.SortByDescendingTitleAsync();
+
+            return PartialView("_BlogsPartial", blogs);
         }
     }
 }

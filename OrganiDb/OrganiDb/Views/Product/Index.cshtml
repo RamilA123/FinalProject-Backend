@@ -214,11 +214,29 @@
 
                                 <div class="product-btns">
                                     <div class="product-add">
-                                        <a class="btn btn-success product-add-to-cart" data-id="@Model.Product.Id">Add To Cart</a>
+
+                                        @if (User.Identity.IsAuthenticated)
+                                        {
+                                            <a class="btn btn-success product-add-to-cart" data-id="@Model.Product.Id">Add To Cart</a>
+                                        }
+                                        else
+                                        {
+                                            <a class="btn btn-success product-add-to-cart">Add To Cart</a>
+                                        }
+
                                     </div>
 
                                     <div class="product-add-to-wishlist product-add">
-                                        <a class="btn btn-warning add-to-wishlist" data-id="@Model.Product.Id">Add To Wishlist</a>
+
+                                        @if (User.Identity.IsAuthenticated)
+                                        {
+                                            <a class="btn btn-warning add-to-wishlist" data-id="@Model.Product.Id">Add To Wishlist</a>
+                                        }
+                                        else
+                                        {
+                                            <a class="btn btn-warning add-to-wishlist">Add To Wishlist</a>
+                                        }
+
                                     </div>
                                 </div>
 
