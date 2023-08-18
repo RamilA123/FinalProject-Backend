@@ -1,9 +1,54 @@
-﻿
+﻿@model List<Category>
 @{
     ViewData["Title"] = "Dashboard";
 }
 
+@section Css{
+
+    <link rel="stylesheet" href="~/admin/theme-assets/css/admin.css">
+}
+
 
 <div class="container my-2">
-    <h1>Ramil</h1>
+    <h2 class="text-center title">Dashboard</h2>
+    <h1 class="text-center title my-3">Categories</h1>
+
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        Image
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Product Count
+                    </th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                    @foreach (Category category in Model)
+                    {
+                        <tr>
+                            <td class="img">
+                                <div class="image">
+                                    <img src="~/assets/images/categories/@category.Image">
+                                </div>
+                            </td>
+                             <td class="cell">
+                                @category.Name
+                            </td>
+                             <td class="cell">
+                                @category.Products.Count
+                            </td>
+                          
+                        </tr>
+                    }
+
+            </tbody>
+        </table>
+    </div>
 </div>
