@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Kbqp12InHq+tOm3nshffZb6qrd5bdbyFWW0xarQBB/0=",
+  "Hash": "xYYQeV7O8B39e6DRYaIqCD+Gf9X1Q4IJsQTm+W6fRxE=",
   "Source": "OrganiDb",
   "BasePath": "_content/OrganiDb",
   "Mode": "Default",
@@ -66,23 +66,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\admin\\theme-assets\\.DS_Store"
-    },
-    {
-      "Identity": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\admin\\theme-assets\\css\\admin.css",
-      "SourceId": "OrganiDb",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\",
-      "BasePath": "_content/OrganiDb",
-      "RelativePath": "admin/theme-assets/css/admin.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\admin\\theme-assets\\css\\admin.css"
     },
     {
       "Identity": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\admin\\theme-assets\\css\\app-lite.css",
@@ -185,6 +168,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\admin\\theme-assets\\css\\bootstrap-extended.min.css"
+    },
+    {
+      "Identity": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\admin\\theme-assets\\css\\category.css",
+      "SourceId": "OrganiDb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\",
+      "BasePath": "_content/OrganiDb",
+      "RelativePath": "admin/theme-assets/css/category.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\admin\\theme-assets\\css\\category.css"
     },
     {
       "Identity": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\admin\\theme-assets\\css\\colors.css",
@@ -797,6 +797,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\admin\\theme-assets\\css\\plugins\\forms\\switch.min.css"
+    },
+    {
+      "Identity": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\admin\\theme-assets\\css\\slider.css",
+      "SourceId": "OrganiDb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\",
+      "BasePath": "_content/OrganiDb",
+      "RelativePath": "admin/theme-assets/css/slider.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\admin\\theme-assets\\css\\slider.css"
     },
     {
       "Identity": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\admin\\theme-assets\\css\\vendors.css",

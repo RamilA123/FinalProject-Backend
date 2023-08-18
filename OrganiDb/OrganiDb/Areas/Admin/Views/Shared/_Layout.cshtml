@@ -118,13 +118,17 @@
       </div>
       <div class="main-menu-content">
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+
           <li class="active">
               <a asp-controller="Dashboard" asp-action="Index"><i class="ft-home"></i><span class="menu-title" data-i18n="">Dashboard</span></a>
           </li>
+
           <li class=" nav-item">
-              <a asp-controller="Categories" asp-action="Index"><span class="menu-title" data-i18n="">Categories</span></a>
+              <a asp-controller="Category" asp-action="Index"><span class="menu-title" data-i18n="">Categories</span></a>
           </li>
-          <li class=" nav-item"><a href="icons.html"><span class="menu-title" data-i18n="">Sliders</span></a>
+
+          <li class=" nav-item">
+               <a asp-controller="Slider" asp-action="Index"><span class="menu-title" data-i18n="">Sliders</span></a>
           </li>
           <li class=" nav-item"><a href="cards.html"><span class="menu-title" data-i18n="">Cards</span></a>
           </li>

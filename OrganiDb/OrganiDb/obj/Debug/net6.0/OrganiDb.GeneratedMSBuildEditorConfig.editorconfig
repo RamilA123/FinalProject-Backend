@@ -16,8 +16,8 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\FX706HCB\Desktop\Final Project\FinalProject-Backend\OrganiDb\OrganiDb
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/FX706HCB/Desktop/Final Project/FinalProject-Backend/OrganiDb/OrganiDb/Areas/Admin/Views/Categories/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcmllc1xJbmRleC5jc2h0bWw=
+[C:/Users/FX706HCB/Desktop/Final Project/FinalProject-Backend/OrganiDb/OrganiDb/Areas/Admin/Views/Category/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcnlcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/FX706HCB/Desktop/Final Project/FinalProject-Backend/OrganiDb/OrganiDb/Areas/Admin/Views/Dashboard/Index.cshtml]
@@ -26,6 +26,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/FX706HCB/Desktop/Final Project/FinalProject-Backend/OrganiDb/OrganiDb/Areas/Admin/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/FX706HCB/Desktop/Final Project/FinalProject-Backend/OrganiDb/OrganiDb/Areas/Admin/Views/Slider/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2xpZGVyXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/FX706HCB/Desktop/Final Project/FinalProject-Backend/OrganiDb/OrganiDb/Areas/Admin/Views/_ViewImports.cshtml]

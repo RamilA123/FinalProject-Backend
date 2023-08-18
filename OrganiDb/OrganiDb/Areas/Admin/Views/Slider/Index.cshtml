@@ -1,0 +1,91 @@
+﻿
+@{
+    ViewData["Title"] = "Sliders";
+}
+
+@section Css{
+
+    <link rel="stylesheet" href="~/admin/theme-assets/css/slider.css">
+}
+
+
+<div class="ctn">
+    <h1 class="text-center my-3 title">Sliders</h1>
+    <div class="btn-create create">
+        <a class="btn btn-success btn-round green" asp-action="Create">Create</a>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        Image
+                    </th>
+                    <th>
+                        Status
+                    </th>
+                    <th>
+                        Logo
+                    </th>
+                    <th>
+                        Text
+                    </th>
+                    <th>
+                        Title
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                    <th>
+                        Options
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Slider slider in Model)
+                {
+                    <tr>
+                        <td class="img">
+                            <div class="image">
+                                <img src="~/assets/images/sliders/@slider.Image">
+                            </div>
+                        </td>
+
+                        <td class="cell">
+                            <div data-id="@slider.Id" class="status-slider @(slider.Status ? "status-true":"status-false")"></div>
+                        </td>
+
+
+                        <td class="logo">
+                            <img src="~/assets/images/info-logos/@slider.Logo">
+                        </td>
+
+                        <td class="cell">
+                            @slider.Text
+                        </td>
+
+                         <td class="cell">
+                            @slider.Title
+                        </td>
+
+                        <td class="cell">
+                            @slider.Description
+
+                        </td>
+
+                        <td class="btns">
+                            <a class="btn btn-primary btn-round blue" asp-action="Detail" asp-route-id="@slider.Id">Detail</a>
+                            <a class="btn btn-warning btn-round orange" asp-action="Edit" asp-route-id="@slider.Id">Edit</a>
+                            <a data-id="@slider.Id" class="btn btn-danger red btn-round category-delete">Delete</a>
+
+                        </td>
+                    </tr>
+                }
+
+
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
