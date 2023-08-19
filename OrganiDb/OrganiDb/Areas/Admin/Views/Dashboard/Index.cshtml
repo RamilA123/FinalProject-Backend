@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="~/admin/theme-assets/css/banner.css">
     <link rel="stylesheet" href="~/admin/theme-assets/css/bannerinfo.css">
     <link rel="stylesheet" href="~/admin/theme-assets/css/product.css">
+    <link rel="stylesheet" href="~/admin/theme-assets/css/blog.css">
 }
 
 
@@ -273,6 +274,71 @@
                         </td>
                     </tr>
                 }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="ctn5">
+    <h1 class="text-center my-3 title">Blogs</h1>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        Image
+                    </th>
+
+                    <th>
+                        Title
+                    </th>
+
+                    <th>
+                        Description
+                    </th>
+
+                    <th>
+                        Date
+                    </th>
+
+                    <th>
+                        Author
+                    </th>
+
+                    <th>
+                        Review Count
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Blog_ blog in Model.Blogs)
+                {
+                    <tr>
+                        <td class="img3">
+                            <div class="image">
+                                <img src="~/assets/images/blogs/@blog.Image">
+                            </div>
+                        </td>
+                        <td class="cell4">
+                            @blog.Title
+                        </td>
+                        <td class="description-blog">
+                            @blog.Description
+                        </td>
+                        <td class="cell4">
+                            @blog.DateTime
+                        </td>
+                        <td class="cell4">
+                            @blog.Author.FullName
+                        </td>
+                        <td style="width: 175px" class="cell4">
+                            @blog.BlogReviews.Count
+                        </td>
+                    </tr>
+                }
+
+
 
             </tbody>
         </table>

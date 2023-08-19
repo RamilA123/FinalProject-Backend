@@ -25,6 +25,10 @@
       "PackagePath": "staticwebassets\\admin\\theme-assets\\css\\bannerinfo.css"
     },
     {
+      "Id": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\admin\\theme-assets\\css\\blog.css",
+      "PackagePath": "staticwebassets\\admin\\theme-assets\\css\\blog.css"
+    },
+    {
       "Id": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\admin\\theme-assets\\css\\bootstrap-extended.css",
       "PackagePath": "staticwebassets\\admin\\theme-assets\\css\\bootstrap-extended.css"
     },

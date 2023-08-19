@@ -52,7 +52,7 @@ tbody {
 }
 
 .table .cell {
-    padding: 80px 15px;
+    padding: 100px 15px;
 }
 
 .table .img2 {
@@ -142,6 +142,47 @@ tbody {
     background-color: #ff0000;
 }
 
+.table .btns {
+    padding-top: 25px;
+}
+
 .btn {
     border: none;
+}
+
+.pagination {
+    margin-left: 32%;
+}
+
+.pagination li {
+   margin-right: 10px;
+}
+
+.pagination li a {
+   box-shadow: none;
+   border-radius: 25px;
+   color: black !important;
+   border-color: green !important;
+   background: #efffef !important;
+   padding: 8px 12px;
+}
+
+.pagination .active-color {
+    color: white !important;
+    background-color: green !important;
+}
+
+.pagination li a:hover {
+   background: green !important;
+   color: white !important;
+}
+
+.page-item:first-child .page-link {
+    border-top-left-radius: 2rem !important;
+    border-bottom-left-radius: 2rem !important;
+}
+
+.page-item:last-child .page-link {
+    border-top-right-radius: 2rem !important;
+    border-bottom-right-radius: 2rem !important;
 }

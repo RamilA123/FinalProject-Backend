@@ -45,15 +45,10 @@ tbody {
 
 .table td {
     color: black;
-    padding: 25px 15px;
 }
 
 .table th {
     color: #055205;
-}
-
-tbody .cell1 {
-    padding-top: 7%;
 }
 
 .table td .image2 {

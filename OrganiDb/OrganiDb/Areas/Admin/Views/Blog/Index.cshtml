@@ -1,0 +1,107 @@
+﻿@model Pagination<Blog_>
+
+@{
+    ViewData["Title"] = "Blog";
+}
+
+@section Css{
+
+    <link rel="stylesheet" href="~/admin/theme-assets/css/blog.css">
+}
+
+<div class="ctn5">
+    <h1 class="text-center my-3 title">Blogs</h1>
+    <div class="btn-create create">
+        <a class="btn btn-success btn-round green" asp-action="Create">Create</a>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        Image
+                    </th>
+
+                    <th>
+                        Title
+                    </th>
+
+                    <th>
+                        Description
+                    </th>
+
+                    <th>
+                        Date
+                    </th>
+
+                    <th>
+                        Author
+                    </th>
+
+                    <th>
+                        Review Count
+                    </th>
+
+                    <th>
+                        Options
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Blog_ blog in Model.Datas)
+                {
+                    <tr>
+                        <td class="img3">
+                            <div class="image">
+                                <img src="~/assets/images/blogs/@blog.Image">
+                            </div>
+                        </td>
+                        <td class="cell4">
+                            @blog.Title
+                        </td>
+                        <td style="padding-top: 30px" class="description-blog">
+                            @blog.Description
+                        </td>
+                            <td class="cell4">
+                            @blog.DateTime
+                        </td>
+                        <td class="cell4">
+                            @blog.Author.FullName
+                        </td>
+                        <td style="width: 175px" class="cell4">
+                            @blog.BlogReviews.Count
+                        </td>
+                        <td class="cell">
+                            <a class="btn btn-primary btn-round blue" asp-action="Detail" asp-route-id="@blog.Id">Detail</a>
+                            <a class="btn btn-warning btn-round orange" asp-action="Edit" asp-route-id="@blog.Id">Edit</a>
+                            <a data-id="@blog.Id" class="btn btn-danger red btn-round category-delete">Delete</a>
+
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+
+        <nav aria-label="Page navigation example">
+             <ul class="pagination mt-3">
+              <li class="page-item @(Model.HasPrevious ? "" : "disabled")">
+                    <a class="page-link" asp-route-page="@(Model.CurrentPage - 1)">Previous</a>
+              </li>
+
+                @for (int i = 1; i <= Model.TotalPage; i++)
+                {
+                      <li class="@(Model.CurrentPage == i ? "disabled" : "")">
+                          <a class="page-link @(Model.CurrentPage == i ? "active-color" : "" )" asp-route-page="@i">@i</a>
+                      </li>
+                }
+
+              <li class="page-item @(Model.HasNext ? "" : "disabled")">
+                  <a class="page-link" asp-route-page="@(Model.CurrentPage + 1)">Next</a>
+              </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+

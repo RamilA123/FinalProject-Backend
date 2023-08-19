@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Product>
+﻿@model Pagination<Product>
 
 @{
     ViewData["Title"] = "Product";
@@ -61,7 +61,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (Product product in Model)
+                @foreach (Product product in Model.Datas)
                 {
                     <tr>
                         <td class="img2">
@@ -111,9 +111,28 @@
                     </tr>
                 }
 
-
-
             </tbody>
         </table>
+
+
+        <nav aria-label="Page navigation example">
+             <ul class="pagination mt-3">
+              <li class="page-item @(Model.HasPrevious ? "" : "disabled")">
+                    <a class="page-link" asp-route-page="@(Model.CurrentPage - 1)">Previous</a>
+              </li>
+
+                @for (int i = 1; i <= Model.TotalPage; i++)
+                {
+                          <li class="@(Model.CurrentPage == i ? "disabled" : "")">
+                              <a class="page-link @(Model.CurrentPage == i ? "active-color" : "" )" asp-route-page="@i">@i</a>
+                          </li>
+                }
+
+              <li class="page-item @(Model.HasNext ? "" : "disabled")">
+                  <a class="page-link" asp-route-page="@(Model.CurrentPage + 1)">Next</a>
+              </li>
+            </ul>
+        </nav>
+
     </div>
 </div>

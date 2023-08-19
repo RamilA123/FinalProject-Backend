@@ -15,13 +15,15 @@ namespace OrganiDb.Areas.Admin.Controllers
         private readonly IBannerInfoService _bannerInfoService;
         private readonly IProductService _productService;
         private readonly ITagService _tagService;
+        private readonly IBlogService _blogService;
 
         public DashboardController(ICategoryService categoryService, 
                                    ISliderService sliderService, 
                                    IBannerService bannerService,
                                    IBannerInfoService bannerInfoService,
                                    IProductService productService,
-                                   ITagService tagService)
+                                   ITagService tagService,
+                                   IBlogService blogService)
         {
             _categoryService = categoryService;
             _sliderService = sliderService;
@@ -29,6 +31,7 @@ namespace OrganiDb.Areas.Admin.Controllers
             _bannerInfoService = bannerInfoService;
             _productService = productService;
             _tagService = tagService;
+            _blogService = blogService;
         }
 
         public async Task<IActionResult> Index()
@@ -43,6 +46,8 @@ namespace OrganiDb.Areas.Admin.Controllers
 
             IEnumerable<Product> products = await _productService.GetAllAsync();
 
+            List<Blog_> blogs = await _blogService.GetAllAsync();
+
             List<Tag> tags = await _tagService.GetAllAsync();
 
 
@@ -52,7 +57,8 @@ namespace OrganiDb.Areas.Admin.Controllers
                 Sliders = sliders,
                 Banners = banners,
                 BannerInfos = bannerInfos,
-                Products = products
+                Products = products,
+                Blogs = blogs,
             };
 
             return View(dashboard);

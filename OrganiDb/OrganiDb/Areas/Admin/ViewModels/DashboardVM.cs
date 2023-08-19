@@ -9,5 +9,6 @@ namespace OrganiDb.Areas.Admin.ViewModels
         public List<Banner> Banners  { get; set; }
         public List<BannerInfo> BannerInfos  { get; set; }
         public IEnumerable<Product> Products  { get; set; }
+        public List<Blog_>  Blogs { get; set; }
     }
 }
