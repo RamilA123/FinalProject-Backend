@@ -1,0 +1,60 @@
+﻿@model List<BannerInfo>
+
+@{
+    ViewData["Title"] = "Banner Info";
+}
+
+@section Css{
+    <link rel="stylesheet" href="~/admin/theme-assets/css/bannerinfo.css">
+}
+
+
+<div class="ctn3">
+    <h1 class="text-center title my-3">Banner Infos</h1>
+    <div class="btn-create create">
+        <a class="btn btn-success btn-round green" asp-action="Create">Create</a>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        Title
+                    </th>
+
+                    <th>
+                        Description
+                    </th>
+
+                    <th>
+                        Options
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (BannerInfo bannerInfo in Model)
+                {
+                    <tr>
+                        <td class="cell2">
+                            @bannerInfo.Title
+                        </td>
+
+                        <td class="description">
+                           @Html.Raw(@bannerInfo.Description) 
+                        </td>
+
+                        <td class="buttons1">
+                            <a class="btn btn-primary btn-round blue" asp-action="Detail" asp-route-id="@bannerInfo.Id">Detail</a>
+                            <a class="btn btn-warning btn-round orange" asp-action="Edit" asp-route-id="@bannerInfo.Id">Edit</a>
+                            <a data-id="@bannerInfo.Id" class="btn btn-danger red btn-round category-delete">Delete</a>
+
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+

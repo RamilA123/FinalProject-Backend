@@ -17,6 +17,14 @@
       "PackagePath": "staticwebassets\\admin\\theme-assets\\css\\app-lite.min.css"
     },
     {
+      "Id": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\admin\\theme-assets\\css\\banner.css",
+      "PackagePath": "staticwebassets\\admin\\theme-assets\\css\\banner.css"
+    },
+    {
+      "Id": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\admin\\theme-assets\\css\\bannerinfo.css",
+      "PackagePath": "staticwebassets\\admin\\theme-assets\\css\\bannerinfo.css"
+    },
+    {
       "Id": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\admin\\theme-assets\\css\\bootstrap-extended.css",
       "PackagePath": "staticwebassets\\admin\\theme-assets\\css\\bootstrap-extended.css"
     },
@@ -179,6 +187,10 @@
     {
       "Id": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\admin\\theme-assets\\css\\plugins\\forms\\switch.min.css",
       "PackagePath": "staticwebassets\\admin\\theme-assets\\css\\plugins\\forms\\switch.min.css"
+    },
+    {
+      "Id": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\admin\\theme-assets\\css\\product.css",
+      "PackagePath": "staticwebassets\\admin\\theme-assets\\css\\product.css"
     },
     {
       "Id": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\admin\\theme-assets\\css\\slider.css",
@@ -7891,6 +7903,14 @@
     {
       "Id": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\images\\banners\\banner11.png",
       "PackagePath": "staticwebassets\\assets\\images\\banners\\banner11.png"
+    },
+    {
+      "Id": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\images\\banners\\banner12.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\banners\\banner12.jpg"
+    },
+    {
+      "Id": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\images\\banners\\banner13.png",
+      "PackagePath": "staticwebassets\\assets\\images\\banners\\banner13.png"
     },
     {
       "Id": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\assets\\images\\banners\\banner2.png",

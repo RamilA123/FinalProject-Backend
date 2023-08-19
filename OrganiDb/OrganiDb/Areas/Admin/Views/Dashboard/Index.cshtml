@@ -1,16 +1,21 @@
-﻿@model List<Category>
+﻿@model DashboardVM
+
 @{
     ViewData["Title"] = "Dashboard";
 }
 
 @section Css{
 
+    <link rel="stylesheet" href="~/admin/theme-assets/css/slider.css">
     <link rel="stylesheet" href="~/admin/theme-assets/css/category.css">
+    <link rel="stylesheet" href="~/admin/theme-assets/css/banner.css">
+    <link rel="stylesheet" href="~/admin/theme-assets/css/bannerinfo.css">
+    <link rel="stylesheet" href="~/admin/theme-assets/css/product.css">
 }
 
 
 <div class="container my-2">
-    <h2 class="text-center title">Dashboard</h2>
+    <h3 class="text-center title">Dashboard</h3>
     <h1 class="text-center title my-3">Categories</h1>
 
     <div class="table-responsive">
@@ -30,7 +35,7 @@
                 </tr>
             </thead>
             <tbody>
-                    @foreach (Category category in Model)
+                    @foreach (Category category in Model.Categories)
                     {
                         <tr>
                             <td class="img">
@@ -38,10 +43,10 @@
                                     <img src="~/assets/images/categories/@category.Image">
                                 </div>
                             </td>
-                             <td class="cell">
+                             <td class="cell1">
                                 @category.Name
                             </td>
-                             <td class="cell">
+                             <td class="cell1">
                                 @category.Products.Count
                             </td>
                           
@@ -52,3 +57,228 @@
         </table>
     </div>
 </div>
+
+<div class="ctn">
+    <h1 class="text-center my-3 title">Sliders</h1>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        Image
+                    </th>
+                    <th>
+                        Status
+                    </th>
+                    <th>
+                        Logo
+                    </th>
+                    <th>
+                        Text
+                    </th>
+                    <th>
+                        Title
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Slider slider in Model.Sliders)
+                {
+                    <tr>
+                        <td class="img">
+                            <div class="image1">
+                                <img src="~/assets/images/sliders/@slider.Image">
+                            </div>
+                        </td>
+
+                        <td class="cell">
+                            <div data-id="@slider.Id" class="status-slider @(slider.Status ? "status-true":"status-false")"></div>
+                        </td>
+
+
+                        <td class="logo">
+                            <img src="~/assets/images/info-logos/@slider.Logo">
+                        </td>
+
+                        <td class="cell">
+                            @slider.Text
+                        </td>
+
+                        <td class="cell">
+                            @slider.Title
+                        </td>
+
+                        <td class="cell">
+                            @slider.Description
+
+                        </td>
+                    </tr>
+                }
+
+
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="ctn2">
+    <h1 class="text-center title my-3">Banners</h1>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        Image
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Banner banner in Model.Banners)
+                {
+                    <tr>
+                        <td class="img">
+                           <div class="image2">
+                               <img src="~/assets/images/banners/@banner.Image">
+                           </div>
+                           </td>
+                     </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="ctn3">
+    <h1 class="text-center title my-3">Banner Infos</h1>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        Title
+                    </th>
+
+                    <th>
+                        Description
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (BannerInfo bannerInfo in Model.BannerInfos)
+                {
+                    <tr>
+                        <td class="cell2">
+                            @bannerInfo.Title
+                        </td>
+
+                        <td class="description">
+                            @Html.Raw(@bannerInfo.Description)
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="ctn4">
+    <h1 class="text-center my-3 title">Products</h1>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        Image
+                    </th>
+
+                    <th>
+                        Name
+                    </th>
+
+                    <th>
+                        Description
+                    </th>
+
+                    <th>
+                        Price
+                    </th>
+
+                    <th>
+                        Category
+                    </th>
+
+                    <th>
+                        Discount
+                    </th>
+
+                    <th>
+                        Brand
+                    </th>
+
+                    <th>
+                        Rating
+                    </th>
+
+                    <th>
+                        Tag
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Product product in Model.Products)
+                {
+                    <tr>
+                        <td class="img2">
+                            <div class="image3">
+                                <img src="~/assets/images/products/@product.ProductImages.FirstOrDefault(m => m.IsMain).Image">
+                            </div>
+                        </td>
+
+                        <td class="cell">
+                            @product.Name
+                        </td>
+
+                        <td class="description-product">
+                            @product.Description
+                        </td>
+
+                        <td class="cell">
+                            $@product.ActualPrice
+                        </td>
+
+                        <td class="cell">
+                            @product.Category.Name
+                        </td>
+
+                        <td class="cell">
+                            @product.Discount.Name
+                        </td>
+
+                        <td class="cell">
+                            @product.Brand.Name
+                        </td>
+
+                        <td class="cell">
+                            @product.Rating.RatingCount
+                        </td>
+
+                        <td class="cell">
+                            @product.ProductTags.FirstOrDefault().Tag.Name
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+

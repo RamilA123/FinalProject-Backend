@@ -1,0 +1,119 @@
+﻿@model IEnumerable<Product>
+
+@{
+    ViewData["Title"] = "Product";
+}
+
+
+@section Css{
+
+    <link rel="stylesheet" href="~/admin/theme-assets/css/product.css">
+}
+
+<div class="ctn4">
+    <h1 class="text-center my-3 title">Products</h1>
+    <div class="btn-create create">
+        <a class="btn btn-success btn-round green" asp-action="Create">Create</a>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        Image
+                    </th>
+
+                    <th>
+                        Name
+                    </th>
+
+                    <th>
+                        Description
+                    </th>
+
+                    <th>
+                        Price
+                    </th>
+
+                    <th>
+                        Category
+                    </th>
+
+                    <th>
+                        Discount
+                    </th>
+
+                    <th>
+                        Brand
+                    </th>
+
+                    <th>
+                        Rating
+                    </th>
+
+                     <th>
+                        Tag
+                    </th>
+
+                    <th>
+                        Options
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Product product in Model)
+                {
+                    <tr>
+                        <td class="img2">
+                            <div class="image3">
+                                <img src="~/assets/images/products/@product.ProductImages.FirstOrDefault(m => m.IsMain).Image">
+                            </div>
+                        </td>
+
+                        <td class="cell">
+                            @product.Name
+                        </td>
+
+                        <td class="description-product">
+                            @product.Description
+                        </td>
+
+                        <td class="cell">
+                            $@product.ActualPrice
+                        </td>
+
+                        <td class="cell">
+                            @product.Category.Name
+                        </td>
+
+                        <td class="cell">
+                            @product.Discount.Name
+                        </td>
+
+                        <td class="cell">
+                            @product.Brand.Name
+                        </td>
+
+                        <td class="cell">
+                            @product.Rating.RatingCount
+                        </td>
+
+                        <td class="cell">
+                            @product.ProductTags.FirstOrDefault().Tag.Name
+                        </td>
+
+                        <td class="btns">
+                            <a class="btn btn-primary btn-round blue" asp-action="Detail" asp-route-id="@product.Id">Detail</a>
+                            <a class="btn btn-warning btn-round orange" asp-action="Edit" asp-route-id="@product.Id">Edit</a>
+                            <a data-id="@product.Id" class="btn btn-danger red btn-round category-delete">Delete</a>
+
+                        </td>
+                    </tr>
+                }
+
+
+
+            </tbody>
+        </table>
+    </div>
+</div>

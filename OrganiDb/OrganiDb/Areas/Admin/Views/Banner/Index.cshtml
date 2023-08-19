@@ -1,0 +1,52 @@
+﻿@model List<Banner>
+
+@{
+    ViewData["Title"] = "Banner";
+}
+
+@section Css{
+    <link rel="stylesheet" href="~/admin/theme-assets/css/banner.css">
+}
+
+<div class="ctn2">
+    <h1 class="text-center title my-3">Banners</h1>
+    <div class="btn-create create">
+        <a class="btn btn-success btn-round green" asp-action="Create">Create</a>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        Image
+                    </th>
+                    <th>
+                        Options
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Banner banner in Model)
+                {
+                    <tr>
+                        <td class="img">
+                           <div class="image2">
+                               <img src="~/assets/images/banners/@banner.Image">
+                           </div>
+                        </td>
+
+                        <td class="buttons">
+                             <a class="btn btn-primary btn-round blue" asp-action="Detail" asp-route-id="@banner.Id">Detail</a>
+                             <a class="btn btn-warning btn-round orange" asp-action="Edit" asp-route-id="@banner.Id">Edit</a>
+                             <a data-id="@banner.Id" class="btn btn-danger red btn-round category-delete">Delete</a>
+
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
