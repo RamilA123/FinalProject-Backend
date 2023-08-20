@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "uMfgGL9+HKcs6cW4Tn0rhEBjuHKG8J8R1QemUzvgQKc=",
+  "Hash": "OwFClnK7ihBlyYj7oVQagx8KPv4hCBlm/ah4kHpCegk=",
   "Source": "OrganiDb",
   "BasePath": "_content/OrganiDb",
   "Mode": "Default",
@@ -68,6 +68,23 @@
       "OriginalItemSpec": "wwwroot\\admin\\theme-assets\\.DS_Store"
     },
     {
+      "Identity": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\admin\\theme-assets\\css\\about.css",
+      "SourceId": "OrganiDb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\",
+      "BasePath": "_content/OrganiDb",
+      "RelativePath": "admin/theme-assets/css/about.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\admin\\theme-assets\\css\\about.css"
+    },
+    {
       "Identity": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\admin\\theme-assets\\css\\app-lite.css",
       "SourceId": "OrganiDb",
       "SourceType": "Discovered",
@@ -100,6 +117,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\admin\\theme-assets\\css\\app-lite.min.css"
+    },
+    {
+      "Identity": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\admin\\theme-assets\\css\\assistance.css",
+      "SourceId": "OrganiDb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\",
+      "BasePath": "_content/OrganiDb",
+      "RelativePath": "admin/theme-assets/css/assistance.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\admin\\theme-assets\\css\\assistance.css"
     },
     {
       "Identity": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\admin\\theme-assets\\css\\banner.css",

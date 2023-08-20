@@ -9,12 +9,20 @@
       "PackagePath": "staticwebassets\\admin\\theme-assets\\.DS_Store"
     },
     {
+      "Id": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\admin\\theme-assets\\css\\about.css",
+      "PackagePath": "staticwebassets\\admin\\theme-assets\\css\\about.css"
+    },
+    {
       "Id": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\admin\\theme-assets\\css\\app-lite.css",
       "PackagePath": "staticwebassets\\admin\\theme-assets\\css\\app-lite.css"
     },
     {
       "Id": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\admin\\theme-assets\\css\\app-lite.min.css",
       "PackagePath": "staticwebassets\\admin\\theme-assets\\css\\app-lite.min.css"
+    },
+    {
+      "Id": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\admin\\theme-assets\\css\\assistance.css",
+      "PackagePath": "staticwebassets\\admin\\theme-assets\\css\\assistance.css"
     },
     {
       "Id": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\admin\\theme-assets\\css\\banner.css",

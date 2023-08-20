@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Slider>
+﻿@model List<SliderVM>
 
 @{
     ViewData["Title"] = "Slider";
@@ -43,7 +43,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (Slider slider in Model)
+                @foreach (SliderVM slider in Model)
                 {
                     <tr>
                         <td class="img">

@@ -1,4 +1,4 @@
-﻿@model List<Banner>
+﻿@model List<BannerVM>
 
 @{
     ViewData["Title"] = "Banner";
@@ -27,7 +27,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (Banner banner in Model)
+                @foreach (BannerVM banner in Model)
                 {
                     <tr>
                         <td class="img">

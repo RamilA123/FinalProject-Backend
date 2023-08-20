@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Assistance>
+
+@{
+    ViewData["Title"] = "Service";
+}
+
+@section Css{
+
+    <link rel="stylesheet" href="~/admin/theme-assets/css/assistance.css">
+}
+
+<div class="container">
+    <h1 class="text-center my-3 title">Services</h1>
+    <div class="btn-create create">
+        <a class="btn btn-success btn-round green" asp-action="Create">Create</a>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        Image
+                    </th>
+                    <th>
+                        Title
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                    <th>
+                        About
+                    </th>
+                    <th>
+                        Options
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Assistance assistance in Model)
+                {
+                    <tr>
+                        <td class="img">
+                            <div class="image4">
+                                <img src="~/assets/images/services/@assistance.Image">
+                            </div>
+                        </td>
+                        <td class="cell5">
+                            @assistance.Title
+                        </td>
+                        <td class="cell5">
+                            @assistance.Description
+                        </td>
+                        <td class="cell5">
+                            @assistance.About.Title
+                        </td>
+                        <td class="cell5">
+                            <a class="btn btn-primary btn-round blue" asp-action="Detail" asp-route-id="@assistance.Id">Detail</a>
+                            <a class="btn btn-warning btn-round orange" asp-action="Edit" asp-route-id="@assistance.Id">Edit</a>
+                            <a data-id="@assistance.Id" class="btn btn-danger red btn-round category-delete">Delete</a>
+
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+

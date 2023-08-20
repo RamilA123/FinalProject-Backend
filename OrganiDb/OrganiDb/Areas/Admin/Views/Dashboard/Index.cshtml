@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="~/admin/theme-assets/css/bannerinfo.css">
     <link rel="stylesheet" href="~/admin/theme-assets/css/product.css">
     <link rel="stylesheet" href="~/admin/theme-assets/css/blog.css">
+    <link rel="stylesheet" href="~/admin/theme-assets/css/assistance.css">
+    <link rel="stylesheet" href="~/admin/theme-assets/css/about.css">
 }
 
 
@@ -36,7 +38,7 @@
                 </tr>
             </thead>
             <tbody>
-                    @foreach (Category category in Model.Categories)
+                    @foreach (CategoryVM category in Model.Categories)
                     {
                         <tr>
                             <td class="img">
@@ -48,7 +50,7 @@
                                 @category.Name
                             </td>
                              <td class="cell1">
-                                @category.Products.Count
+                                @category.ProductCount
                             </td>
                           
                         </tr>
@@ -86,7 +88,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (Slider slider in Model.Sliders)
+                @foreach (SliderVM slider in Model.Sliders)
                 {
                     <tr>
                         <td class="img">
@@ -138,7 +140,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (Banner banner in Model.Banners)
+                @foreach (BannerVM banner in Model.Banners)
                 {
                     <tr>
                         <td class="img">
@@ -170,7 +172,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (BannerInfo bannerInfo in Model.BannerInfos)
+                @foreach (BannerInfoVM bannerInfo in Model.BannerInfos)
                 {
                     <tr>
                         <td class="cell2">
@@ -344,6 +346,81 @@
         </table>
     </div>
 </div>
+
+<div class="container">
+    <h1 class="text-center my-3 title">Services</h1>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        Image
+                    </th>
+                    <th>
+                        Title
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                    <th>
+                        About
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Assistance assistance in Model.Assistances)
+                {
+                    <tr>
+                        <td class="img">
+                            <div class="image4">
+                                <img src="~/assets/images/services/@assistance.Image">
+                            </div>
+                        </td>
+                        <td class="cell5">
+                            @assistance.Title
+                        </td>
+                        <td class="cell5">
+                            @assistance.Description
+                        </td>
+                        <td class="cell5">
+                            @assistance.About.Title
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="ctn6">
+    <h1 class="text-center my-3 title">Abouts</h1>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        Title
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="cell5">
+                        @Model.About.Title
+                    </td>
+                    <td class="description-about">
+                        @Model.About.Description
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
 
 
 

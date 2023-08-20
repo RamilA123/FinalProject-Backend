@@ -1,4 +1,4 @@
-﻿@model List<Category>
+﻿@model List<CategoryVM>
 
 @{
     ViewData["Title"] = "Category";
@@ -34,7 +34,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (Category category in Model)
+                @foreach (CategoryVM category in Model)
                 {
                     <tr>
                         <td class="img">
@@ -46,7 +46,7 @@
                             @category.Name
                         </td>
                          <td class="cell">
-                            @category.Products.Count
+                            @category.ProductCount
                         </td>
                          <td class="cell">
                             <a class="btn btn-primary btn-round blue" asp-action="Detail" asp-route-id="@category.Id">Detail</a>
