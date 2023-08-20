@@ -18,5 +18,10 @@ namespace OrganiDb.Services
         {
             return await _context.Discounts.FirstOrDefaultAsync();
         }
+
+        public async Task<List<Discount>> GetAllAsync()
+        {
+            return await _context.Discounts.Include(m => m.Products).ToListAsync();
+        }
     }
 }

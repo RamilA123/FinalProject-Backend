@@ -1,4 +1,4 @@
-﻿@model Pagination<Product>
+﻿@model List<ProductVM>
 
 @{
     ViewData["Title"] = "Product";
@@ -61,12 +61,12 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (Product product in Model.Datas)
+                @foreach (ProductVM product in Model)
                 {
                     <tr>
                         <td class="img2">
                             <div class="image3">
-                                <img src="~/assets/images/products/@product.ProductImages.FirstOrDefault(m => m.IsMain).Image">
+                                <img src="~/assets/images/products/@product.Image">
                             </div>
                         </td>
 
@@ -79,27 +79,27 @@
                         </td>
 
                         <td class="cell">
-                            $@product.ActualPrice
+                            $@product.Price
                         </td>
 
                         <td class="cell">
-                            @product.Category.Name
+                            @product.Category
                         </td>
 
                         <td class="cell">
-                            @product.Discount.Name
+                            @product.Discount
                         </td>
 
                         <td class="cell">
-                            @product.Brand.Name
+                            @product.Brand
                         </td>
 
                         <td class="cell">
-                            @product.Rating.RatingCount
+                            @product.Rating
                         </td>
 
                         <td class="cell">
-                            @product.ProductTags.FirstOrDefault().Tag.Name
+                            @product.Tag
                         </td>
 
                         <td class="btns">
@@ -117,19 +117,19 @@
 
         <nav aria-label="Page navigation example">
              <ul class="pagination mt-3">
-              <li class="page-item @(Model.HasPrevious ? "" : "disabled")">
-                    <a class="page-link" asp-route-page="@(Model.CurrentPage - 1)">Previous</a>
+              <li class="page-item @(Model.FirstOrDefault().HasPrevious ? "" : "disabled")">
+                    <a class="page-link" asp-route-page="@(Model.FirstOrDefault().CurrentPage - 1)">Previous</a>
               </li>
 
-                @for (int i = 1; i <= Model.TotalPage; i++)
+                @for (int i = 1; i <= Model.FirstOrDefault().TotalPage; i++)
                 {
-                          <li class="@(Model.CurrentPage == i ? "disabled" : "")">
-                              <a class="page-link @(Model.CurrentPage == i ? "active-color" : "" )" asp-route-page="@i">@i</a>
+                    <li class="@(Model.FirstOrDefault().CurrentPage == i ? "disabled" : "")">
+                        <a class="page-link @(Model.FirstOrDefault().CurrentPage == i ? "active-color" : "" )" asp-route-page="@i">@i</a>
                           </li>
                 }
 
-              <li class="page-item @(Model.HasNext ? "" : "disabled")">
-                  <a class="page-link" asp-route-page="@(Model.CurrentPage + 1)">Next</a>
+              <li class="page-item @(Model.FirstOrDefault().HasNext ? "" : "disabled")">
+                  <a class="page-link" asp-route-page="@(Model.FirstOrDefault().CurrentPage + 1)">Next</a>
               </li>
             </ul>
         </nav>

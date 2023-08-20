@@ -53,6 +53,10 @@
       "PackagePath": "staticwebassets\\admin\\theme-assets\\css\\bootstrap.min.css"
     },
     {
+      "Id": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\admin\\theme-assets\\css\\brand.css",
+      "PackagePath": "staticwebassets\\admin\\theme-assets\\css\\brand.css"
+    },
+    {
       "Id": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\admin\\theme-assets\\css\\category.css",
       "PackagePath": "staticwebassets\\admin\\theme-assets\\css\\category.css"
     },
@@ -153,6 +157,10 @@
       "PackagePath": "staticwebassets\\admin\\theme-assets\\css\\core\\mixins\\transitions.min.css"
     },
     {
+      "Id": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\admin\\theme-assets\\css\\discount.css",
+      "PackagePath": "staticwebassets\\admin\\theme-assets\\css\\discount.css"
+    },
+    {
       "Id": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\admin\\theme-assets\\css\\pages\\dashboard-ecommerce.css",
       "PackagePath": "staticwebassets\\admin\\theme-assets\\css\\pages\\dashboard-ecommerce.css"
     },
@@ -205,8 +213,16 @@
       "PackagePath": "staticwebassets\\admin\\theme-assets\\css\\product.css"
     },
     {
+      "Id": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\admin\\theme-assets\\css\\rating.css",
+      "PackagePath": "staticwebassets\\admin\\theme-assets\\css\\rating.css"
+    },
+    {
       "Id": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\admin\\theme-assets\\css\\slider.css",
       "PackagePath": "staticwebassets\\admin\\theme-assets\\css\\slider.css"
+    },
+    {
+      "Id": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\admin\\theme-assets\\css\\tag.css",
+      "PackagePath": "staticwebassets\\admin\\theme-assets\\css\\tag.css"
     },
     {
       "Id": "C:\\Users\\FX706HCB\\Desktop\\Final Project\\FinalProject-Backend\\OrganiDb\\OrganiDb\\wwwroot\\admin\\theme-assets\\css\\vendors.css",

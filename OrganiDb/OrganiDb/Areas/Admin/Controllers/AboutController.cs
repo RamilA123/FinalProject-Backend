@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using OrganiDb.Areas.Admin.ViewModels.About;
 using OrganiDb.Models;
 using OrganiDb.Services;
 using OrganiDb.Services.Interfaces;
@@ -17,8 +18,14 @@ namespace OrganiDb.Areas.Admin.Controllers
 
         public async Task<IActionResult> Index()
         {
-            About_ about = await _aboutService.GetAsync();
+            AboutVM about = new();
 
+            About_ dbAbout = await _aboutService.GetAsync();
+
+            about.Id = dbAbout.Id;
+            about.Title = dbAbout.Title;
+            about.Description = dbAbout.Description;
+            
             return View(about);
         }
     }

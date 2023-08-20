@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Assistance>
+﻿@model List<AssistanceVM>
 
 @{
     ViewData["Title"] = "Service";
@@ -36,7 +36,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (Assistance assistance in Model)
+                @foreach (AssistanceVM assistance in Model)
                 {
                     <tr>
                         <td class="img">
@@ -51,7 +51,7 @@
                             @assistance.Description
                         </td>
                         <td class="cell5">
-                            @assistance.About.Title
+                            @assistance.About
                         </td>
                         <td class="cell5">
                             <a class="btn btn-primary btn-round blue" asp-action="Detail" asp-route-id="@assistance.Id">Detail</a>

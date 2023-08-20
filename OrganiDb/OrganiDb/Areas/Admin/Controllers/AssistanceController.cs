@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using OrganiDb.Areas.Admin.ViewModels.Assistance;
+using OrganiDb.Areas.Admin.ViewModels.Category;
 using OrganiDb.Models;
+using OrganiDb.Services;
 using OrganiDb.Services.Interfaces;
 
 namespace OrganiDb.Areas.Admin.Controllers
@@ -18,9 +21,23 @@ namespace OrganiDb.Areas.Admin.Controllers
 
         public async Task<IActionResult> Index()
         {
-            IEnumerable<Assistance> assistances = await _assistanceService.GetAllAsync();
+            List<AssistanceVM> assistances = new();
+
+            IEnumerable<Assistance> dbAssistances = await _assistanceService.GetAllAsync();
 
             About_ about = await _aboutService.GetAsync();
+
+            foreach (Assistance assistance in dbAssistances)
+            {
+                assistances.Add(new AssistanceVM
+                {
+                    Id = assistance.Id,
+                    Image = assistance.Image,
+                    Title = assistance.Title,
+                    Description = assistance.Description,
+                    About = assistance.About.Title,
+                });
+            }
 
             return View(assistances);
         }

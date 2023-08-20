@@ -1,0 +1,62 @@
+﻿@model List<BrandVM>
+
+@{
+    ViewData["Title"] = "Brand";
+}
+
+@section Css{
+
+    <link rel="stylesheet" href="~/admin/theme-assets/css/brand.css">
+}
+
+
+<div class="container">
+    <h1 class="text-center my-3 title">Brands</h1>
+    <div class="btn-create create">
+        <a class="btn btn-success btn-round green" asp-action="Create">Create</a>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        Image
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Product Count
+                    </th>
+                    <th>
+                        Options
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (BrandVM brand in Model)
+                {
+                        <tr>
+                            <td class="img">
+                                <div class="image6">
+                                <img src="~/assets/images/brands/@brand.Image">
+                                </div>
+                            </td>
+                             <td class="cell">
+                            @brand.Name
+                            </td>
+                             <td class="cell">
+                            @brand.ProductCount
+                            </td>
+                             <td class="cell">
+                            <a class="btn btn-primary btn-round blue" asp-action="Detail" asp-route-id="@brand.Id">Detail</a>
+                            <a class="btn btn-warning btn-round orange" asp-action="Edit" asp-route-id="@brand.Id">Edit</a>
+                            <a data-id="@brand.Id" class="btn btn-danger red btn-round category-delete">Delete</a>
+
+                            </td>
+                        </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

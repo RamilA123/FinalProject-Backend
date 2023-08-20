@@ -15,7 +15,7 @@ namespace OrganiDb.Services
         }
         public async Task<List<Brand>> GetAllAsync()
         {
-            return await _context.Brands.ToListAsync();
+            return await _context.Brands.Include(m => m.Products).ToListAsync();
         }
     }
 }

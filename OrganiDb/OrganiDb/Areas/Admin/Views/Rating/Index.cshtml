@@ -1,0 +1,60 @@
+﻿@model List<RatingVM>
+
+@{
+    ViewData["Title"] = "Rating";
+}
+
+@section Css{
+
+    <link rel="stylesheet" href="~/admin/theme-assets/css/rating.css">
+}
+
+
+<div class="container">
+    <h1 class="text-center my-3 title">Ratings</h1>
+    <div class="btn-create create">
+        <a class="btn btn-success btn-round green" asp-action="Create">Create</a>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        Rating Count
+                    </th>
+                    <th>
+                        Product Count
+                    </th>
+                    <th>
+                        Options
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (RatingVM rating in Model)
+                {
+                    <tr>
+                        <td>
+                            @rating.RatingCount
+                        </td>
+                        <td>
+                            @rating.ProductCount
+                        </td>
+                        <td>
+                            <a class="btn btn-primary btn-round blue" asp-action="Detail" asp-route-id="@rating.Id">Detail</a>
+                            <a class="btn btn-warning btn-round orange" asp-action="Edit" asp-route-id="@rating.Id">Edit</a>
+                            <a data-id="@rating.Id" class="btn btn-danger red btn-round category-delete">Delete</a>
+
+                        </td>
+                    </tr>
+                }
+
+
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+

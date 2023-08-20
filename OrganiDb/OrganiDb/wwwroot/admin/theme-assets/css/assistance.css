@@ -59,7 +59,7 @@ tbody {
 }
 
 tbody .cell5 {
-    padding: 60px 0;
+    padding: 60px 9px;
 }
 
 .table td .image4 {
@@ -81,7 +81,6 @@ tbody .cell5 {
 
 .table td a {
     color: white !important;
-    margin-left: 8px;
     padding: 10px 35px;
     font-size: 15px;
 }

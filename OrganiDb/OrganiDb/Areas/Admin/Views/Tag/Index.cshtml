@@ -1,0 +1,57 @@
+﻿@model List<TagVM>
+
+@{
+    ViewData["Title"] = "Tag";
+}
+
+@section Css{
+
+        <link rel="stylesheet" href="~/admin/theme-assets/css/tag.css">
+}
+
+
+<div class="container">
+    <h1 class="text-center my-3 title">Tags</h1>
+    <div class="btn-create create">
+        <a class="btn btn-success btn-round green" asp-action="Create">Create</a>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Product Count
+                    </th>
+                    <th>
+                        Options
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (TagVM tag in Model)
+                {
+                   <tr>
+                       <td>
+                       @tag.Name
+                       </td>
+                       <td>
+                       @tag.ProductCount
+                       </td>
+                       <td>
+                       <a class="btn btn-primary btn-round blue" asp-action="Detail" asp-route-id="@tag.Id">Detail</a>
+                       <a class="btn btn-warning btn-round orange" asp-action="Edit" asp-route-id="@tag.Id">Edit</a>
+                       <a data-id="@tag.Id" class="btn btn-danger red btn-round category-delete">Delete</a>
+                       </td>
+                   </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+

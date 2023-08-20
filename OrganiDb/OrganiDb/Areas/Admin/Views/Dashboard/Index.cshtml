@@ -14,6 +14,10 @@
     <link rel="stylesheet" href="~/admin/theme-assets/css/blog.css">
     <link rel="stylesheet" href="~/admin/theme-assets/css/assistance.css">
     <link rel="stylesheet" href="~/admin/theme-assets/css/about.css">
+    <link rel="stylesheet" href="~/admin/theme-assets/css/brand.css">
+    <link rel="stylesheet" href="~/admin/theme-assets/css/discount.css">
+    <link rel="stylesheet" href="~/admin/theme-assets/css/rating.css">
+    <link rel="stylesheet" href="~/admin/theme-assets/css/tag.css">
 }
 
 
@@ -234,12 +238,12 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (Product product in Model.Products)
+                @foreach (ProductVM product in Model.Products)
                 {
                     <tr>
                         <td class="img2">
                             <div class="image3">
-                                <img src="~/assets/images/products/@product.ProductImages.FirstOrDefault(m => m.IsMain).Image">
+                                <img src="~/assets/images/products/@product.Image">
                             </div>
                         </td>
 
@@ -252,27 +256,27 @@
                         </td>
 
                         <td class="cell">
-                            $@product.ActualPrice
+                            $@product.Price
                         </td>
 
                         <td class="cell">
-                            @product.Category.Name
+                            @product.Category
                         </td>
 
                         <td class="cell">
-                            @product.Discount.Name
+                            @product.Discount
                         </td>
 
                         <td class="cell">
-                            @product.Brand.Name
+                            @product.Brand
                         </td>
 
                         <td class="cell">
-                            @product.Rating.RatingCount
+                            @product.Rating
                         </td>
 
                         <td class="cell">
-                            @product.ProductTags.FirstOrDefault().Tag.Name
+                            @product.Tag
                         </td>
                     </tr>
                 }
@@ -314,11 +318,11 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (Blog_ blog in Model.Blogs)
+                @foreach (BlogVM blog in Model.Blogs)
                 {
                     <tr>
                         <td class="img3">
-                            <div class="image">
+                            <div class="image5">
                                 <img src="~/assets/images/blogs/@blog.Image">
                             </div>
                         </td>
@@ -329,13 +333,13 @@
                             @blog.Description
                         </td>
                         <td class="cell4">
-                            @blog.DateTime
+                            @blog.Date
                         </td>
                         <td class="cell4">
-                            @blog.Author.FullName
+                            @blog.Author
                         </td>
                         <td style="width: 175px" class="cell4">
-                            @blog.BlogReviews.Count
+                            @blog.ReviewCount
                         </td>
                     </tr>
                 }
@@ -368,7 +372,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (Assistance assistance in Model.Assistances)
+                @foreach (AssistanceVM assistance in Model.Assistances)
                 {
                     <tr>
                         <td class="img">
@@ -383,7 +387,7 @@
                             @assistance.Description
                         </td>
                         <td class="cell5">
-                            @assistance.About.Title
+                            @assistance.About
                         </td>
                     </tr>
                 }
@@ -420,6 +424,164 @@
         </table>
     </div>
 </div>
+
+<div class="container">
+    <h1 class="text-center my-3 title">Brands</h1>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        Image
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Product Count
+                    </th>
+              
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (BrandVM brand in Model.Brands)
+                {
+                    <tr>
+                        <td class="img">
+                            <div class="image6">
+                                <img src="~/assets/images/brands/@brand.Image">
+                            </div>
+                        </td>
+                        <td class="cell">
+                            @brand.Name
+                        </td>
+                        <td class="cell">
+                            @brand.ProductCount
+                        </td>
+                     
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="container">
+    <h1 class="text-center my-3 title">Discounts</h1>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+
+                    <th>
+                        Title
+                    </th>
+
+                    <th>
+                        Percent
+                    </th>
+
+                    <th>
+                        Target Time
+                    </th>
+
+                    <th>
+                        Product Count
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (DiscountVM discount in Model.Discounts)
+                {
+                    <tr>
+                        <td class="cell">
+                            @discount.Name
+                        </td>
+                        <td class="cell">
+                            @discount.Title
+                        </td>
+                        <td class="cell">
+                            @discount.Percent%
+                        </td>
+                        <td style="width: 157px" class="cell">
+                            @discount.TargetTime
+                        </td>
+                        <td style="width: 178px" class="cell">
+                            @discount.ProductCount
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="container">
+    <h1 class="text-center my-3 title">Ratings</h1>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        Rating Count
+                    </th>
+                    <th>
+                        Product Count
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (RatingVM rating in Model.Ratings)
+                {
+                     <tr>
+                          <td>
+                          @rating.RatingCount
+                          </td>
+                          <td>
+                          @rating.ProductCount
+                          </td>
+                        
+                     </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="container">
+    <h1 class="text-center my-3 title">Tags</h1>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Product Count
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (TagVM tag in Model.Tags)
+                {
+                    <tr>
+                        <td>
+                            @tag.Name
+                        </td>
+                        <td>
+                            @tag.ProductCount
+                        </td>                 
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
 
 
 
